@@ -192,7 +192,9 @@ def topic_stories(topic: str, state: dict) -> list[dict]:
 
 
 def draft_embed(d: dict, status: str = "pending", by: str | None = None) -> discord.Embed:
-    color = {"pending": COLOR_PENDING, "included": COLOR_IN}.get(status, COLOR_OUT)
+    if status == "pending" and d.get("carried"):
+        status = "carried"
+    color = {"pending": COLOR_PENDING, "carried": COLOR_PENDING, "included": COLOR_IN}.get(status, COLOR_OUT)
     embed = discord.Embed(title=d["title"], url=d["url"],
                           description=d["blurb"] or "*(no blurb: reply with blurb: to add one)*",
                           color=color)
@@ -201,6 +203,7 @@ def draft_embed(d: dict, status: str = "pending", by: str | None = None) -> disc
     if d.get("requested"):
         embed.add_field(name="Requested", value=d["requested"])
     footer = {"pending": HOW_TO,
+              "carried": f"Carried over: last chance this Friday. {HOW_TO}",
               "included": f"Posted to #ai-news (approved by {by})",
               "left_out": "Not posted this week"}[status]
     embed.set_footer(text=footer)
@@ -276,6 +279,9 @@ async def post_roundup(queue: discord.TextChannel, forum: discord.ForumChannel,
                        state: dict) -> None:
     """Friday: post every ✅ draft as its own forum post, and close out the rest.
 
+    A draft nobody reacted to carries over to next week once, then closes, so
+    the queue doesn't fill up with old stories.
+
     Each draft is closed only after its post succeeds, so if Discord refuses a
     post (e.g. missing permissions in the forum), the rest stay open and the
     next run retries them without re-posting the ones that went through.
@@ -283,7 +289,7 @@ async def post_roundup(queue: discord.TextChannel, forum: discord.ForumChannel,
     if not state["drafts"]:
         return                             # nothing was drafted (e.g. first week)
     tags_by_name = {t.name.lower(): t for t in forum.available_tags}
-    posted = 0
+    posted = carried = 0
     for msg_id, d in list(state["drafts"].items()):
         try:
             msg = await queue.fetch_message(int(msg_id))
@@ -291,7 +297,13 @@ async def post_roundup(queue: discord.TextChannel, forum: discord.ForumChannel,
             del state["drafts"][msg_id]    # a mod deleted the draft
             continue
         # Skip wins if a draft has both, so one ❌ is enough to leave it out.
-        who = None if await decided_by(msg, SKIP) else await decided_by(msg, APPROVE)
+        skipped = await decided_by(msg, SKIP)
+        who = None if skipped else await decided_by(msg, APPROVE)
+        if not who and not skipped and not d.get("carried"):
+            d["carried"] = True
+            await msg.edit(embed=draft_embed(d))
+            carried += 1
+            continue
         if who:
             names = [ROUNDUP_TAG] + ([d["tag"]] if d["tag"] else [])
             tags = [tags_by_name[n.lower()] for n in names if n.lower() in tags_by_name]
@@ -307,12 +319,14 @@ async def post_roundup(queue: discord.TextChannel, forum: discord.ForumChannel,
         await msg.edit(embed=draft_embed(d, "included" if who else "left_out", who))
         del state["drafts"][msg_id]
 
-    if posted:
-        await queue.send(f"Posted this week's {posted} approved "
-                         f"{'story' if posted == 1 else 'stories'} to {forum.mention}.")
-    else:
-        await queue.send("No drafts were approved this week, so nothing was posted to #ai-news.")
-    log.info("Posted %d stories.", posted)
+    summary = (f"Posted this week's {posted} approved {'story' if posted == 1 else 'stories'} "
+               f"to {forum.mention}." if posted else
+               "No drafts were approved this week, so nothing was posted to #ai-news.")
+    if carried:
+        summary += (f" {carried} unreviewed {'draft carries' if carried == 1 else 'drafts carry'} "
+                    f"over to next Friday, then {'closes' if carried == 1 else 'close'}.")
+    await queue.send(summary)
+    log.info("Posted %d stories; carried over %d.", posted, carried)
 
 
 async def post_draft(queue: discord.TextChannel, story: dict, state: dict,

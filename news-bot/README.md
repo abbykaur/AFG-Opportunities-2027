@@ -6,13 +6,13 @@ A weekly batch of AI news for the AFG server, curated by mods.
 |---|---|
 | Monday | The bot posts about 8 of the week's AI stories as drafts in **#news-queue**, mixed across sources. |
 | Mon–Fri | Mods react ✅ to include a draft or ❌ to leave it out. To edit one, reply to it (see below). Post `more: <topic>` for 3 extra drafts. |
-| Friday, 10 AM | Every ✅ draft becomes its own post in the **#ai-news** forum, tagged with its topic and **Weekly Roundup**. Drafts without a ✅ are closed. |
+| Friday, 10 AM | Every ✅ draft becomes its own post in the **#ai-news** forum, tagged with its topic and **Weekly Roundup**. ❌ drafts close. Drafts nobody reacted to carry over to the next Friday once, then close. |
 
 The bot checks the queue every 2 hours on weekdays, so a reply or request takes up to 2 hours to show up. The bot reacts ✏️ when it applies an edit and 👀 when it picks up a request.
 
 ## For mods
 
-- **Include / leave out:** react ✅ or ❌ on the draft. If a draft has both, ❌ wins. Reactions are read on Friday, so you can change your mind until then.
+- **Include / leave out:** react ✅ or ❌ on the draft. If a draft has both, ❌ wins. Reactions are read on Friday, so you can change your mind until then. A draft with no reaction by Friday gets one more week (its footer says "Carried over"), then closes.
 - **Edit a draft:** reply to it with any of these lines:
   ```
   title: Better headline
