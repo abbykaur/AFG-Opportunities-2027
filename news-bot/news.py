@@ -67,6 +67,10 @@ ROUNDUP_DAY, ROUNDUP_HOUR = 4, 10  # Friday, 10 AM
 ROUNDUP_TAG = "Weekly Roundup"
 
 WEEKLY_CANDIDATES = 8
+# Monday tops the queue up to at most this many open drafts, counting ones
+# carried over from last week, so mods never face more than 11 at once.
+# "more" requests add on top: a mod asked for them.
+MAX_OPEN_DRAFTS = 11
 DRAFTS_PER_REQUEST = 3
 MAX_STORY_AGE = timedelta(days=7)
 SEEN_TTL = timedelta(days=30)
@@ -372,8 +376,13 @@ async def run_once() -> None:
                 state["roundup_week"] = week
 
             if FORCE == "draft" or (now.weekday() in DRAFT_DAYS and state["drafted_week"] != week):
-                stories = await loop.run_in_executor(None, weekly_candidates, state, WEEKLY_CANDIDATES)
-                await queue.send(f"**This week's AI news candidates.** {HOW_TO}. "
+                open_now = len(state["drafts"])
+                count = max(0, min(WEEKLY_CANDIDATES, MAX_OPEN_DRAFTS - open_now))
+                stories = (await loop.run_in_executor(None, weekly_candidates, state, count)
+                           if count else [])
+                carried = (f" {open_now} {'draft is' if open_now == 1 else 'drafts are'} "
+                           "still open from last week (above)." if open_now else "")
+                await queue.send(f"**This week's AI news candidates.**{carried} {HOW_TO}. "
                                  f"Approved stories post to #ai-news Friday at {ROUNDUP_HOUR} AM PT. "
                                  "Post `more: <topic>` for extra drafts.")
                 for story in stories:

@@ -4,7 +4,7 @@ A weekly batch of AI news for the AFG server, curated by mods.
 
 | When (Pacific) | What happens |
 |---|---|
-| Monday | The bot posts about 8 of the week's AI stories as drafts in **#news-queue**, mixed across sources. |
+| Monday | The bot posts 8 of the week's AI stories as drafts in **#news-queue**, mixed across sources. If drafts carried over from last week, it posts fewer, so the queue never has more than 11 open. |
 | Mon–Fri | Mods react ✅ to include a draft or ❌ to leave it out. To edit one, reply to it (see below). Post `more: <topic>` for 3 extra drafts. |
 | Friday, 10 AM | Every ✅ draft becomes its own post in the **#ai-news** forum, tagged with its topic and **Weekly Roundup**. ❌ drafts close. Drafts nobody reacted to carry over to the next Friday once, then close. |
 
@@ -52,4 +52,5 @@ These are all near the top of `news.py`:
 | `TAG_KEYWORDS` | Which forum tag each story gets. Tag names must match the #ai-news forum's tags exactly. |
 | `FEEDS` | Which RSS feeds the Monday drafts come from. |
 | `WEEKLY_CANDIDATES` | How many drafts Monday posts. |
+| `MAX_OPEN_DRAFTS` | The most open drafts Monday will leave in the queue, counting carried-over ones. |
 | `ROUNDUP_DAY`, `ROUNDUP_HOUR` | When approved stories post to #ai-news. |
