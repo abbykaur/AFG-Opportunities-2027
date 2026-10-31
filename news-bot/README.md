@@ -4,7 +4,7 @@ A weekly batch of AI news for the AFG server, curated by mods.
 
 | When (Pacific) | What happens |
 |---|---|
-| Monday | The bot posts 8 of the week's AI stories as drafts in **#news-queue**, mixed across sources. If drafts carried over from last week, it posts fewer, so the queue never has more than 11 open. |
+| Monday | The bot posts 8 of the week's AI stories as drafts in **#news-queue**: 6 articles mixed across sources, and 2 🎥 YouTube videos from different video categories. If drafts carried over from last week, it posts fewer, so the queue never has more than 11 open. |
 | Mon–Fri | Mods react ✅ to include a draft or ❌ to leave it out. To edit one, reply to it (see below). Post `more: <topic>` for 3 extra drafts. |
 | Friday, 10 AM | Every ✅ draft becomes its own post in the **#ai-news** forum, tagged with its topic and **Weekly Roundup**. ❌ drafts close. Drafts nobody reacted to carry over to the next Friday once, then close. |
 
@@ -20,7 +20,21 @@ The bot checks the queue every 2 hours on weekdays, so a reply or request takes 
   tag: Research
   ```
   A reply with no `title:` / `blurb:` / `tag:` lines replaces the blurb. `tag: none` removes the tag.
-- **More stories:** `more: AI chips` searches Google News for the past week. Plain `more` pulls the next stories from the regular feeds.
+- **More stories:** `more: AI chips` searches Google News for the past week. Plain `more` pulls the next stories from the regular feeds. `more videos` gives 3 videos, each from a different category.
+
+## Videos and the feedback loop
+
+The 2 video slots come from YouTube channels grouped into categories in `VIDEO_CHANNELS`: paper breakdowns, news & analysis, official labs, and learning. Each week the bot picks 2 different categories and drafts the most-watched video from each, from the past 2 weeks. It skips Shorts.
+
+Which categories get picked depends on how mods react. When drafts close on Friday, the bot logs how each one went: kind, category, source, tag, and ✅ / ❌ / no reaction. It doesn't log who reacted or what anyone wrote, since the repo is public. Over the last 8 weeks:
+
+- A category with lots of ✅ gets picked more often.
+- ❌ counts fully against a category. A draft nobody reacted to counts half, since that often just means nobody had time.
+- No category ever drops out completely, so you still see variety.
+
+Each Friday summary in #news-queue ends with the counts, e.g. `Videos approved, last 8 weeks: Paper breakdowns 3/4 · Official labs 1/3`.
+
+Video posts in #ai-news get a **Video** tag if the forum has one with that name. Otherwise they just get Weekly Roundup and their topic tag.
 
 ## Setup
 
@@ -52,5 +66,7 @@ These are all near the top of `news.py`:
 | `TAG_KEYWORDS` | Which forum tag each story gets. Tag names must match the #ai-news forum's tags exactly. |
 | `FEEDS` | Which RSS feeds the Monday drafts come from. |
 | `WEEKLY_CANDIDATES` | How many drafts Monday posts. |
+| `VIDEO_SLOTS` | How many of those are videos. |
+| `VIDEO_CHANNELS` | Which YouTube channels the videos come from, by category. |
 | `MAX_OPEN_DRAFTS` | The most open drafts Monday will leave in the queue, counting carried-over ones. |
 | `ROUNDUP_DAY`, `ROUNDUP_HOUR` | When approved stories post to #ai-news. |

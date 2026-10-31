@@ -1,7 +1,8 @@
 """AI news bot: a weekly batch of stories for the #ai-news forum, curated by mods.
 
 The weekly cycle (Pacific time):
-  Monday   the bot drafts the week's top stories into #news-queue (mods only).
+  Monday   the bot drafts the week's top stories into #news-queue (mods only):
+           mostly articles, plus a couple of YouTube videos.
   Mon-Fri  mods react ✅ / ❌ on drafts, reply to a draft to edit it, or post
            "more: <topic>" for extra drafts.
   Friday   from 10 AM, every ✅ draft becomes its own post in the #ai-news
@@ -20,6 +21,7 @@ import os
 import re
 import html
 import json
+import random
 import asyncio
 import logging
 import urllib.parse
@@ -52,6 +54,22 @@ FEEDS = {
 # "more: <topic>" searches Google News for the past week.
 TOPIC_SEARCH_URL = "https://news.google.com/rss/search?q={q}+when:7d&hl=en-US&gl=US&ceid=US:en"
 FEED_AGENT = "Mozilla/5.0 (compatible; afg-news-bot)"
+
+# YouTube channels for the video slots, grouped into categories. Every channel
+# has a free RSS feed. To add one, open the channel page, view the page source,
+# and search for "channelId" to find its ID.
+VIDEO_CHANNELS = {
+    "Paper breakdowns": {"Two Minute Papers": "UCbfYPyITQ-7l4upoX8nvctg",
+                         "Yannic Kilcher": "UCZHmQk67mSJgfCCTn7xBfew"},
+    "News & analysis":  {"AI Explained": "UCNJ1Ymd5yFuUPtn21xtRbbw",
+                         "Matthew Berman": "UCawZsQWqfGSbCI5yjkdVkTA"},
+    "Official labs":    {"OpenAI": "UCXZCJLdBC09xxGZ6gcdrc6A",
+                         "Google DeepMind": "UCP7jMXSY2xbc3KCAE0MHQ-A",
+                         "Anthropic": "UCrDwWp7EBBv4NwvScIpBDOA"},
+    "Learning":         {"3Blue1Brown": "UCYO_jab_esuFRV4b17AJtAw",
+                         "Andrej Karpathy": "UCXUPKJO5MZQN11PqgIvyuvQ"},
+}
+VIDEO_FEED_URL = "https://www.youtube.com/feeds/videos.xml?channel_id={}"
 # Feeds mix in promos for their own events ("5 days left: save at TechCrunch
 # Founder Summit"). Titles matching this are dropped.
 PROMO_RE = re.compile(r"\btechcrunch\b|\btickets?\b|\bdays left\b|\blast chance\b", re.IGNORECASE)
@@ -65,14 +83,22 @@ ROUNDUP_DAY, ROUNDUP_HOUR = 4, 10  # Friday, 10 AM
 # lists all mod-picked stories. It's a mod-only tag, which the bot can apply
 # because it has Manage Threads.
 ROUNDUP_TAG = "Weekly Roundup"
+# Video posts also get this tag, if the forum has one by this name.
+VIDEO_TAG = "Video"
 
 WEEKLY_CANDIDATES = 8
 # Monday tops the queue up to at most this many open drafts, counting ones
 # carried over from last week, so mods never face more than 11 at once.
 # "more" requests add on top: a mod asked for them.
 MAX_OPEN_DRAFTS = 11
+# How many of the weekly drafts are videos, each from a different category.
+# Categories mods keep approving get picked more often (see video_weights).
+VIDEO_SLOTS = 2
 DRAFTS_PER_REQUEST = 3
 MAX_STORY_AGE = timedelta(days=7)
+MAX_VIDEO_AGE = timedelta(days=14)  # video channels post less often than news sites
+# Decisions from the last HISTORY_WEEKS weeks steer the video picks.
+HISTORY_WEEKS = 8
 SEEN_TTL = timedelta(days=30)
 BLURB_CHARS = 300
 
@@ -108,6 +134,9 @@ def load_state() -> dict:
     state.setdefault("last_message_id", None)
     state.setdefault("drafted_week", None)  # ISO week ("2026-W44") last drafted
     state.setdefault("roundup_week", None)  # ISO week last rounded up
+    # How each closed draft went, to steer future picks. Kind, category, source,
+    # tag and outcome only: no names or comments, since the repo is public.
+    state.setdefault("history", [])
     return state
 
 
@@ -190,6 +219,97 @@ def weekly_candidates(state: dict, count: int) -> list[dict]:
     return picked
 
 
+def video_blurb(description: str) -> str:
+    """First paragraph of a video description that isn't sponsor links or chapters."""
+    for para in re.split(r"\n\s*\n", description or ""):
+        para = para.strip()
+        # Sponsor and link lines usually start with an emoji, or contain a URL.
+        if (para and para[0].isalnum() and "http" not in para
+                and not re.search(r"\b\d{1,2}:\d{2}\b", para)):
+            return clean_text(para)
+    return ""
+
+
+def fetch_videos(state: dict) -> dict[str, list[dict]]:
+    """Recent videos per category, most-viewed first. Shorts are skipped."""
+    cutoff = datetime.now(timezone.utc) - MAX_VIDEO_AGE
+    by_category = {}
+    for category, channels in VIDEO_CHANNELS.items():
+        videos = []
+        for name, channel_id in channels.items():
+            parsed = feedparser.parse(VIDEO_FEED_URL.format(channel_id), agent=FEED_AGENT)
+            for e in parsed.entries:
+                link = e.get("link", "")
+                when = e.get("published_parsed")
+                if not link or "/shorts/" in link or link in state["seen"] or not when:
+                    continue
+                published = datetime(*when[:6], tzinfo=timezone.utc)
+                if published < cutoff:
+                    continue
+                title = clean_text(e.get("title", ""), limit=100)
+                blurb = video_blurb(e.get("summary", ""))
+                videos.append({
+                    "title": title, "blurb": blurb, "url": link, "source": name,
+                    "published": published.isoformat(), "tag": pick_tag(title, blurb),
+                    "kind": "video", "category": category,
+                    "views": int((e.get("media_statistics") or {}).get("views") or 0),
+                })
+        if videos:
+            by_category[category] = sorted(videos, key=lambda v: v["views"], reverse=True)
+    return by_category
+
+
+def video_weights(state: dict) -> dict[str, float]:
+    """How strongly to favor each video category, from mods' recent decisions.
+
+    Each category's approval rate over the last HISTORY_WEEKS weeks, smoothed
+    as (approved + 1) / (shown + 2) so a new or rarely shown category starts at
+    0.5, not 0 or 1. A ❌ counts fully against a category, but a draft nobody
+    reacted to counts half, since that often means nobody had time. Squaring
+    the rate means a category mods keep approving clearly wins, while the
+    others still come up now and then.
+    """
+    weeks = sorted({h["week"] for h in state["history"]})[-HISTORY_WEEKS:]
+    recent = [h for h in state["history"] if h["week"] in weeks and h.get("kind") == "video"]
+    weights = {}
+    for category in VIDEO_CHANNELS:
+        shown = [h for h in recent if h.get("category") == category]
+        approved = sum(h["decision"] == "approved" for h in shown)
+        rejected = sum(h["decision"] == "rejected" for h in shown)
+        ignored = sum(h["decision"] == "ignored" for h in shown)
+        weights[category] = ((approved + 1) / (approved + rejected + ignored / 2 + 2)) ** 2
+    return weights
+
+
+def pick_videos(state: dict, count: int) -> list[dict]:
+    """The most-viewed recent video from `count` different categories.
+
+    Categories are drawn at random, weighted by video_weights, so the mix
+    leans toward what mods approve without ever settling on one category.
+    """
+    by_category = fetch_videos(state)
+    weights = video_weights(state)
+    picked = []
+    while by_category and len(picked) < count:
+        categories = list(by_category)
+        category = random.choices(categories, weights=[weights[c] for c in categories])[0]
+        picked.append(by_category.pop(category)[0])
+    return picked
+
+
+def video_summary(state: dict) -> str:
+    """One line of video approvals per category, e.g. 'Official labs 2/3'."""
+    weeks = sorted({h["week"] for h in state["history"]})[-HISTORY_WEEKS:]
+    recent = [h for h in state["history"] if h["week"] in weeks and h.get("kind") == "video"]
+    parts = []
+    for category in VIDEO_CHANNELS:
+        shown = [h for h in recent if h.get("category") == category]
+        if shown:
+            approved = sum(h["decision"] == "approved" for h in shown)
+            parts.append(f"{category} {approved}/{len(shown)}")
+    return " · ".join(parts)
+
+
 def topic_stories(topic: str, state: dict) -> list[dict]:
     url = TOPIC_SEARCH_URL.format(q=urllib.parse.quote(topic))
     return [s for s in fetch_stories(url) if s["url"] not in state["seen"]]
@@ -199,11 +319,14 @@ def draft_embed(d: dict, status: str = "pending", by: str | None = None) -> disc
     if status == "pending" and d.get("carried"):
         status = "carried"
     color = {"pending": COLOR_PENDING, "carried": COLOR_PENDING, "included": COLOR_IN}.get(status, COLOR_OUT)
-    embed = discord.Embed(title=d["title"], url=d["url"],
+    title = f"🎥 {d['title']}" if d.get("kind") == "video" else d["title"]
+    embed = discord.Embed(title=title[:256], url=d["url"],
                           description=d["blurb"] or "*(no blurb: reply with blurb: to add one)*",
                           color=color)
     embed.add_field(name="Tag", value=d["tag"] or "none")
     embed.add_field(name="Source", value=d["source"])
+    if d.get("kind") == "video":
+        embed.add_field(name="Video type", value=d["category"])
     if d.get("requested"):
         embed.add_field(name="Requested", value=d["requested"])
     footer = {"pending": HOW_TO,
@@ -309,9 +432,11 @@ async def post_roundup(queue: discord.TextChannel, forum: discord.ForumChannel,
             carried += 1
             continue
         if who:
-            names = [ROUNDUP_TAG] + ([d["tag"]] if d["tag"] else [])
+            names = ([ROUNDUP_TAG] + ([VIDEO_TAG] if d.get("kind") == "video" else [])
+                     + ([d["tag"]] if d["tag"] else []))
             tags = [tags_by_name[n.lower()] for n in names if n.lower() in tags_by_name]
-            # The bare link lets Discord show the article's preview under the blurb.
+            # The bare link lets Discord show the article's preview (or the video
+            # player) under the blurb.
             content = f"{d['blurb']}\n\n{d['url']}".strip()
             try:
                 await forum.create_thread(name=d["title"], content=content[:2000], applied_tags=tags)
@@ -321,6 +446,12 @@ async def post_roundup(queue: discord.TextChannel, forum: discord.ForumChannel,
                 raise
             posted += 1
         await msg.edit(embed=draft_embed(d, "included" if who else "left_out", who))
+        state["history"].append({
+            "week": datetime.now(TZ).strftime("%G-W%V"),
+            "kind": d.get("kind", "article"), "category": d.get("category"),
+            "source": d["source"], "tag": d["tag"],
+            "decision": "approved" if who else "rejected" if skipped else "ignored",
+        })
         del state["drafts"][msg_id]
 
     summary = (f"Posted this week's {posted} approved {'story' if posted == 1 else 'stories'} "
@@ -329,6 +460,8 @@ async def post_roundup(queue: discord.TextChannel, forum: discord.ForumChannel,
     if carried:
         summary += (f" {carried} unreviewed {'draft carries' if carried == 1 else 'drafts carry'} "
                     f"over to next Friday, then {'closes' if carried == 1 else 'close'}.")
+    if videos := video_summary(state):
+        summary += f"\nVideos approved, last {HISTORY_WEEKS} weeks: {videos}."
     await queue.send(summary)
     log.info("Posted %d stories; carried over %d.", posted, carried)
 
@@ -336,6 +469,8 @@ async def post_roundup(queue: discord.TextChannel, forum: discord.ForumChannel,
 async def post_draft(queue: discord.TextChannel, story: dict, state: dict,
                      requested: str | None = None) -> None:
     d = {k: story[k] for k in ("title", "blurb", "url", "source", "tag")}
+    if story.get("kind") == "video":
+        d["kind"], d["category"] = "video", story["category"]
     d["created"] = datetime.now(timezone.utc).isoformat()
     if requested:
         d["requested"] = requested
@@ -378,19 +513,26 @@ async def run_once() -> None:
             if FORCE == "draft" or (now.weekday() in DRAFT_DAYS and state["drafted_week"] != week):
                 open_now = len(state["drafts"])
                 count = max(0, min(WEEKLY_CANDIDATES, MAX_OPEN_DRAFTS - open_now))
-                stories = (await loop.run_in_executor(None, weekly_candidates, state, count)
-                           if count else [])
+                # Keep the video share steady when Monday posts fewer than 8.
+                n_videos = min(VIDEO_SLOTS, round(count * VIDEO_SLOTS / WEEKLY_CANDIDATES))
+                videos = (await loop.run_in_executor(None, pick_videos, state, n_videos)
+                          if n_videos else [])
+                stories = (await loop.run_in_executor(None, weekly_candidates, state,
+                                                      count - len(videos))
+                           if count > len(videos) else []) + videos
                 carried = (f" {open_now} {'draft is' if open_now == 1 else 'drafts are'} "
                            "still open from last week (above)." if open_now else "")
                 await queue.send(f"**This week's AI news candidates.**{carried} {HOW_TO}. "
                                  f"Approved stories post to #ai-news Friday at {ROUNDUP_HOUR} AM PT. "
-                                 "Post `more: <topic>` for extra drafts.")
+                                 "Post `more: <topic>` or `more videos` for extra drafts.")
                 for story in stories:
                     await post_draft(queue, story, state)
                 state["drafted_week"] = week
 
             for topic in requests:
-                if topic:
+                if topic and topic.lower() in ("video", "videos"):
+                    stories = await loop.run_in_executor(None, pick_videos, state, DRAFTS_PER_REQUEST)
+                elif topic:
                     stories = await loop.run_in_executor(None, topic_stories, topic, state)
                 else:
                     stories = await loop.run_in_executor(None, weekly_candidates, state, DRAFTS_PER_REQUEST)
