@@ -55,6 +55,9 @@ jobs:
       # The jobs workflow pushes jobs.db to the same branch, so rebase onto
       # whatever it pushed while this run was going.
       - name: Persist state.json (only if it changed)
+        # Also after a failed run: the bot saves what it already did, and
+        # dropping that would make the next run repeat it.
+        if: always()
         run: |
           if [[ -n "$(git status --porcelain news-bot/state.json)" ]]; then
             git config user.name  "github-actions[bot]"

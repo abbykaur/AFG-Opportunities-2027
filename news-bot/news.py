@@ -274,35 +274,45 @@ async def decided_by(msg: discord.Message, emoji: str) -> str | None:
 
 async def post_roundup(queue: discord.TextChannel, forum: discord.ForumChannel,
                        state: dict) -> None:
-    """Friday: post every ✅ draft as its own forum post, and close out the rest."""
+    """Friday: post every ✅ draft as its own forum post, and close out the rest.
+
+    Each draft is closed only after its post succeeds, so if Discord refuses a
+    post (e.g. missing permissions in the forum), the rest stay open and the
+    next run retries them without re-posting the ones that went through.
+    """
     if not state["drafts"]:
         return                             # nothing was drafted (e.g. first week)
-    approved = []
+    tags_by_name = {t.name.lower(): t for t in forum.available_tags}
+    posted = 0
     for msg_id, d in list(state["drafts"].items()):
         try:
             msg = await queue.fetch_message(int(msg_id))
         except discord.NotFound:
-            continue                       # a mod deleted the draft
+            del state["drafts"][msg_id]    # a mod deleted the draft
+            continue
         # Skip wins if a draft has both, so one ❌ is enough to leave it out.
         who = None if await decided_by(msg, SKIP) else await decided_by(msg, APPROVE)
         if who:
-            approved.append(d)
+            names = [ROUNDUP_TAG] + ([d["tag"]] if d["tag"] else [])
+            tags = [tags_by_name[n.lower()] for n in names if n.lower() in tags_by_name]
+            # The bare link lets Discord show the article's preview under the blurb.
+            content = f"{d['blurb']}\n\n{d['url']}".strip()
+            try:
+                await forum.create_thread(name=d["title"], content=content[:2000], applied_tags=tags)
+            except discord.HTTPException as e:
+                await queue.send(f"Couldn't post to {forum.mention} ({e.status}: {e.text}). "
+                                 "The remaining drafts stay open; the next run will try again.")
+                raise
+            posted += 1
         await msg.edit(embed=draft_embed(d, "included" if who else "left_out", who))
-    state["drafts"] = {}
+        del state["drafts"][msg_id]
 
-    if not approved:
+    if posted:
+        await queue.send(f"Posted this week's {posted} approved "
+                         f"{'story' if posted == 1 else 'stories'} to {forum.mention}.")
+    else:
         await queue.send("No drafts were approved this week, so nothing was posted to #ai-news.")
-        return
-    tags_by_name = {t.name.lower(): t for t in forum.available_tags}
-    for d in approved:
-        names = [ROUNDUP_TAG] + ([d["tag"]] if d["tag"] else [])
-        tags = [tags_by_name[n.lower()] for n in names if n.lower() in tags_by_name]
-        # The bare link lets Discord show the article's preview under the blurb.
-        content = f"{d['blurb']}\n\n{d['url']}".strip()
-        await forum.create_thread(name=d["title"], content=content[:2000], applied_tags=tags)
-    await queue.send(f"Posted this week's {len(approved)} approved "
-                     f"{'story' if len(approved) == 1 else 'stories'} to {forum.mention}.")
-    log.info("Posted %d stories.", len(approved))
+    log.info("Posted %d stories.", posted)
 
 
 async def post_draft(queue: discord.TextChannel, story: dict, state: dict,
@@ -324,47 +334,51 @@ async def run_once() -> None:
     week = now.strftime("%G-W%V")
     loop = asyncio.get_running_loop()
 
-    client = discord.Client(intents=discord.Intents.default())
-    async with client:
-        # REST only: everything below is a plain API call, so there's no need
-        # to open a gateway connection and wait for on_ready.
-        await client.login(TOKEN)
-        log.info("Logged in as %s (application %s).", client.user, client.application_id)
-        queue = await client.fetch_channel(QUEUE_CHANNEL_ID)
-        forum = await client.fetch_channel(FORUM_CHANNEL_ID)
+    # Save even if a step fails partway, so what already happened (drafts
+    # posted, stories published) isn't repeated by the next run.
+    try:
+        client = discord.Client(intents=discord.Intents.default())
+        async with client:
+            # REST only: everything below is a plain API call, so there's no need
+            # to open a gateway connection and wait for on_ready.
+            await client.login(TOKEN)
+            log.info("Logged in as %s (application %s).", client.user, client.application_id)
+            queue = await client.fetch_channel(QUEUE_CHANNEL_ID)
+            forum = await client.fetch_channel(FORUM_CHANNEL_ID)
 
-        # Edits first, so a draft edited and approved in the same window goes
-        # out with the edit.
-        requests = await read_queue_messages(queue, state)
+            # Edits first, so a draft edited and approved in the same window goes
+            # out with the edit.
+            requests = await read_queue_messages(queue, state)
 
-        # Post approved stories before making any new drafts, so drafts made in
-        # this run (e.g. for a "more" request) stay open for mods to review.
-        if FORCE == "roundup" or (now.weekday() == ROUNDUP_DAY and now.hour >= ROUNDUP_HOUR
-                                  and state["roundup_week"] != week):
-            await post_roundup(queue, forum, state)
-            state["roundup_week"] = week
+            # Post approved stories before making any new drafts, so drafts made in
+            # this run (e.g. for a "more" request) stay open for mods to review.
+            if FORCE == "roundup" or (now.weekday() == ROUNDUP_DAY and now.hour >= ROUNDUP_HOUR
+                                      and state["roundup_week"] != week):
+                await post_roundup(queue, forum, state)
+                state["roundup_week"] = week
 
-        if FORCE == "draft" or (now.weekday() in DRAFT_DAYS and state["drafted_week"] != week):
-            stories = await loop.run_in_executor(None, weekly_candidates, state, WEEKLY_CANDIDATES)
-            await queue.send(f"**This week's AI news candidates.** {HOW_TO}. "
-                             f"Approved stories post to #ai-news Friday at {ROUNDUP_HOUR} AM PT. "
-                             "Post `more: <topic>` for extra drafts.")
-            for story in stories:
-                await post_draft(queue, story, state)
-            state["drafted_week"] = week
+            if FORCE == "draft" or (now.weekday() in DRAFT_DAYS and state["drafted_week"] != week):
+                stories = await loop.run_in_executor(None, weekly_candidates, state, WEEKLY_CANDIDATES)
+                await queue.send(f"**This week's AI news candidates.** {HOW_TO}. "
+                                 f"Approved stories post to #ai-news Friday at {ROUNDUP_HOUR} AM PT. "
+                                 "Post `more: <topic>` for extra drafts.")
+                for story in stories:
+                    await post_draft(queue, story, state)
+                state["drafted_week"] = week
 
-        for topic in requests:
-            if topic:
-                stories = await loop.run_in_executor(None, topic_stories, topic, state)
-            else:
-                stories = await loop.run_in_executor(None, weekly_candidates, state, DRAFTS_PER_REQUEST)
-            if not stories:
-                await queue.send(f"Nothing new found for **{topic or 'the regular feeds'}**.")
-            for story in stories[:DRAFTS_PER_REQUEST]:
-                await post_draft(queue, story, state, requested=f"more: {topic or 'feeds'}")
+            for topic in requests:
+                if topic:
+                    stories = await loop.run_in_executor(None, topic_stories, topic, state)
+                else:
+                    stories = await loop.run_in_executor(None, weekly_candidates, state, DRAFTS_PER_REQUEST)
+                if not stories:
+                    await queue.send(f"Nothing new found for **{topic or 'the regular feeds'}**.")
+                for story in stories[:DRAFTS_PER_REQUEST]:
+                    await post_draft(queue, story, state, requested=f"more: {topic or 'feeds'}")
 
-        log.info("Open drafts: %d.", len(state["drafts"]))
-    save_state(state)
+            log.info("Open drafts: %d.", len(state["drafts"]))
+    finally:
+        save_state(state)
 
 
 if __name__ == "__main__":
