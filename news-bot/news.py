@@ -112,12 +112,20 @@ HOW_TO = (f"{APPROVE} post Friday · {SKIP} leave out · "
 # doesn't hit "bank"). The first tag with a match wins, so the more specific
 # tags come first. Names must match the #ai-news forum's tags.
 TAG_KEYWORDS = {
-    "Policy & Safety":    ["regulation", "law", "senate", "eu ai act", "safety", "lawsuit", "copyright", "ban", "alignment"],
-    "Startups & Funding": ["raises", "funding", "series a", "series b", "valuation", "acquires", "acquisition", "ipo", "startup"],
-    "Careers":            ["hiring", "layoffs", "jobs", "internship", "workforce", "talent"],
-    "Research":           ["paper", "study", "researchers", "benchmark", "arxiv", "breakthrough"],
-    "Models & Releases":  ["launches", "releases", "gpt", "claude", "gemini", "llama", "model", "open source"],
-    "Tools":              ["app", "tool", "api", "plugin", "feature", "agent", "copilot"],
+    "Policy & Safety":    ["regulation", "regulator", "law", "lawmaker", "senate", "congress", "government", "eu ai act",
+                           "safety", "security", "privacy", "lawsuit", "court", "copyright", "fair use", "scraping",
+                           "opt out", "ban", "alignment", "election", "misinformation", "deepfake", "fraud",
+                           "backdoor", "hack", "national security", "doj", "ftc", "protest", "ethic"],
+    "Startups & Funding": ["raises", "funding", "series a", "series b", "valuation", "acquires", "acquisition", "ipo",
+                           "startup", "invest", "investor", "stock", "stake", "revenue", "profit", "spending",
+                           "data center", "shutting down", "shuts down", "cosigner", "deal", "roi"],
+    "Careers":            ["hiring", "layoffs", "job", "internship", "workforce", "talent", "at work", "workplace",
+                           "worker", "employee", "career"],
+    "Research":           ["paper", "study", "research", "researchers", "scientist", "benchmark", "arxiv", "breakthrough"],
+    "Models & Releases":  ["launches", "releases", "announces", "unveils", "gpt", "chatgpt", "claude", "gemini",
+                           "llama", "model", "open source"],
+    "Tools":              ["app", "tool", "api", "plugin", "feature", "agent", "copilot", "assistant", "extension",
+                           "chatbot", "search", "robot", "autonomy", "enterprise"],
 }
 
 logging.basicConfig(level=logging.INFO)
@@ -156,11 +164,19 @@ def clean_text(raw: str, limit: int = BLURB_CHARS) -> str:
     return text[:limit].rsplit(" ", 1)[0].rstrip(",;:") + "…"
 
 
+def tag_key(name: str) -> str:
+    """Forum tag names compared without emoji, case or extra spaces, so
+    "🧪 Research" in the forum still matches "Research" here."""
+    return " ".join(re.findall(r"[a-z0-9&]+", name.lower()))
+
+
 def pick_tag(title: str, blurb: str) -> str | None:
-    text = f"{title} {blurb}".lower()
-    for tag, words in TAG_KEYWORDS.items():
-        if any(re.search(r"\b" + re.escape(w) + r"s?\b", text) for w in words):
-            return tag
+    # The headline says what the story is about; the blurb only breaks ties
+    # when the headline has none of the keywords.
+    for text in (title.lower(), blurb.lower()):
+        for tag, words in TAG_KEYWORDS.items():
+            if any(re.search(r"\b" + re.escape(w) + r"s?\b", text) for w in words):
+                return tag
     return None
 
 
@@ -415,8 +431,9 @@ async def post_roundup(queue: discord.TextChannel, forum: discord.ForumChannel,
     """
     if not state["drafts"]:
         return                             # nothing was drafted (e.g. first week)
-    tags_by_name = {t.name.lower(): t for t in forum.available_tags}
+    tags_by_name = {tag_key(t.name): t for t in forum.available_tags}
     posted = carried = 0
+    missing = set()
     for msg_id, d in list(state["drafts"].items()):
         try:
             msg = await queue.fetch_message(int(msg_id))
@@ -434,7 +451,8 @@ async def post_roundup(queue: discord.TextChannel, forum: discord.ForumChannel,
         if who:
             names = ([ROUNDUP_TAG] + ([VIDEO_TAG] if d.get("kind") == "video" else [])
                      + ([d["tag"]] if d["tag"] else []))
-            tags = [tags_by_name[n.lower()] for n in names if n.lower() in tags_by_name]
+            tags = [tags_by_name[tag_key(n)] for n in names if tag_key(n) in tags_by_name]
+            missing |= {n for n in names if tag_key(n) not in tags_by_name and n != VIDEO_TAG}
             # The bare link lets Discord show the article's preview (or the video
             # player) under the blurb.
             content = f"{d['blurb']}\n\n{d['url']}".strip()
@@ -462,6 +480,9 @@ async def post_roundup(queue: discord.TextChannel, forum: discord.ForumChannel,
                     f"over to next Friday, then {'closes' if carried == 1 else 'close'}.")
     if videos := video_summary(state):
         summary += f"\nVideos approved, last {HISTORY_WEEKS} weeks: {videos}."
+    if missing:
+        summary += (f"\n⚠️ {forum.mention} has no tag named {', '.join(sorted(missing))}, "
+                    "so posts went out without it. Rename the forum tag or the one in TAG_KEYWORDS to match.")
     await queue.send(summary)
     log.info("Posted %d stories; carried over %d.", posted, carried)
 
@@ -498,6 +519,7 @@ async def run_once() -> None:
             log.info("Logged in as %s (application %s).", client.user, client.application_id)
             queue = await client.fetch_channel(QUEUE_CHANNEL_ID)
             forum = await client.fetch_channel(FORUM_CHANNEL_ID)
+            log.info("Forum tags: %s", ", ".join(repr(t.name) for t in forum.available_tags) or "none")
 
             # Edits first, so a draft edited and approved in the same window goes
             # out with the edit.
