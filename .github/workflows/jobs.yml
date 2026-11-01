@@ -45,6 +45,7 @@ jobs:
           CHANNEL_ID_HOUSTON_AIML: ${{ secrets.CHANNEL_ID_HOUSTON_AIML }}
           CHANNEL_ID_DALLAS_AIML: ${{ secrets.CHANNEL_ID_DALLAS_AIML }}
           CHANNEL_ID_ATLANTA_AIML: ${{ secrets.CHANNEL_ID_ATLANTA_AIML }}
+          CHANNEL_ID_REMOTE_REDTEAM: ${{ secrets.CHANNEL_ID_REMOTE_REDTEAM }}
         run: python bot.py
 
       - name: Persist jobs.db (only if it changed)

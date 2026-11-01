@@ -16,12 +16,13 @@ load_dotenv()
 
 TOKEN = os.getenv("DISCORD_TOKEN")
 # Feed 1 (security) reuses the original CHANNEL_ID; feed 2 (AI/ML) adds one;
-# feeds 3-5 (Houston, Dallas, Atlanta AI/ML) add one each.
+# feeds 3-5 (Houston, Dallas, Atlanta AI/ML) and 6 (remote AI red team) add one each.
 CHANNEL_ID = int(os.getenv("CHANNEL_ID", "0"))
 CHANNEL_ID_AIML = int(os.getenv("CHANNEL_ID_AIML", "0"))
 CHANNEL_ID_HOUSTON_AIML = int(os.getenv("CHANNEL_ID_HOUSTON_AIML", "0"))
 CHANNEL_ID_DALLAS_AIML = int(os.getenv("CHANNEL_ID_DALLAS_AIML", "0"))
 CHANNEL_ID_ATLANTA_AIML = int(os.getenv("CHANNEL_ID_ATLANTA_AIML", "0"))
+CHANNEL_ID_REMOTE_REDTEAM = int(os.getenv("CHANNEL_ID_REMOTE_REDTEAM", "0"))
 
 # --- Configuration ---
 LISTINGS_URL = (
@@ -47,6 +48,9 @@ JOBSPY_SF_SECURITY = ("security engineer", "San Francisco, CA")
 JOBSPY_HOUSTON_AIML = ("machine learning engineer", "Houston, TX")
 JOBSPY_DALLAS_AIML = ("machine learning engineer", "Dallas, TX")
 JOBSPY_ATLANTA_AIML = ("machine learning engineer", "Atlanta, GA")
+# Remote AI red team: exact "red team" titles are rare, so a second search
+# for AI security widens the net. AIRED_TITLE_RE decides what's kept.
+JOBSPY_REMOTE_REDTEAM = [("AI red team", "United States"), ("AI security", "United States")]
 
 # The feed has no "Security" category, so we match security roles by scanning
 # the job title for these keywords. Titles are lowercased before comparison.
@@ -102,6 +106,31 @@ AIML_TITLE_RE = re.compile(
     r"\b(machine learning|deep learning|artificial intelligence|"
     r"data scien(ce|tist)|ml engineer|ai engineer|mlops|"
     r"nlp|computer vision|ml|ai)\b",
+    re.IGNORECASE,
+)
+
+# AI red team roles: offensive or security work aimed at AI systems, e.g.
+# jailbreak / prompt-injection testing of LLMs, adversarial ML, and securing
+# models and agents. Titles look like "AI Red Team Researcher", "ML Security
+# Engineer", "Security Engineer, AI Protection", "Frontier Red Team". A title
+# needs a security word AND an AI word, so a bank's "Red Team Operator" or a
+# plain "AI Engineer" doesn't count. Live Indeed results showed exact "red team"
+# titles are rare, so AI security roles are included too.
+AIRED_SECURITY_RE = re.compile(
+    r"\b(red[\s-]?team(s|ing|er)?|adversarial|jailbreak|prompt injection|"
+    r"offensive|pentest(er|ing)?|penetration|security|safeguards|threat)\b",
+    re.IGNORECASE,
+)
+AIRED_AI_RE = re.compile(
+    r"\b(ai|ml|llms?|genai|machine learning|artificial intelligence|"
+    r"models?|frontier|agentic|agents?)\b",
+    re.IGNORECASE,
+)
+# Same words, but not the job: sales, PM, faculty, and similar roles at AI
+# security companies.
+AIRED_EXCLUDE_RE = re.compile(
+    r"\b(account|sales|business development|marketing|recruit(er|ing)|"
+    r"product manager|program manager|professor|faculty|governance|grc|full[\s-]?stack)\b",
     re.IGNORECASE,
 )
 
@@ -342,6 +371,8 @@ def normalize_simplify(raw: dict) -> dict:
         "is_houston": int(is_houston_area(raw)),
         "is_dallas": int(is_dallas_area(raw)),
         "is_atlanta": int(is_atlanta_area(raw)),
+        "is_redteam": int(is_ai_redteam_role(raw)),
+        "is_remote": int(is_remote(raw)),
         "scope": classify_scope(raw),
         "active": int(raw.get("active", True)),
         "date_posted": raw.get("date_posted", 0) or 0,
@@ -403,6 +434,10 @@ def normalize_jobspy(row) -> dict:
         "is_houston": int(is_houston_area(as_job)),
         "is_dallas": int(is_dallas_area(as_job)),
         "is_atlanta": int(is_atlanta_area(as_job)),
+        "is_redteam": int(is_ai_redteam_role(as_job)),
+        # Indeed's remote search also returns on-site roles, so trust the
+        # posting's own remote flag or location instead.
+        "is_remote": int(is_remote_flag or is_remote(as_job)),
         "scope": scope,
         "active": 1,
         "date_posted": 0,  # JobSpy gives a date, not the int epoch we sort by
@@ -410,7 +445,7 @@ def normalize_jobspy(row) -> dict:
     }
 
 
-def _scrape_jobspy(search_term: str, location: str):
+def _scrape_jobspy(search_term: str, location: str, remote: bool = False):
     """Blocking JobSpy call, run in a thread by produce_jobspy."""
     from jobspy import scrape_jobs
     return scrape_jobs(
@@ -420,10 +455,11 @@ def _scrape_jobspy(search_term: str, location: str):
         results_wanted=JOBSPY_RESULTS_WANTED,
         hours_old=JOBSPY_HOURS_OLD,
         country_indeed="USA",
+        is_remote=remote,
     )
 
 
-async def produce_jobspy(search, keep) -> int:
+async def produce_jobspy(search, keep, remote: bool = False) -> int:
     """Generic JobSpy producer: scrape one (term, location), normalize, filter, upsert.
 
     `search` is a (search_term, location) tuple; `keep` is a predicate over a
@@ -435,7 +471,7 @@ async def produce_jobspy(search, keep) -> int:
     """
     search_term, location = search
     try:
-        df = await asyncio.to_thread(_scrape_jobspy, search_term, location)
+        df = await asyncio.to_thread(_scrape_jobspy, search_term, location, remote)
     except Exception as e:
         log.error("JobSpy scrape failed (%s @ %s): %s", search_term, location, e)
         return 0
@@ -482,6 +518,18 @@ async def produce_jobspy_atlanta_aiml() -> int:
         JOBSPY_ATLANTA_AIML,
         keep=lambda j: j["is_aiml"] and j["is_atlanta"] and is_new_grad(j),
     )
+
+
+async def produce_jobspy_remote_redteam() -> int:
+    """Remote AI red team / AI security new-grad roles from job boards."""
+    total = 0
+    for search in JOBSPY_REMOTE_REDTEAM:
+        total += await produce_jobspy(
+            search,
+            keep=lambda j: j["is_redteam"] and j["is_remote"] and is_new_grad(j),
+            remote=True,
+        )
+    return total
 
 
 def job_id(job: dict) -> str:
@@ -556,6 +604,13 @@ def is_aiml_role(job: dict) -> bool:
     return bool(AIML_TITLE_RE.search(str(job.get("title", ""))))
 
 
+def is_ai_redteam_role(job: dict) -> bool:
+    """Return True if the title is security work on AI systems (see AIRED_SECURITY_RE)."""
+    title = str(job.get("title", ""))
+    return bool(AIRED_SECURITY_RE.search(title) and AIRED_AI_RE.search(title)
+                and not AIRED_EXCLUDE_RE.search(title))
+
+
 def is_new_grad(job: dict) -> bool:
     """Return True unless the title carries a seniority signal (Senior/Staff/etc).
 
@@ -626,6 +681,12 @@ FEEDS = [
         "channel_id": CHANNEL_ID_ATLANTA_AIML,
         "where": "is_aiml=1 AND is_atlanta=1",
         "intro": "🍑 New Atlanta **AI/ML** new-grad roles:",
+    },
+    {
+        "name": "remote_redteam",
+        "channel_id": CHANNEL_ID_REMOTE_REDTEAM,
+        "where": "is_redteam=1 AND is_remote=1",
+        "intro": "🛡️ New remote **AI red team** new-grad roles:",
     },
 ]
 
@@ -716,6 +777,7 @@ async def run_one_cycle():
         ("jobspy-houston-aiml", produce_jobspy_houston_aiml),
         ("jobspy-dallas-aiml", produce_jobspy_dallas_aiml),
         ("jobspy-atlanta-aiml", produce_jobspy_atlanta_aiml),
+        ("jobspy-remote-redteam", produce_jobspy_remote_redteam),
     )
     for name, producer in producers:
         try:
@@ -761,7 +823,7 @@ async def run_once():
 
 @bot.tree.command(name="jobs", description="Show recent new-grad roles from a feed")
 @discord.app_commands.describe(
-    feed="Which feed to show: security, aiml, houston_aiml, dallas_aiml, or atlanta_aiml",
+    feed="Which feed to show: security, aiml, houston_aiml, dallas_aiml, atlanta_aiml, or remote_redteam",
     count="How many to show (1-10)",
 )
 @discord.app_commands.choices(feed=[
@@ -770,6 +832,7 @@ async def run_once():
     discord.app_commands.Choice(name="houston_aiml", value="houston_aiml"),
     discord.app_commands.Choice(name="dallas_aiml", value="dallas_aiml"),
     discord.app_commands.Choice(name="atlanta_aiml", value="atlanta_aiml"),
+    discord.app_commands.Choice(name="remote_redteam", value="remote_redteam"),
 ])
 async def jobs_command(
     interaction: discord.Interaction,
@@ -781,7 +844,7 @@ async def jobs_command(
 
     feed_cfg = next((f for f in FEEDS if f["name"] == feed), None)
     if feed_cfg is None:
-        await interaction.followup.send(f"Unknown feed '{feed}'. Try 'security', 'aiml', 'houston_aiml', 'dallas_aiml', or 'atlanta_aiml'.")
+        await interaction.followup.send(f"Unknown feed '{feed}'. Try 'security', 'aiml', 'houston_aiml', 'dallas_aiml', 'atlanta_aiml', or 'remote_redteam'.")
         return
 
     rows = db.fetch_recent(feed_cfg["where"], limit=count)
@@ -810,6 +873,8 @@ if __name__ == "__main__":
         log.warning("CHANNEL_ID_DALLAS_AIML not set — the Dallas AI/ML feed will be skipped.")
     if not CHANNEL_ID_ATLANTA_AIML:
         log.warning("CHANNEL_ID_ATLANTA_AIML not set — the Atlanta AI/ML feed will be skipped.")
+    if not CHANNEL_ID_REMOTE_REDTEAM:
+        log.warning("CHANNEL_ID_REMOTE_REDTEAM not set — the remote AI red team feed will be skipped.")
     # Run-once mode: do one ingest+post cycle then exit. Scheduled 3x/day on
     # weekdays by Render Cron (see README / render.yaml). The /jobs slash command
     # is unavailable in this mode — there is no persistent process to serve it.
