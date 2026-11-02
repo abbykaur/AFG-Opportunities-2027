@@ -1,0 +1,5 @@
+# This repo is the AFG Opportunities board first: count it as Markdown on
+# GitHub (language bar and Trending), not as the Python tooling that keeps
+# the board and the Discord bots running.
+*.py linguist-detectable=false
+*.md linguist-detectable=true

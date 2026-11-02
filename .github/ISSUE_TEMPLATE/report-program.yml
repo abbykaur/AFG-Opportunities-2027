@@ -11,7 +11,7 @@ body:
     id: name
     attributes:
       label: Program name
-      description: Exactly as it appears on the board.
+      description: Exactly as it appears on the board (filled in for you if you came from a board link).
       placeholder: Visa Sophomore Internship Program
     validations:
       required: true
@@ -22,8 +22,10 @@ body:
       options:
         - It's closed (not accepting applications)
         - It's open now
+        - It's not open yet
         - Wrong deadline
         - Link is broken or moved
+        - The women-only / women-focused label is wrong
         - Something else
     validations:
       required: true

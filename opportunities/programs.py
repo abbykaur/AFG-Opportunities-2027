@@ -11,11 +11,15 @@
 EVENT.json is the GitHub event payload. Each prints problems and exits 1 if
 the list or the issue isn't valid.
 
-Status: every program is "open" (accepting applications, checked), "closed"
-(not accepting right now), or "unconfirmed" (only its usual timing is known).
-refresh() keeps that honest over time: a passed deadline closes a program, a
-closed program comes back as unconfirmed when its usual month comes around
-again, and an "open" nobody has re-checked in a while goes back to unconfirmed.
+Status: every program is "open" (accepting applications, checked), "upcoming"
+(checked, not open yet), "closed" (not accepting this cycle), or "unconfirmed"
+(only its usual timing is known). refresh() keeps that honest over time: a
+passed deadline closes a program, a closed program comes back as unconfirmed
+when its usual month comes around again, and an "open" or "upcoming" nobody
+has re-checked in a while goes back to unconfirmed.
+
+women: "only" (only women, or women and gender minorities, can apply),
+"focused" (open to others, but built to support women), or null.
 """
 import calendar
 import json
@@ -30,12 +34,14 @@ from board import COMING_UP_MONTHS, PROGRAMS_PATH, SECTIONS, TZ, months_until
 
 WHO = ["Freshman", "Sophomore", "Junior", "All students"]
 MONTHS = {calendar.month_name[i]: i for i in range(1, 13)}
-STATUSES = ("open", "closed", "unconfirmed")
+STATUSES = ("open", "upcoming", "closed", "unconfirmed")
+WOMEN = ("only", "focused")
 # A closed program comes back as unconfirmed once its usual month is close
 # again (and it closed at least REOPEN_MIN ago); with no month, after REOPEN_AFTER.
 REOPEN_MIN = timedelta(days=60)
 REOPEN_AFTER = timedelta(days=300)
 OPEN_STALE_AFTER = timedelta(days=45)  # "open" with no deadline needs a re-check by then
+UPCOMING_STALE_AFTER = timedelta(days=30)  # "not open yet" needs a re-check by then
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124.0 Safari/537.36"
 
 
@@ -76,7 +82,7 @@ def parse_date(text: str, ref: date) -> date | None:
 def new_program(**fields) -> dict:
     """A program with every field the board expects, defaults filled in."""
     p = {"name": "", "url": "", "type": "Fellowship", "who": "All students",
-         "deadline_month": None, "women": False, "source": "",
+         "deadline_month": None, "women": None, "source": "",
          "status": "unconfirmed", "deadline": None, "checked": None,
          "added": today().isoformat()}
     p.update(fields)
@@ -118,6 +124,8 @@ def refresh(programs: list[dict], on: date | None = None) -> bool:
         elif (p["status"] == "open" and not deadline and checked
               and on - checked > OPEN_STALE_AFTER):
             p["status"] = "unconfirmed"
+        elif p["status"] == "upcoming" and checked and on - checked > UPCOMING_STALE_AFTER:
+            p["status"] = "unconfirmed"
         if p["status"] != "open":
             p.pop("apply_url", None)
         changed |= (p["status"], p.get("deadline")) != before
@@ -143,8 +151,11 @@ def problems(programs: list[dict]) -> list[str]:
             out.append(f"{label}: 'who' must be from {', '.join(WHO)}, comma-separated")
         if p.get("deadline_month") not in [None, *range(1, 13)]:
             out.append(f"{label}: deadline_month must be 1-12 or null")
-        if not isinstance(p.get("women"), bool):
-            out.append(f"{label}: women must be true or false")
+        if p.get("women") not in (None, *WOMEN):
+            out.append(f"{label}: women must be \"only\", \"focused\", or null")
+        for field in ("match", "company"):
+            if p.get(field) is not None and (not isinstance(p[field], str) or not p[field].strip()):
+                out.append(f"{label}: {field} must be non-empty text or left out")
         if p.get("status") not in STATUSES:
             out.append(f"{label}: status must be one of {', '.join(STATUSES)}")
         for field in ("deadline", "checked", "added"):
@@ -183,11 +194,14 @@ def issue_fields(body: str):
 def from_issue(body: str) -> tuple[dict, list[str]]:
     """The program in a "Suggest a program" issue, plus any problems reading it."""
     field, ticked = issue_fields(body)
+    who_can_apply = field("Who can apply?")
+    women = ("only" if who_can_apply.startswith("Women only") else
+             "focused" if who_can_apply.startswith("Women-focused") or ticked("For women?") else None)
     p = new_program(
         name=field("Program name"), url=field("Link"), type=field("Type"),
         who=", ".join(w for w in WHO if w in ticked("Who it's for")) or "All students",
         deadline_month=MONTHS.get(field("Usual deadline month")),
-        women=bool(ticked("For women?")), source="suggestion",
+        women=women, source="suggestion",
     )
     errors = []
     deadline = None
@@ -197,6 +211,8 @@ def from_issue(body: str) -> tuple[dict, list[str]]:
             errors.append("couldn't read the deadline; use a date like Dec 15, 2026")
     if field("Is it open right now?").startswith("Yes"):
         set_status(p, "open", deadline, via="suggestion")
+    elif field("Is it open right now?").startswith("Not open yet"):
+        set_status(p, "upcoming", deadline, via="suggestion")
     elif deadline:
         p["deadline"], p["deadline_month"] = deadline.isoformat(), deadline.month
     return p, errors
@@ -228,6 +244,8 @@ def apply_report(programs: list[dict], body: str) -> tuple[dict | None, list[str
         set_status(p, "closed", via="report")
     elif problem.startswith("It's open"):
         set_status(p, "open", deadline, via="report")
+    elif problem.startswith("It's not open yet"):
+        set_status(p, "upcoming", deadline, via="report")
     elif problem.startswith("Wrong deadline"):
         if not deadline:
             return p, ["add the correct deadline"]
@@ -239,6 +257,9 @@ def apply_report(programs: list[dict], body: str) -> tuple[dict | None, list[str
         p["url"] = url
         if not link_works(url):
             return p, ["the new link returns 404/410"]
+    elif problem.startswith("The women"):
+        return p, ["a maintainer needs to check the program's eligibility wording, then fix the label "
+                   "(in #opps-queue: `women: Name | only`, `focused`, or `none`)"]
     else:
         return p, ["this kind of report needs a maintainer to edit programs.json by hand"]
     return p, problems(programs)

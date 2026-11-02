@@ -69,18 +69,24 @@ body:
       label: Is it open right now?
       options:
         - Yes, I checked and applications are open
-        - Not sure / not yet
+        - Not open yet (I checked)
+        - Not sure
   - type: input
     id: deadline
     attributes:
       label: Deadline (if you know it)
       placeholder: Dec 15, 2026
-  - type: checkboxes
+  - type: dropdown
     id: women
     attributes:
-      label: For women?
+      label: Who can apply?
+      description: We mark programs made for women so they're easy to find.
       options:
-        - label: This program is for women (or women and other groups underrepresented in tech)
+        - Everyone
+        - Women-focused (open to everyone, built to support women)
+        - Women only (or women and gender minorities)
+    validations:
+      required: true
   - type: textarea
     id: notes
     attributes:
