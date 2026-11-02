@@ -1,0 +1,76 @@
+name: Suggest a program
+description: Add a fellowship, insight program, or early-career program to the AFG Opportunities board.
+title: "[Program] "
+labels: ["program-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping! A maintainer reviews each suggestion. Once it's approved, the program shows up on the board automatically.
+  - type: input
+    id: name
+    attributes:
+      label: Program name
+      placeholder: HeadStart Fellowship
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Link
+      description: The program's own page, not a news article or a LinkedIn post.
+      placeholder: https://www.headstartfellowship.com/fellowship
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - Underclassmen program
+        - Fellowship
+        - Insight / exploratory
+        - Scholarship
+        - Conference scholarship
+        - Research program
+        - Mentorship
+    validations:
+      required: true
+  - type: checkboxes
+    id: who
+    attributes:
+      label: Who it's for
+      options:
+        - label: Freshman
+        - label: Sophomore
+        - label: Junior
+        - label: All students
+  - type: dropdown
+    id: month
+    attributes:
+      label: Usual deadline month
+      description: When applications usually close (or open, if that's all you know). Leave blank if you're not sure.
+      options:
+        - January
+        - February
+        - March
+        - April
+        - May
+        - June
+        - July
+        - August
+        - September
+        - October
+        - November
+        - December
+  - type: checkboxes
+    id: women
+    attributes:
+      label: For women?
+      options:
+        - label: This program is for women (or women and other groups underrepresented in tech)
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      description: Optional. Eligibility, stipend, your experience with it.

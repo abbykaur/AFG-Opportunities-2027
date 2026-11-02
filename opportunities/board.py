@@ -16,6 +16,7 @@ README_PATH = ROOT / "README.md"
 TZ = ZoneInfo("America/Los_Angeles")
 
 INVITE_URL = "https://discord.gg/6BBkjMJURt"
+SUGGEST_URL = "../../issues/new?template=suggest-program.yml"
 # How many months ahead "Coming up" looks, counting the current month.
 COMING_UP_MONTHS = 2
 # Section heading for each program type, in board order. Types missing here
@@ -65,6 +66,8 @@ def render(programs: list[dict], now: datetime) -> str:
         f"**{len(programs)} programs** · updated {now:%B %Y} · "
         "💜 = for women · dates are when a program usually opens or closes, so check its page.",
         "",
+        f"**[➕ Suggest a program]({SUGGEST_URL})**",
+        "",
         f"## 🔥 Coming up ({calendar.month_name[now.month]}"
         f"{'' if COMING_UP_MONTHS == 1 else ' – ' + calendar.month_name[(now.month + COMING_UP_MONTHS - 2) % 12 + 1]})",
         "",
@@ -83,7 +86,9 @@ def render(programs: list[dict], now: datetime) -> str:
         "",
         "## Suggest a program",
         "",
-        f"Post it in **#opportunities** on the [AI First Girls Discord]({INVITE_URL}), or open an issue here.",
+        f"Fill out the **[Suggest a program]({SUGGEST_URL})** form (needs a free GitHub account). "
+        "A maintainer reviews it, and once approved it shows up here automatically. "
+        f"You can also post it in **#opportunities** on the [AI First Girls Discord]({INVITE_URL}).",
         "",
         "## Credits",
         "",

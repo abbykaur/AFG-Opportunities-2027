@@ -4,6 +4,8 @@ Fellowships, insight programs, and early-career programs for students in tech, c
 
 **109 programs** · updated November 2026 · 💜 = for women · dates are when a program usually opens or closes, so check its page.
 
+**[➕ Suggest a program](../../issues/new?template=suggest-program.yml)**
+
 ## 🔥 Coming up (November – December)
 
 | Program | For | Type | When |
@@ -170,7 +172,7 @@ Fellowships, insight programs, and early-career programs for students in tech, c
 
 ## Suggest a program
 
-Post it in **#opportunities** on the [AI First Girls Discord](https://discord.gg/6BBkjMJURt), or open an issue here.
+Fill out the **[Suggest a program](../../issues/new?template=suggest-program.yml)** form (needs a free GitHub account). A maintainer reviews it, and once approved it shows up here automatically. You can also post it in **#opportunities** on the [AI First Girls Discord](https://discord.gg/6BBkjMJURt).
 
 ## Credits
 
