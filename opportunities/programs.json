@@ -979,5 +979,14 @@
     "deadline_month": 9,
     "women": false,
     "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Google STEP Internship",
+    "url": "https://buildyourfuture.withgoogle.com/programs/step",
+    "type": "Underclassmen program",
+    "who": "Freshman, Sophomore",
+    "deadline_month": null,
+    "women": false,
+    "source": "suggestion"
   }
 ]

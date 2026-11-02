@@ -2,7 +2,7 @@
 
 Fellowships, insight programs, and early-career programs for students in tech, curated by **[AI First Girls](https://discord.gg/6BBkjMJURt)**.
 
-**109 programs** · updated November 2026 · 💜 = for women · dates are when a program usually opens or closes, so check its page.
+**110 programs** · updated November 2026 · 💜 = for women · dates are when a program usually opens or closes, so check its page.
 
 **[➕ Suggest a program](../../issues/new?template=suggest-program.yml)**
 
@@ -26,7 +26,7 @@ Fellowships, insight programs, and early-career programs for students in tech, c
 | [NYU CDS Undergraduate Research Program (CURP)](https://cds.nyu.edu/curp/) | All students | Research program | ~Dec |
 | [Two Sigma Freshman Software Engineer Internship](https://careers.twosigma.com/) | Freshman | Underclassmen program | ~Dec |
 
-## 🎓 Underclassmen programs (23)
+## 🎓 Underclassmen programs (24)
 
 | Program | For | When |
 |---|---|---|
@@ -49,6 +49,7 @@ Fellowships, insight programs, and early-career programs for students in tech, c
 | [Meta University](https://www.metacareers.com/careerprograms/students/) | All students | ~Oct |
 | [Uber STAR](https://jobs.uber.com/en/teams/emerging-talent/) | Freshman, Sophomore | ~Oct |
 | [Amazon Future Engineer](https://www.amazonfutureengineer.com/scholarships) | All students | Check site |
+| [Google STEP Internship](https://buildyourfuture.withgoogle.com/programs/step) | Freshman, Sophomore | Check site |
 | [Jane Street Immersion Program (JSIP)](https://www.janestreet.com/join-jane-street/programs-and-events/jsip/) | Sophomore | Check site |
 | [Microsoft Explore](https://careers.microsoft.com/students/us/en/usexploremicrosoftprogram) | Freshman, Sophomore | Check site |
 | [NASA](https://intern.nasa.gov/) | All students | Check site |
