@@ -1,0 +1,983 @@
+[
+  {
+    "name": "Google Conference Scholarships",
+    "url": "https://buildyourfuture.withgoogle.com/scholarships/google-conference-scholarships",
+    "type": "Conference scholarship",
+    "who": "All students",
+    "deadline_month": 6,
+    "women": true,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Grace Hopper Scholarship",
+    "url": "https://ghc.anitab.org",
+    "type": "Conference scholarship",
+    "who": "All students",
+    "deadline_month": 3,
+    "women": true,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "SHPE National Convention",
+    "url": "https://shpe.org/engage/events/national-convention/",
+    "type": "Conference scholarship",
+    "who": "All students",
+    "deadline_month": 3,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Tapia Conference Scholarship",
+    "url": "http://tapiaconference.org",
+    "type": "Conference scholarship",
+    "who": "All students",
+    "deadline_month": 3,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "YC AI Startup School",
+    "url": "https://events.ycombinator.com/startup-school-2026",
+    "type": "Conference scholarship",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "8VC Fellowship",
+    "url": "https://www.8vc.com/fellowships",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Bellingcat Tech Fellow",
+    "url": "https://www.bellingcat.com/become-a-bellingcat-tech-fellow-2/",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Bessemer Fellowship Program",
+    "url": "https://www.bvp.com/bessemer-fellows",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": 7,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Break Through Tech AI Immersion Program",
+    "url": "https://ecornell.cornell.edu/portal/break-through-tech-ai-information/",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": 3,
+    "women": true,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Capital One First Gen Focus",
+    "url": "https://capitalone.eightfold.ai/events/candidate?plannedEventId=E75Y3bk7",
+    "type": "Fellowship",
+    "who": "Freshman, Sophomore",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Code2040 Fellows",
+    "url": "https://www.code2040.org/",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "CodePath Summer Internship for Tech Excellence",
+    "url": "https://support.codepath.org/hc/en-us/sections/10451374834203-Summer-Internship-For-Tech-Excellence-SITE-",
+    "type": "Fellowship",
+    "who": "Sophomore",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Coding it Forward’s Fellowship",
+    "url": "https://www.codingitforward.com/fellowship",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Emma Bowen Foundation Fellowship",
+    "url": "https://www.emmabowenfoundation.org/apply",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Futureforce Tech Launchpad",
+    "url": "https://info.codepath.org/futureforce-tech-launchpad-salesforce-and-codepath",
+    "type": "Fellowship",
+    "who": "Junior",
+    "deadline_month": 4,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "GGV NextGen Fellowship",
+    "url": "https://www.ggvc.com/ggv-nextgen-fellow/",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Google Summer of Code",
+    "url": "https://summerofcode.withgoogle.com",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": 4,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Hack Diversity",
+    "url": "https://www.hackdiversity.com/",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "HeadStart Fellowship",
+    "url": "https://www.headstartfellowship.com/fellowship",
+    "type": "Fellowship",
+    "who": "Freshman, Sophomore",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "IBM Accelerate",
+    "url": "https://www.ibm.com/careers/us-en/early-career/entry-level/",
+    "type": "Fellowship",
+    "who": "Sophomore, Junior",
+    "deadline_month": null,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "INROADS",
+    "url": "https://inroads.org/apply/",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Keploy API Fellowship",
+    "url": "https://fellowship.keploy.io/",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Keploy DevRel Cohort",
+    "url": "https://devrel.keploy.io/",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Kleiner Perkins Fellows",
+    "url": "https://fellows.kleinerperkins.com",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": 1,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "LyftU Early Talent Development",
+    "url": "https://www.lyft.com/careers/early-talent",
+    "type": "Fellowship",
+    "who": "Freshman, Sophomore",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "MLH Fellowship",
+    "url": "https://fellowship.mlh.io",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": 1,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Neo Scholar",
+    "url": "https://neo.com/scholars",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Outreachy",
+    "url": "https://www.outreachy.org/",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": 1,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "SEO Tech Developer",
+    "url": "https://tech.seo-usa.org/",
+    "type": "Fellowship",
+    "who": "Sophomore",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "thrivecap Fellows",
+    "url": "https://fellows.thrivecap.com",
+    "type": "Fellowship",
+    "who": "Junior",
+    "deadline_month": 2,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Two Sigma College Mentor Connect",
+    "url": "https://www.twosigma.com/careers",
+    "type": "Fellowship",
+    "who": "Freshman",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Year Up",
+    "url": "https://www.yearup.org/students",
+    "type": "Fellowship",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Accenture Student Empowerment Program",
+    "url": "https://www.accenture.com/us-en/careers/local/accenture-student-empowerment-program",
+    "type": "Insight / exploratory",
+    "who": "Freshman, Sophomore",
+    "deadline_month": 4,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Barclays Sophomore Springboard",
+    "url": "https://joinus.barclays/americas/diversity-programs-career/sophomore-springboard-diversity-program/",
+    "type": "Insight / exploratory",
+    "who": "Sophomore",
+    "deadline_month": 1,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Blackrock Find Your Future Forum - Tech",
+    "url": "https://blackrock.tal.net/vx/mobile-1/brand-3/candidate/so/pm/1/pl/2/opp/3806-2020-Find-Your-Future-Forum/en-GB",
+    "type": "Insight / exploratory",
+    "who": "Sophomore",
+    "deadline_month": 2,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Blackstone Diverse Leaders Program",
+    "url": "https://www.blackstone.com/careers/diversity-inclusion",
+    "type": "Insight / exploratory",
+    "who": "All students",
+    "deadline_month": 1,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Blackstone Future Women Innovators Program",
+    "url": "https://www.blackstone.com/careers/diversity-inclusion",
+    "type": "Insight / exploratory",
+    "who": "All students",
+    "deadline_month": 1,
+    "women": true,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Blackstone Future Women Leaders",
+    "url": "https://www.blackstone.com/careers/diversity-inclusion",
+    "type": "Insight / exploratory",
+    "who": "Sophomore",
+    "deadline_month": 12,
+    "women": true,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Bloomberg First Year Insights",
+    "url": "https://www.bloomberg.com/company/career/first-year-insights/",
+    "type": "Insight / exploratory",
+    "who": "Freshman",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Bridge to consulting",
+    "url": "https://www.bcg.com/en-us/careers/working-at-bcg/bridge-to-consulting.aspx",
+    "type": "Insight / exploratory",
+    "who": "Freshman, Sophomore",
+    "deadline_month": 3,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Building Entrepreneurial Leaders Program",
+    "url": "https://www.bain.com/careers/bel/",
+    "type": "Insight / exploratory",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Capital One’s Tech Summit",
+    "url": "https://www.capitalonecareers.com/get-ahead-with-early-career-programs-for-students",
+    "type": "Insight / exploratory",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "City Early ID",
+    "url": "http://careers.citi.com/Careers/index/#/universityprogram",
+    "type": "Insight / exploratory",
+    "who": "All students",
+    "deadline_month": 11,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "DE Shaw Fellowships",
+    "url": "https://fellowships.deshaw.com",
+    "type": "Insight / exploratory",
+    "who": "Sophomore",
+    "deadline_month": null,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Deloitte National Leadership Conference",
+    "url": "https://www2.deloitte.com/us/en/pages/careers/articles/join-deloitte-deloitte-national-leadership-conference.html",
+    "type": "Insight / exploratory",
+    "who": "Sophomore, Junior",
+    "deadline_month": null,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Discover Citadel",
+    "url": "https://www.citadel.com/careers/programs-and-events/discover-citadel/",
+    "type": "Insight / exploratory",
+    "who": "Freshman, Sophomore",
+    "deadline_month": 12,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Evercore’s Sophomore Diversity Seminar",
+    "url": "https://evercore.tal.net/vx/mobile-0/appcentre-ext/brand-4/candidate/so/pm/1/pl/1/opp/567-Evercore-Sophomore-Diversity-Seminar-Investment-Banking-Simulation-Friday-March-13-2020/en-GB",
+    "type": "Insight / exploratory",
+    "who": "Sophomore",
+    "deadline_month": 1,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Extern (formerly Paragon One)",
+    "url": "https://extern.com/externships",
+    "type": "Insight / exploratory",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Freshman Diversity Leadership Academy - McKinsey",
+    "url": "https://www.mckinsey.com/careers/students/freshman-diversity-leadership-academy/overview",
+    "type": "Insight / exploratory",
+    "who": "Freshman",
+    "deadline_month": 2,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Girls Who Invest Summer Intensive Program",
+    "url": "http://www.girlswhoinvest.org/sip",
+    "type": "Insight / exploratory",
+    "who": "Sophomore",
+    "deadline_month": 9,
+    "women": true,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Goldman Sachs Diversity Programs",
+    "url": "https://www.goldmansachs.com/careers/students/programs/",
+    "type": "Insight / exploratory",
+    "who": "Freshman, Sophomore, Junior",
+    "deadline_month": 11,
+    "women": true,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "HRT Women in Trading Technology",
+    "url": "https://www.hudsonrivertrading.com/student-opportunities/",
+    "type": "Insight / exploratory",
+    "who": "Freshman, Sophomore",
+    "deadline_month": 11,
+    "women": true,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Ignite with Tech",
+    "url": "https://bankcampuscareers.tal.net/vx/mobile-0/brand-4/candidate/so/pm/1/pl/1/opp/2067-Ignite-with-Tech/en-GB?fbclid=IwAR2lPQ8W7_graetvLg1dvaryK3wdtx3oYmGwvPMfwHPx3ORDAVuYShGuVfw",
+    "type": "Insight / exploratory",
+    "who": "Freshman, Sophomore",
+    "deadline_month": 3,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Impact Labs Fellowship",
+    "url": "https://www.impactlabs.io/fellowship",
+    "type": "Insight / exploratory",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Impact Labs Summit",
+    "url": "https://www.impactlabs.io/summit",
+    "type": "Insight / exploratory",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Jane Street FTTP",
+    "url": "https://www.janestreet.com/join-jane-street/programs-and-events/fttp/",
+    "type": "Insight / exploratory",
+    "who": "Freshman",
+    "deadline_month": 7,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Jane Street Insight",
+    "url": "https://www.janestreet.com/join-jane-street/programs-and-events/insight/",
+    "type": "Insight / exploratory",
+    "who": "All students",
+    "deadline_month": 7,
+    "women": true,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Jane Street SEE",
+    "url": "https://www.janestreet.com/join-jane-street/programs-and-events/see/",
+    "type": "Insight / exploratory",
+    "who": "Freshman, Sophomore",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Jefferies Inspiring Women for finance",
+    "url": "https://jefferies.tal.net/vx/mobile-0/appcentre-ext/brand-4/candidate/so/pm/1/pl/2/opp/66-Inspiring-Women-for-Finance-Symposium/en-GB",
+    "type": "Insight / exploratory",
+    "who": "Sophomore",
+    "deadline_month": 1,
+    "women": true,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "JP Morgan Sophomore Edge",
+    "url": "https://careers.jpmorgan.com/us/en/students/programs/sophomore-development-program?search=&tags=location__Americas__UnitedStatesofAmerica",
+    "type": "Insight / exploratory",
+    "who": "Sophomore",
+    "deadline_month": 1,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "JPMorgan Chase Career.edYOU",
+    "url": "https://careers.jpmorgan.com/us/en/students/programs/career-edyou",
+    "type": "Insight / exploratory",
+    "who": "Sophomore",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Koch Rising Leaders",
+    "url": "https://www.kochcollegerecruiting.com/rising_leaders/",
+    "type": "Insight / exploratory",
+    "who": "All students",
+    "deadline_month": 1,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Morgan Stanley Technology Early Insight",
+    "url": "https://morganstanley.tal.net/vx/lang-en-GB/mobile-0/brand-2/candidate/so/pm/1/pl/2/opp/9425-2020-Spring-Technology-Early-Insights-Day/en-GB",
+    "type": "Insight / exploratory",
+    "who": "All students",
+    "deadline_month": 3,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Nomura sophomore diversity program",
+    "url": "https://nomuracampus.tal.net/vx/mobile-0/appcentre-ext/brand-4/candidate/so/pm/1/pl/2/opp/338-2020-Explore-Nomura-Sophomore-Diversity-Program/en-GB",
+    "type": "Insight / exploratory",
+    "who": "Sophomore",
+    "deadline_month": 1,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "P&G Emerging Leaders Information Technology",
+    "url": "https://www.pgcareers.com/job/cincinnati/information-technology-emerging-leaders-2022-internship-sophomore/936/17085179",
+    "type": "Insight / exploratory",
+    "who": "Sophomore",
+    "deadline_month": 9,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Palantir Launch: Spring Program",
+    "url": "https://www.palantir.com/careers/students/launch/",
+    "type": "Insight / exploratory",
+    "who": "All students",
+    "deadline_month": 9,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "SIG Discovery Day",
+    "url": "https://careers.sig.com/sig-discovery-days/",
+    "type": "Insight / exploratory",
+    "who": "Freshman, Sophomore",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "Technology Inside Track Series Diversity Program",
+    "url": "https://joinus.barclays/americas/diversity-programs-career/technology-inside-track-series-diversity-program/",
+    "type": "Insight / exploratory",
+    "who": "Junior",
+    "deadline_month": 9,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "UBS Tomorrow's Leaders Program",
+    "url": "https://ubs.dejobs.org/virtual-usa/tomorrows-leaders-2020/101e618569184fe9bb4ba6a155b65a9b/job/",
+    "type": "Insight / exploratory",
+    "who": "Freshman, Sophomore",
+    "deadline_month": 4,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Vanguard EXPLORE Days",
+    "url": "https://www.vanguardjobs.com/students-and-recent-graduates/explore-days/",
+    "type": "Insight / exploratory",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Management Leadership for Tomorrow Career Prep SWE Track",
+    "url": "https://mlt.org/career-prep/",
+    "type": "Mentorship",
+    "who": "Sophomore",
+    "deadline_month": 10,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Uber Career Prep Fellowship",
+    "url": "https://www.hiddengeniusproject.org/ubercareerprep/",
+    "type": "Mentorship",
+    "who": "Freshman, Sophomore",
+    "deadline_month": 11,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Big Data Summer Institute - A SIBS Program",
+    "url": "https://sph.umich.edu/bdsi/",
+    "type": "Research program",
+    "who": "All students",
+    "deadline_month": 3,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Brown + Google exploreCSR",
+    "url": "http://explorecsr.cs.brown.edu/?fbclid=IwAR0wxlRlNNpk7vKRy0-fYEs7qFQ3Ogp0GCCiIbVhJW1M24ZH4UnIsLVkyag",
+    "type": "Research program",
+    "who": "All students",
+    "deadline_month": 12,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "CMU Data Science for Social Good",
+    "url": "https://www.dssgfellowship.org",
+    "type": "Research program",
+    "who": "All students",
+    "deadline_month": 3,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "D.E. Shaw Research Undergraduate Fellowship",
+    "url": "https://www.deshawresearch.com/stemfellowship/",
+    "type": "Research program",
+    "who": "Freshman, Sophomore",
+    "deadline_month": 12,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Google CS Research Mentorship Program",
+    "url": "https://research.google/outreach/csrmp/",
+    "type": "Research program",
+    "who": "All students",
+    "deadline_month": 11,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Harvey Mudd CS Summer Research",
+    "url": "https://www.hmc.edu/cs/research/reu/",
+    "type": "Research program",
+    "who": "All students",
+    "deadline_month": 3,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "NCAR",
+    "url": "https://www2.cisl.ucar.edu/outreach/internships",
+    "type": "Research program",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "NYU CDS Undergraduate Research Program (CURP)",
+    "url": "https://cds.nyu.edu/curp/",
+    "type": "Research program",
+    "who": "All students",
+    "deadline_month": 12,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Undergrad Architecture Mentoring (uArch) Workshop",
+    "url": "https://sites.google.com/wisc.edu/5thuarchworkshop/",
+    "type": "Research program",
+    "who": "All students",
+    "deadline_month": 3,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Generation Google Scholarship",
+    "url": "https://buildyourfuture.withgoogle.com/scholarships/generation-google-scholarship/",
+    "type": "Scholarship",
+    "who": "All students",
+    "deadline_month": 9,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Palantir Future Scholarship",
+    "url": "https://www.palantir.com/students/scholarship/future/",
+    "type": "Scholarship",
+    "who": "All students",
+    "deadline_month": 3,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Palantir Women in Tech Scholarship",
+    "url": "https://www.palantir.com/students/scholarship/wit-north-america/",
+    "type": "Scholarship",
+    "who": "All students",
+    "deadline_month": 3,
+    "women": true,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Quip Diversity Scholarship",
+    "url": "https://quip.com/blog/2020-quip-diversity-scholarship",
+    "type": "Scholarship",
+    "who": "All students",
+    "deadline_month": 6,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "VMware Scholarships",
+    "url": "https://careers.vmware.com/scholarships",
+    "type": "Scholarship",
+    "who": "All students",
+    "deadline_month": 5,
+    "women": true,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Amazon Future Engineer",
+    "url": "https://www.amazonfutureengineer.com/scholarships",
+    "type": "Underclassmen program",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Capital One’s Early Internship Program",
+    "url": "https://www.capitalonecareers.com/early-internships-program",
+    "type": "Underclassmen program",
+    "who": "Sophomore",
+    "deadline_month": 9,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Citadel Launch",
+    "url": "https://www.citadel.com/careers/programs-and-events/",
+    "type": "Underclassmen program",
+    "who": "All students",
+    "deadline_month": 11,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Dropbox Launch",
+    "url": "https://www.dropbox.jobs/",
+    "type": "Underclassmen program",
+    "who": "All students",
+    "deadline_month": 12,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Duolingo Thrive Internship (SWE)",
+    "url": "https://careers.duolingo.com/",
+    "type": "Underclassmen program",
+    "who": "Sophomore",
+    "deadline_month": 10,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "EA Pathfinder",
+    "url": "https://www.ea.com/en-ca/careers/early-careers",
+    "type": "Underclassmen program",
+    "who": "Freshman, Sophomore",
+    "deadline_month": 9,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Global Technology Freshman Summer Analyst Program",
+    "url": "https://campus.bankofamerica.com/careers/Global-Technology-Freshman-Summer-Analyst-Program-US.html",
+    "type": "Underclassmen program",
+    "who": "Freshman",
+    "deadline_month": 12,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Google ASDI - Associate Software Developer Intern",
+    "url": "https://buildyourfuture.withgoogle.com/programs/step/",
+    "type": "Underclassmen program",
+    "who": "Sophomore",
+    "deadline_month": 10,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Jane Street Immersion Program (JSIP)",
+    "url": "https://www.janestreet.com/join-jane-street/programs-and-events/jsip/",
+    "type": "Underclassmen program",
+    "who": "Sophomore",
+    "deadline_month": null,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "JPMorganChase Fellowship Program",
+    "url": "https://www.jpmorganchase.com/careers/explore-opportunities/programs/jpmcfellowship",
+    "type": "Underclassmen program",
+    "who": "Sophomore",
+    "deadline_month": 9,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "LinkedIn First Play",
+    "url": "https://careers.linkedin.com/pathways-programs/internships/Technical/first-play",
+    "type": "Underclassmen program",
+    "who": "Sophomore",
+    "deadline_month": 9,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Meta University",
+    "url": "https://www.metacareers.com/careerprograms/students/",
+    "type": "Underclassmen program",
+    "who": "All students",
+    "deadline_month": 10,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Microsoft Explore",
+    "url": "https://careers.microsoft.com/students/us/en/usexploremicrosoftprogram",
+    "type": "Underclassmen program",
+    "who": "Freshman, Sophomore",
+    "deadline_month": null,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Microsoft New Technologists",
+    "url": "https://newtechnologists.com",
+    "type": "Underclassmen program",
+    "who": "All students",
+    "deadline_month": 2,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "NASA",
+    "url": "https://intern.nasa.gov/",
+    "type": "Underclassmen program",
+    "who": "All students",
+    "deadline_month": null,
+    "women": false,
+    "source": "zapplyjobs/underclassmen-internships"
+  },
+  {
+    "name": "NVIDIA Ignite Program",
+    "url": "https://www.nvidia.com/en-us/about-nvidia/careers/university-recruiting/",
+    "type": "Underclassmen program",
+    "who": "Freshman, Sophomore",
+    "deadline_month": 1,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Oracle First Year SWE internships",
+    "url": "https://www.oracle.com/careers/students-grads/internships/",
+    "type": "Underclassmen program",
+    "who": "Freshman",
+    "deadline_month": 9,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Palantir path",
+    "url": "https://www.palantir.com/careers/students-and-early-talent",
+    "type": "Underclassmen program",
+    "who": "Sophomore, Junior",
+    "deadline_month": 9,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "SPARX Internship - ABK",
+    "url": "https://careers.blizzard.com/global/en/earlycareers",
+    "type": "Underclassmen program",
+    "who": "All students",
+    "deadline_month": 11,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Two Sigma Freshman Software Engineer Internship",
+    "url": "https://careers.twosigma.com/",
+    "type": "Underclassmen program",
+    "who": "Freshman",
+    "deadline_month": 12,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Uber STAR",
+    "url": "https://jobs.uber.com/en/teams/emerging-talent/",
+    "type": "Underclassmen program",
+    "who": "Freshman, Sophomore",
+    "deadline_month": 10,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Visa Sophomore Internship Program",
+    "url": "https://www.visa.com/careers/",
+    "type": "Underclassmen program",
+    "who": "Sophomore",
+    "deadline_month": null,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  },
+  {
+    "name": "Zillow Engineering and Leadership Program - ZEAL",
+    "url": "https://www.zillow.com/careers/internships/",
+    "type": "Underclassmen program",
+    "who": "Sophomore",
+    "deadline_month": 9,
+    "women": false,
+    "source": "LuisaE/opportunities"
+  }
+]
