@@ -6,7 +6,11 @@
     "who": "All students",
     "deadline_month": 6,
     "women": true,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Grace Hopper Scholarship",
@@ -15,7 +19,11 @@
     "who": "All students",
     "deadline_month": 3,
     "women": true,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "SHPE National Convention",
@@ -24,7 +32,11 @@
     "who": "All students",
     "deadline_month": 3,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Tapia Conference Scholarship",
@@ -33,7 +45,11 @@
     "who": "All students",
     "deadline_month": 3,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "YC AI Startup School",
@@ -42,7 +58,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "8VC Fellowship",
@@ -51,7 +71,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Bellingcat Tech Fellow",
@@ -60,7 +84,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Bessemer Fellowship Program",
@@ -69,7 +97,11 @@
     "who": "All students",
     "deadline_month": 7,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Break Through Tech AI Immersion Program",
@@ -78,7 +110,11 @@
     "who": "All students",
     "deadline_month": 3,
     "women": true,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Capital One First Gen Focus",
@@ -87,7 +123,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Code2040 Fellows",
@@ -96,7 +136,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "CodePath Summer Internship for Tech Excellence",
@@ -105,7 +149,11 @@
     "who": "Sophomore",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Coding it Forward’s Fellowship",
@@ -114,7 +162,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Emma Bowen Foundation Fellowship",
@@ -123,7 +175,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Futureforce Tech Launchpad",
@@ -132,7 +188,11 @@
     "who": "Junior",
     "deadline_month": 4,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "GGV NextGen Fellowship",
@@ -141,7 +201,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Google Summer of Code",
@@ -150,7 +214,11 @@
     "who": "All students",
     "deadline_month": 4,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Hack Diversity",
@@ -159,7 +227,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "HeadStart Fellowship",
@@ -168,7 +240,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "IBM Accelerate",
@@ -177,7 +253,11 @@
     "who": "Sophomore, Junior",
     "deadline_month": null,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "INROADS",
@@ -186,7 +266,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Keploy API Fellowship",
@@ -195,7 +279,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Keploy DevRel Cohort",
@@ -204,7 +292,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Kleiner Perkins Fellows",
@@ -213,7 +305,11 @@
     "who": "All students",
     "deadline_month": 1,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "LyftU Early Talent Development",
@@ -222,7 +318,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "MLH Fellowship",
@@ -231,7 +331,11 @@
     "who": "All students",
     "deadline_month": 1,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Neo Scholar",
@@ -240,7 +344,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Outreachy",
@@ -249,7 +357,11 @@
     "who": "All students",
     "deadline_month": 1,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "SEO Tech Developer",
@@ -258,7 +370,11 @@
     "who": "Sophomore",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "thrivecap Fellows",
@@ -267,7 +383,11 @@
     "who": "Junior",
     "deadline_month": 2,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Two Sigma College Mentor Connect",
@@ -276,7 +396,11 @@
     "who": "Freshman",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Year Up",
@@ -285,7 +409,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Accenture Student Empowerment Program",
@@ -294,7 +422,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": 4,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Barclays Sophomore Springboard",
@@ -303,7 +435,11 @@
     "who": "Sophomore",
     "deadline_month": 1,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Blackrock Find Your Future Forum - Tech",
@@ -312,7 +448,11 @@
     "who": "Sophomore",
     "deadline_month": 2,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Blackstone Diverse Leaders Program",
@@ -321,7 +461,11 @@
     "who": "All students",
     "deadline_month": 1,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Blackstone Future Women Innovators Program",
@@ -330,7 +474,11 @@
     "who": "All students",
     "deadline_month": 1,
     "women": true,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Blackstone Future Women Leaders",
@@ -339,7 +487,11 @@
     "who": "Sophomore",
     "deadline_month": 12,
     "women": true,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Bloomberg First Year Insights",
@@ -348,7 +500,11 @@
     "who": "Freshman",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Bridge to consulting",
@@ -357,7 +513,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": 3,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Building Entrepreneurial Leaders Program",
@@ -366,7 +526,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Capital One’s Tech Summit",
@@ -375,7 +539,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "City Early ID",
@@ -384,7 +552,11 @@
     "who": "All students",
     "deadline_month": 11,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "DE Shaw Fellowships",
@@ -393,7 +565,11 @@
     "who": "Sophomore",
     "deadline_month": null,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Deloitte National Leadership Conference",
@@ -402,7 +578,11 @@
     "who": "Sophomore, Junior",
     "deadline_month": null,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Discover Citadel",
@@ -411,7 +591,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": 12,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Evercore’s Sophomore Diversity Seminar",
@@ -420,7 +604,11 @@
     "who": "Sophomore",
     "deadline_month": 1,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Extern (formerly Paragon One)",
@@ -429,7 +617,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Freshman Diversity Leadership Academy - McKinsey",
@@ -438,7 +630,11 @@
     "who": "Freshman",
     "deadline_month": 2,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Girls Who Invest Summer Intensive Program",
@@ -447,7 +643,11 @@
     "who": "Sophomore",
     "deadline_month": 9,
     "women": true,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Goldman Sachs Diversity Programs",
@@ -456,7 +656,12 @@
     "who": "Freshman, Sophomore, Junior",
     "deadline_month": 3,
     "women": true,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "closed",
+    "deadline": null,
+    "checked": "2026-11-01",
+    "added": "2026-11-01",
+    "via": "checked"
   },
   {
     "name": "HRT Women in Trading Technology",
@@ -465,7 +670,12 @@
     "who": "Freshman, Sophomore",
     "deadline_month": 10,
     "women": true,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "closed",
+    "deadline": null,
+    "checked": "2026-11-01",
+    "added": "2026-11-01",
+    "via": "checked"
   },
   {
     "name": "Ignite with Tech",
@@ -474,7 +684,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": 3,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Impact Labs Fellowship",
@@ -483,7 +697,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Impact Labs Summit",
@@ -492,7 +710,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Jane Street FTTP",
@@ -501,7 +723,11 @@
     "who": "Freshman",
     "deadline_month": 7,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Jane Street Insight",
@@ -510,7 +736,11 @@
     "who": "All students",
     "deadline_month": 7,
     "women": true,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Jane Street SEE",
@@ -519,7 +749,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Jefferies Inspiring Women for finance",
@@ -528,7 +762,11 @@
     "who": "Sophomore",
     "deadline_month": 1,
     "women": true,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "JP Morgan Sophomore Edge",
@@ -537,7 +775,11 @@
     "who": "Sophomore",
     "deadline_month": 1,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "JPMorgan Chase Career.edYOU",
@@ -546,7 +788,11 @@
     "who": "Sophomore",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Koch Rising Leaders",
@@ -555,7 +801,11 @@
     "who": "All students",
     "deadline_month": 1,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Morgan Stanley Technology Early Insight",
@@ -564,7 +814,11 @@
     "who": "All students",
     "deadline_month": 3,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Nomura sophomore diversity program",
@@ -573,7 +827,11 @@
     "who": "Sophomore",
     "deadline_month": 1,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "P&G Emerging Leaders Information Technology",
@@ -582,7 +840,11 @@
     "who": "Sophomore",
     "deadline_month": 9,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Palantir Launch: Spring Program",
@@ -591,7 +853,11 @@
     "who": "All students",
     "deadline_month": 9,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "SIG Discovery Day",
@@ -600,7 +866,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Technology Inside Track Series Diversity Program",
@@ -609,7 +879,11 @@
     "who": "Junior",
     "deadline_month": 9,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "UBS Tomorrow's Leaders Program",
@@ -618,7 +892,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": 4,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Vanguard EXPLORE Days",
@@ -627,7 +905,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Management Leadership for Tomorrow Career Prep SWE Track",
@@ -636,7 +918,11 @@
     "who": "Sophomore",
     "deadline_month": 10,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Uber Career Prep Fellowship",
@@ -645,7 +931,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": 9,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Big Data Summer Institute - A SIBS Program",
@@ -654,7 +944,11 @@
     "who": "All students",
     "deadline_month": 3,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Brown + Google exploreCSR",
@@ -663,7 +957,11 @@
     "who": "All students",
     "deadline_month": 12,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "CMU Data Science for Social Good",
@@ -672,7 +970,11 @@
     "who": "All students",
     "deadline_month": 3,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "D.E. Shaw Research Undergraduate Fellowship",
@@ -681,7 +983,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": 12,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Google CS Research Mentorship Program",
@@ -690,7 +996,11 @@
     "who": "All students",
     "deadline_month": 11,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Harvey Mudd CS Summer Research",
@@ -699,7 +1009,11 @@
     "who": "All students",
     "deadline_month": 3,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "NCAR",
@@ -708,7 +1022,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "NYU CDS Undergraduate Research Program (CURP)",
@@ -717,7 +1035,11 @@
     "who": "All students",
     "deadline_month": 12,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Undergrad Architecture Mentoring (uArch) Workshop",
@@ -726,7 +1048,11 @@
     "who": "All students",
     "deadline_month": 3,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Generation Google Scholarship",
@@ -735,7 +1061,11 @@
     "who": "All students",
     "deadline_month": 9,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Palantir Future Scholarship",
@@ -744,7 +1074,11 @@
     "who": "All students",
     "deadline_month": 3,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Palantir Women in Tech Scholarship",
@@ -753,7 +1087,11 @@
     "who": "All students",
     "deadline_month": 3,
     "women": true,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Quip Diversity Scholarship",
@@ -762,7 +1100,11 @@
     "who": "All students",
     "deadline_month": 6,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "VMware Scholarships",
@@ -771,7 +1113,11 @@
     "who": "All students",
     "deadline_month": 5,
     "women": true,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Amazon Future Engineer",
@@ -780,7 +1126,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Capital One’s Early Internship Program",
@@ -789,7 +1139,11 @@
     "who": "Sophomore",
     "deadline_month": 9,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Citadel Launch",
@@ -798,7 +1152,11 @@
     "who": "All students",
     "deadline_month": 11,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Dropbox Launch",
@@ -807,7 +1165,11 @@
     "who": "All students",
     "deadline_month": 12,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Duolingo Thrive Internship (SWE)",
@@ -816,7 +1178,11 @@
     "who": "Sophomore",
     "deadline_month": 10,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "EA Pathfinder",
@@ -825,7 +1191,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": 9,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Global Technology Freshman Summer Analyst Program",
@@ -834,7 +1204,11 @@
     "who": "Freshman",
     "deadline_month": 12,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Google ASDI - Associate Software Developer Intern",
@@ -843,7 +1217,11 @@
     "who": "Sophomore",
     "deadline_month": 10,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Jane Street Immersion Program (JSIP)",
@@ -852,7 +1230,11 @@
     "who": "Sophomore",
     "deadline_month": null,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "JPMorganChase Fellowship Program",
@@ -861,7 +1243,11 @@
     "who": "Sophomore",
     "deadline_month": 9,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "LinkedIn First Play",
@@ -870,7 +1256,11 @@
     "who": "Sophomore",
     "deadline_month": 9,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Meta University",
@@ -879,7 +1269,11 @@
     "who": "All students",
     "deadline_month": 10,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Microsoft Explore",
@@ -888,7 +1282,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": null,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Microsoft New Technologists",
@@ -897,7 +1295,11 @@
     "who": "All students",
     "deadline_month": 2,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "NASA",
@@ -906,7 +1308,11 @@
     "who": "All students",
     "deadline_month": null,
     "women": false,
-    "source": "zapplyjobs/underclassmen-internships"
+    "source": "zapplyjobs/underclassmen-internships",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "NVIDIA Ignite Program",
@@ -915,7 +1321,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": 1,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Oracle First Year SWE internships",
@@ -924,7 +1334,11 @@
     "who": "Freshman",
     "deadline_month": 9,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Palantir path",
@@ -933,7 +1347,11 @@
     "who": "Sophomore, Junior",
     "deadline_month": 9,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "SPARX Internship - ABK",
@@ -942,7 +1360,11 @@
     "who": "All students",
     "deadline_month": 11,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Two Sigma Freshman Software Engineer Internship",
@@ -951,7 +1373,11 @@
     "who": "Freshman",
     "deadline_month": 12,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Uber STAR",
@@ -960,7 +1386,11 @@
     "who": "Freshman, Sophomore",
     "deadline_month": 10,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Visa Sophomore Internship Program",
@@ -969,7 +1399,13 @@
     "who": "Sophomore",
     "deadline_month": null,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "open",
+    "deadline": null,
+    "checked": "2026-11-01",
+    "added": "2026-11-01",
+    "via": "checked",
+    "apply_url": "https://visa.wd5.myworkdayjobs.com/Visa_Early_Careers/job/US---Ashburn-VA/XMLNAME-2027-Sophomore-Internship-Program---Software-Engineer-Intern--Ashburn_REF089878W"
   },
   {
     "name": "Zillow Engineering and Leadership Program - ZEAL",
@@ -978,7 +1414,11 @@
     "who": "Sophomore",
     "deadline_month": 9,
     "women": false,
-    "source": "LuisaE/opportunities"
+    "source": "LuisaE/opportunities",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-01"
   },
   {
     "name": "Google STEP Internship",
@@ -987,6 +1427,10 @@
     "who": "Freshman, Sophomore",
     "deadline_month": null,
     "women": false,
-    "source": "suggestion"
+    "source": "suggestion",
+    "status": "unconfirmed",
+    "deadline": null,
+    "checked": null,
+    "added": "2026-11-02"
   }
 ]

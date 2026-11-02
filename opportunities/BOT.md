@@ -4,10 +4,10 @@ Picks a few programs a week for **#opportunities**, reviewed by mods in **#opps-
 
 | When (Pacific) | What happens |
 |---|---|
-| Monday | Up to 4 picks go to #opps-queue: programs whose usual deadline is this month or next, and programs [SimplifyJobs](https://github.com/SimplifyJobs) lists as open right now (those go first). At most 2 of one type, and at most 6 drafts open at once. |
+| Monday | Up to 4 picks go to #opps-queue: programs confirmed open go first, then ones whose usual deadline is this month or next. At most 2 of one type, and at most 6 drafts open at once. |
 | Any time | ✅ on a draft posts it to #opportunities within about 2 hours. ❌ closes it. |
 | Next Monday | A draft nobody reacted to is marked "Carried over". If it's still unreviewed the Monday after, it closes. |
-| Daily, ~6 AM | The pinned **📌 Opportunities board** message in #opportunities is refreshed with what's coming up. |
+| Daily, ~6 AM | The bot checks [SimplifyJobs](https://github.com/SimplifyJobs) for programs that are open right now (and marks ones it stopped listing as closed), then refreshes the pinned **📌 Opportunities board** message in #opportunities. |
 
 The bot checks every 2 hours, so replies and commands take up to 2 hours to show up. It reacts ✏️, 👍, 🗑️ or 👀 when it picks one up.
 
@@ -18,6 +18,14 @@ The bot checks every 2 hours, so replies and commands take up to 2 hours to show
 - **More picks:** post `more` for 3 extra.
 - **Add a program to the board:** `add: Name | https://link | Oct | Fellowship`. Month and type are optional. Types: Underclassmen program, Fellowship, Insight / exploratory, Scholarship, Conference scholarship, Research program, Mentorship (the start of the name is enough, e.g. `insight`).
 - **Remove one:** `remove: Name`.
+- **Mark one open:** `open: Name | Dec 15 | https://apply-link` (deadline and apply link optional). It shows as ✅ on the board, with a bold deadline if you gave one.
+- **Mark one closed:** `closed: Name`. It moves to CLOSED.md and comes back when its usual month comes around again.
+
+For any command, the name can be the full name or a unique part of it (`open: Dropbox | Dec 15`).
+
+## Statuses
+
+Every program is ✅ open (someone checked), 🔒 closed, or ❓ unconfirmed (only its usual timing is known). Checks come from SimplifyJobs, your `open:` / `closed:` commands, and approved reports on GitHub. A ✅ on a draft posts it but doesn't change its status, so a program that's coming up but not open yet can still be announced. A passed deadline closes a program automatically, and an "open" nobody re-checks in 45 days goes back to ❓.
 - **New programs:** a pick marked **New** came from SimplifyJobs and isn't on the board yet. Approving it posts it and adds it to the board.
 
 People without Discord access can suggest programs through the repo's [Suggest a program](../../../issues/new?template=suggest-program.yml) form.

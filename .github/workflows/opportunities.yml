@@ -3,7 +3,8 @@ name: opportunities
 # Every 2 hours, the opportunities bot (opportunities/opps.py) reads #opps-queue,
 # posts approved picks to #opportunities, drafts Monday's picks, and refreshes
 # the pinned board once a day. Every run (and every push that edits the list)
-# also re-renders the README board from opportunities/programs.json.
+# also re-renders the board (README.md and CLOSED.md) from
+# opportunities/programs.json, closing programs whose deadline passed.
 # State and list changes are committed back, only when something changed.
 on:
   schedule:
@@ -53,7 +54,7 @@ jobs:
         if: always()
         run: |
           # The folder, not single files: state.json doesn't exist before the first run.
-          git add opportunities README.md
+          git add opportunities README.md CLOSED.md
           if git diff --cached --quiet; then
             echo "Nothing changed — nothing to commit."
           else

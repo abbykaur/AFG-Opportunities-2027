@@ -1,13 +1,14 @@
 name: opportunities-check
 
 # Checks pull requests that touch the opportunities list: programs.json must be
-# valid, have no duplicates, and new links must load. README.md is generated
-# from programs.json, so hand edits to it are turned away.
+# valid, have no duplicates, and new links must load. README.md and CLOSED.md
+# are generated from programs.json, so hand edits to them are turned away.
 on:
   pull_request:
     paths:
       - opportunities/**
       - README.md
+      - CLOSED.md
 
 permissions:
   contents: read
@@ -22,10 +23,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: README.md isn't edited by hand
+      - name: README.md and CLOSED.md aren't edited by hand
         run: |
-          if git diff --name-only "origin/$GITHUB_BASE_REF...HEAD" | grep -qx README.md; then
-            echo "::error::README.md is generated from opportunities/programs.json. Edit programs.json instead (or use the 'Suggest a program' issue form)."
+          if git diff --name-only "origin/$GITHUB_BASE_REF...HEAD" | grep -qxE "README.md|CLOSED.md"; then
+            echo "::error::README.md and CLOSED.md are generated from opportunities/programs.json. Edit programs.json instead (or use the 'Suggest a program' / 'Report closed / wrong info' issue forms)."
             exit 1
           fi
       - name: programs.json is valid

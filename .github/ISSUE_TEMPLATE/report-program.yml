@@ -1,0 +1,48 @@
+name: Report closed / wrong info
+description: A program on the AFG Opportunities board is closed, open now, has the wrong deadline, or has a broken link.
+title: "[Report] "
+labels: ["status-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for keeping the board accurate! A maintainer reviews each report, and approved fixes show up on the board automatically.
+  - type: input
+    id: name
+    attributes:
+      label: Program name
+      description: Exactly as it appears on the board.
+      placeholder: Visa Sophomore Internship Program
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What's wrong?
+      options:
+        - It's closed (not accepting applications)
+        - It's open now
+        - Wrong deadline
+        - Link is broken or moved
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Correct deadline (if you know it)
+      placeholder: Dec 15, 2026
+  - type: input
+    id: link
+    attributes:
+      label: Correct link (if it moved)
+      placeholder: https://...
+  - type: input
+    id: source
+    attributes:
+      label: Where did you see this?
+      description: A link to the application page or announcement helps the maintainer check quickly.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?

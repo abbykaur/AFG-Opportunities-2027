@@ -1,16 +1,18 @@
 """Opportunities bot: a few program picks a week for #opportunities, curated by mods.
 
-  Monday    up to 4 programs are drafted into #opps-queue (mods only): ones whose
-            usual deadline is this month or next, plus programs SimplifyJobs
-            lists as open right now, which go first.
+  Monday    up to 4 programs are drafted into #opps-queue (mods only): ones
+            confirmed open go first, then ones whose usual deadline is this
+            month or next.
   Any run   ✅ drafts post to #opportunities right away (deadlines don't wait for
             Friday) and ❌ drafts close. Mods reply to a draft to edit it, or post
-            `more`, `add: …` or `remove: …` in the queue.
-  Daily     the pinned board message in #opportunities is refreshed.
+            `more`, `add:`, `remove:`, `open:` or `closed:` in the queue.
+  Daily     SimplifyJobs is checked for programs that are open right now (and
+            ones it no longer lists), and the pinned board message in
+            #opportunities is refreshed.
 
 Same bot, token, and run-once design as news-bot/news.py. The program list is
-programs.json, which also renders the repo's README board (board.py); this
-folder's state.json tracks drafts and is committed back by the workflow.
+programs.json, which also renders the repo's README board and CLOSED.md
+(board.py); this folder's state.json tracks drafts. The workflow commits both.
 """
 import os
 import re
@@ -19,13 +21,14 @@ import asyncio
 import logging
 import urllib.request
 from pathlib import Path
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 
 import discord
 from dotenv import load_dotenv
 
 import board
-from programs import WHO, MONTHS, key, problems
+import programs as plist
+from programs import key, problems
 
 load_dotenv(Path(__file__).with_name(".env"))
 
@@ -44,14 +47,15 @@ SIMPLIFY_URL = ("https://raw.githubusercontent.com/SimplifyJobs/Summer{year}-Int
 
 TZ = board.TZ
 DRAFT_DAYS = {0, 1, 2, 3}       # Monday=0; later days only if Monday's run failed
-BOARD_HOUR = 6                  # refresh the pinned board on the first run after 6 AM PT
+DAILY_HOUR = 6                  # SimplifyJobs check + pinned board, first run after 6 AM PT
 WEEKLY_CANDIDATES = 4
 MAX_OPEN_DRAFTS = 6             # Monday never leaves more than this many open
 DRAFTS_PER_REQUEST = 3
 MAX_PER_TYPE = 2                # variety: at most 2 of one type per batch
-DUE_WINDOW = 2                  # "due soon" = this month or next
+DUE_WINDOW = board.COMING_UP_MONTHS   # "due soon" = this month or next
 REDRAFT_AFTER = timedelta(days=300)   # a program comes back next cycle, not sooner
 CARRY_AFTER = timedelta(days=6)       # unreviewed by next Monday: carried once, then closed
+RECHECK_AFTER = timedelta(days=14)    # re-stamp a still-open program's check date this often
 HISTORY_WEEKS = 8
 
 # Program-like titles on SimplifyJobs, and the research/medical roles to skip.
@@ -67,6 +71,8 @@ APPROVE, SKIP = "✅", "❌"
 COLOR_PENDING, COLOR_IN, COLOR_OUT, COLOR_POST = 0xF1C40F, 0x2ECC71, 0x95A5A6, 0x9B59B6
 HOW_TO = (f"{APPROVE} post to #opportunities · {SKIP} skip · "
           "reply with note: / title: to edit")
+COMMANDS = ("`more` · `add: Name | link | month | type` · `remove: Name` · "
+            "`open: Name | deadline | apply link` · `closed: Name`")
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("oppsbot")
@@ -82,7 +88,7 @@ def load_state() -> dict:
     state.setdefault("last_message_id", None)
     state.setdefault("drafted_week", None)
     state.setdefault("board_message_id", None)
-    state.setdefault("board_day", None)
+    state.setdefault("board_day", None)      # last day the daily step ran
     # How each closed draft went, by type only (the repo is public: no names).
     state.setdefault("history", [])
     return state
@@ -92,9 +98,12 @@ def save_state(state: dict) -> None:
     STATE_PATH.write_text(json.dumps(state, indent=2, ensure_ascii=False) + "\n")
 
 
-def save_programs(programs: list[dict]) -> None:
-    board.PROGRAMS_PATH.write_text(json.dumps(programs, indent=2, ensure_ascii=False) + "\n")
-    board.README_PATH.write_text(board.render(programs, datetime.now(TZ)))
+def save_programs(programs: list[dict], now: datetime) -> None:
+    """Write the list and re-render both board pages."""
+    plist.refresh(programs, now.date())
+    plist.save(programs)
+    board.README_PATH.write_text(board.render(programs, now))
+    board.CLOSED_PATH.write_text(board.render_closed(programs, now))
 
 
 def fetch_simplify(now: datetime) -> list[dict]:
@@ -139,6 +148,44 @@ def guess_who(title: str) -> str:
     return ", ".join(found) or "All students"
 
 
+def sync_simplify(programs: list[dict], listings: list[dict], now: datetime) -> tuple[bool, list[dict]]:
+    """Record what SimplifyJobs says is open, and collect programs it lists that
+    the board doesn't have yet. Returns (whether the list changed, new programs).
+
+    A known program listed as open is marked open (with its application link).
+    One the bot marked open from SimplifyJobs before, but that's no longer
+    listed, is marked closed. Statuses mods or reports set aren't touched by
+    the second rule, since SimplifyJobs only covers some programs.
+    """
+    today = now.date()
+    changed, listed, new = False, set(), {}
+    for listing in listings:
+        p = match_program(listing, programs)
+        if p:
+            if key(p["name"]) in listed:
+                continue   # a second posting for the same program (e.g. another city)
+            listed.add(key(p["name"]))
+            checked = date.fromisoformat(p["checked"]) if p.get("checked") else None
+            if (p["status"] != "open" or p.get("apply_url") != listing["url"]
+                    or not checked or today - checked > RECHECK_AFTER):
+                plist.set_status(p, "open", via="simplify", on=today, apply_url=listing["url"])
+                changed = True
+            continue
+        title, company = listing["title"], listing["company"]
+        # "Anthropic Fellows Program", not "Anthropic Anthropic Fellows Program".
+        name = (title if key(company) in key(title) else f"{company} {title}").strip()[:100]
+        new.setdefault(key(name), plist.new_program(
+            name=name, url=listing["url"], type=guess_type(title), who=guess_who(title),
+            women=bool(re.search(r"\bwomen\b", title, re.I)), source="SimplifyJobs",
+            status="open", checked=today.isoformat(), via="simplify", apply_url=listing["url"], new=True))
+    if listings:   # an empty fetch says nothing about what closed
+        for p in programs:
+            if p["status"] == "open" and p.get("via") == "simplify" and key(p["name"]) not in listed:
+                plist.set_status(p, "closed", via="simplify", on=today)
+                changed = True
+    return changed, list(new.values())
+
+
 def type_weights(state: dict) -> dict[str, float]:
     """How strongly to favor each program type, from mods' recent decisions.
 
@@ -158,49 +205,30 @@ def type_weights(state: dict) -> dict[str, float]:
     return weights
 
 
-def candidates(state: dict, programs: list[dict], listings: list[dict], now: datetime) -> list[dict]:
+def candidates(state: dict, programs: list[dict], new: list[dict], now: datetime) -> list[dict]:
     """Programs worth drafting now, best first.
 
-    Known programs qualify when they're due this month or next, or SimplifyJobs
-    lists them as open. Unknown SimplifyJobs programs qualify as "new". Each is
-    scored by type weight, with open-now and women-focused programs boosted and
-    later deadlines discounted. A program drafted in the last REDRAFT_AFTER days
-    (or open in the queue) is skipped.
+    Known programs qualify when they're open, or due this month or next and not
+    closed. Programs SimplifyJobs lists that the board doesn't have qualify as
+    "new". Each is scored by type weight, with open and women-focused programs
+    boosted and later deadlines discounted. A program drafted in the last
+    REDRAFT_AFTER days (or open in the queue) is skipped.
     """
     recent = {k for k, t in state["drafted"].items()
               if now - datetime.fromisoformat(t) < REDRAFT_AFTER}
     recent |= {key(d["name"]) for d in state["drafts"].values()}
-    confirmed, new = {}, {}
-    for listing in listings:
-        p = match_program(listing, programs)
-        if p:
-            confirmed.setdefault(key(p["name"]), listing["url"])
-        else:
-            title, company = listing["title"], listing["company"]
-            # "Anthropic Fellows Program", not "Anthropic Anthropic Fellows Program".
-            name = (title if key(company) in key(title) else f"{company} {title}").strip()[:100]
-            new.setdefault(key(name), {
-                "name": name, "url": listing["url"], "type": guess_type(listing["title"]),
-                "who": guess_who(listing["title"]), "deadline_month": None,
-                "women": bool(re.search(r"\bwomen\b", listing["title"], re.I)),
-                "source": "SimplifyJobs", "new": True, "open_url": listing["url"],
-            })
-
-    pool = []
-    for p in programs:
-        months = board.months_until(p["deadline_month"], now)
-        if key(p["name"]) in confirmed or months < DUE_WINDOW:
-            pool.append({**p, "open_url": confirmed.get(key(p["name"]))})
-    pool += new.values()
+    pool = [p for p in programs if p["status"] == "open" or (
+        p["status"] != "closed" and board.months_until(p["deadline_month"], now) < DUE_WINDOW)]
+    pool = [p for p in pool + new if key(p["name"]) not in recent]
 
     weights = type_weights(state)
     def score(p):
-        # Open right now counts as due now. Programs not on the board yet are
-        # half-weighted, since SimplifyJobs' program titles are noisier.
-        months = 0 if p.get("open_url") else min(board.months_until(p["deadline_month"], now), 3)
-        return (weights.get(p["type"], 0.25) * (2 if p.get("open_url") else 1)
+        # Open counts as due now. Programs not on the board yet are half-weighted,
+        # since SimplifyJobs' program titles are noisier.
+        is_open = p["status"] == "open"
+        months = 0 if is_open else min(board.months_until(p["deadline_month"], now), 3)
+        return (weights.get(p["type"], 0.25) * (2 if is_open else 1)
                 * (0.5 if p.get("new") else 1) * (1.5 if p.get("women") else 1) / (1 + months))
-    pool = [p for p in pool if key(p["name"]) not in recent]
     return sorted(pool, key=score, reverse=True)
 
 
@@ -216,7 +244,10 @@ def pick(pool: list[dict], count: int) -> list[dict]:
     return picked
 
 
-def when(d: dict) -> str:
+def due(d: dict) -> str:
+    """'Dec 15' for a known deadline, else the usual month."""
+    if d.get("deadline"):
+        return board.short(d["deadline"])
     return board.when(d.get("deadline_month")).replace("Check site", "check the page")
 
 
@@ -228,14 +259,16 @@ def draft_embed(d: dict, status: str = "pending", by: str | None = None) -> disc
                           description=d.get("note") or "*(reply with note: to add a line that posts with it)*")
     embed.add_field(name="Type", value=d["type"])
     embed.add_field(name="For", value=d["who"])
-    embed.add_field(name="Usually due", value=when(d))
-    if d.get("open_url"):
-        embed.add_field(name="Open now", value=f"[Listed on SimplifyJobs]({d['open_url']})", inline=False)
+    embed.add_field(name="Deadline" if d.get("deadline") else "Usually due", value=due(d))
+    if d.get("status") == "open":
+        how = f"[apply here]({d['apply_url']})" if d.get("apply_url") else f"checked {board.short(d['checked'])}"
+        embed.add_field(name="✅ Open now", value=how, inline=False)
     else:
         # The board's months are rough (from community lists), so a pick that
         # isn't confirmed open may be closed or not open yet.
         embed.add_field(name="⚠️ Not confirmed open",
-                        value=f"Usual timing only. Check [the page]({d['url']}) before {APPROVE}.", inline=False)
+                        value=f"Usual timing only. Check [the page]({d['url']}) before {APPROVE}. "
+                              "If it's open, `open: Name | deadline` marks it on the board.", inline=False)
     if d.get("new"):
         embed.add_field(name="New", value="Not on the board yet; approving adds it.", inline=False)
     if d.get("women"):
@@ -253,31 +286,41 @@ def draft_embed(d: dict, status: str = "pending", by: str | None = None) -> disc
 def post_embed(d: dict) -> discord.Embed:
     """What members see in #opportunities."""
     lines = (["💜 **For women**"] if d.get("women") else []) + ([d["note"]] if d.get("note") else [])
+    if d.get("status") == "open" and d.get("apply_url"):
+        lines.append(f"**[Apply here]({d['apply_url']})**")
     lines.append(f"[📋 All opportunities]({BOARD_URL})")
     embed = discord.Embed(title=d["name"][:256], url=d["url"], color=COLOR_POST,
                           description="\n\n".join(lines))
     embed.add_field(name="For", value=d["who"])
     embed.add_field(name="Type", value=d["type"])
-    embed.add_field(name="Usually due", value=when(d))
+    embed.add_field(name="Deadline" if d.get("deadline") else "Usually due", value=due(d))
     return embed
 
 
 def board_embed(programs: list[dict], now: datetime) -> discord.Embed:
-    """The pinned summary: what's coming up, with a link to the full board."""
-    soon = sorted((p for p in programs if board.months_until(p["deadline_month"], now) < DUE_WINDOW),
-                  key=lambda p: (board.months_until(p["deadline_month"], now), p["name"].lower()))
-    lines = [f"• [{p['name']}]({p['url']}) · {p['who']} · {board.when(p['deadline_month'])}"
-             + (" 💜" if p.get("women") else "") for p in soon]
-    footer = f"\n\n[📋 See all {len(programs)} programs →]({BOARD_URL})"
-    text = "**🔥 Coming up**\n"
-    for line in lines:
-        if len(text) + len(line) + len(footer) > 3900:
-            text += "• …and more on the full board\n"
-            break
-        text += line + "\n"
+    """The pinned summary: what's open and coming up, with a link to the full board."""
+    today = now.date()
+    active = sorted((p for p in programs if p["status"] != "closed"), key=lambda p: board.sort_key(p, today))
+    open_now = [p for p in active if p["status"] == "open"]
+    soon = [p for p in active if p["status"] != "open"
+            and board.months_until(p["deadline_month"], today) < DUE_WINDOW]
+    line = lambda p: (f"• [{p['name']}]({p.get('apply_url') or p['url']}) · {p['who']} · {due(p)}"
+                      + (" 💜" if p.get("women") else ""))
+    footer = f"\n[📋 See all {len(active)} programs →]({BOARD_URL})"
+    text = ""
+    for title, group in (("**✅ Open now**", open_now), ("**🔥 Coming up** (not confirmed, check each page)", soon)):
+        if not group:
+            continue
+        text += f"{title}\n"
+        for p in group:
+            if len(text) + len(line(p)) + len(footer) > 3900:
+                text += "• …and more on the full board\n"
+                break
+            text += line(p) + "\n"
+        text += "\n"
     embed = discord.Embed(title="📌 Opportunities board", url=BOARD_URL, color=COLOR_POST,
-                          description=text + footer)
-    embed.set_footer(text="💜 = for women · dates are approximate, check each page · updated daily")
+                          description=(text or "Nothing open or coming up right now.\n") + footer)
+    embed.set_footer(text="💜 = for women · updated daily")
     embed.timestamp = now
     return embed
 
@@ -304,14 +347,34 @@ def parse_add(text: str) -> dict:
     name, url = (parts + ["", ""])[:2]
     month = None
     if len(parts) > 2 and parts[2]:
-        month = next((n for m, n in MONTHS.items() if m.lower().startswith(parts[2].lower()[:3])), None)
+        month = next((n for m, n in plist.MONTHS.items() if m.lower().startswith(parts[2].lower()[:3])), None)
     ptype = next((t for t in board.SECTIONS if len(parts) > 3 and t.lower().startswith(parts[3].lower())),
                  "Fellowship")
-    return {"name": name, "url": url, "type": ptype, "who": "All students",
-            "deadline_month": month, "women": False, "source": "discord"}
+    return plist.new_program(name=name, url=url, type=ptype, deadline_month=month, source="discord")
 
 
-async def read_queue(queue: discord.TextChannel, state: dict, programs: list[dict]) -> tuple[int, bool]:
+def apply_status_command(programs: list[dict], verb: str, args: str, now: datetime) -> str | None:
+    """`open: Name | deadline | apply link` or `closed: Name`. Returns a problem, or None."""
+    parts = [p.strip() for p in args.split("|")]
+    p = plist.find(programs, parts[0])
+    if not p:
+        return f"No single program on the board matches **{parts[0]}**. Use its name as shown on the board."
+    if verb == "closed":
+        plist.set_status(p, "closed", via="mod", on=now.date())
+        return None
+    deadline = None
+    if len(parts) > 1 and parts[1]:
+        deadline = plist.parse_date(parts[1], now.date())
+        if not deadline:
+            return f"Couldn't read the deadline **{parts[1]}**. Try `Dec 15` or `2026-12-15`."
+    apply_url = parts[2] if len(parts) > 2 and parts[2] else None
+    plist.set_status(p, "open", deadline, via="mod", on=now.date(), apply_url=apply_url)
+    errors = problems(programs)
+    return "; ".join(e.split(": ", 1)[-1] for e in errors) or None
+
+
+async def read_queue(queue: discord.TextChannel, state: dict, programs: list[dict],
+                     now: datetime) -> tuple[int, bool]:
     """Apply edits and commands. Returns (`more` requests, whether the list changed)."""
     more, changed = 0, False
     if state["last_message_id"] is None:
@@ -351,13 +414,21 @@ async def read_queue(queue: discord.TextChannel, state: dict, programs: list[dic
                 changed = True
                 await msg.add_reaction("👍")
         elif m := re.match(r"remove\s*:\s*(.+)", text, re.IGNORECASE | re.DOTALL):
-            gone = [p for p in programs if key(p["name"]) == key(m.group(1))]
+            gone = plist.find(programs, m.group(1))
             if gone:
-                programs.remove(gone[0])
+                programs.remove(gone)
                 changed = True
                 await msg.add_reaction("🗑️")
             else:
-                await msg.reply(f"No program named **{m.group(1).strip()}** on the board.")
+                await msg.reply(f"No single program on the board matches **{m.group(1).strip()}**.")
+        elif m := re.match(r"(open|closed?)\s*:\s*(.+)", text, re.IGNORECASE | re.DOTALL):
+            verb = "open" if m.group(1).lower() == "open" else "closed"
+            problem = apply_status_command(programs, verb, m.group(2), now)
+            if problem:
+                await msg.reply(problem)
+            else:
+                changed = True
+                await msg.add_reaction("👍")
         elif re.match(r"more\b", text, re.IGNORECASE):
             more += 1
             await msg.add_reaction("👀")
@@ -398,22 +469,27 @@ async def close_decided(queue, channel, state: dict, programs: list[dict], monda
                 await msg.edit(embed=draft_embed(d))
                 continue
         if who:
+            # Post with the program's latest status (e.g. a mod's `open:` since drafting).
+            current = plist.find(programs, d["name"])
+            if current:
+                d.update({k: current.get(k) for k in ("status", "deadline", "apply_url", "checked")})
             try:
                 await channel.send(embed=post_embed(d))
             except discord.HTTPException as e:
                 await queue.send(f"Couldn't post to {channel.mention} ({e.status}: {e.text}). "
                                  "The draft stays open; the next run will try again.")
                 raise
-            if d.get("new"):
-                program = {k: d[k] for k in ("name", "url", "type", "who", "deadline_month", "women")}
-                program["source"] = d["source"]
+            if d.get("new") and not current:
+                program = plist.new_program(**{k: d[k] for k in (
+                    "name", "url", "type", "who", "deadline_month", "women", "source",
+                    "status", "deadline", "checked", "apply_url", "via") if d.get(k) is not None})
                 if not problems(programs + [program]):
                     programs.append(program)
                     changed = True
         await msg.edit(embed=draft_embed(d, "included" if who else "left_out", who))
         state["history"].append({
             "week": datetime.now(TZ).strftime("%G-W%V"), "type": d["type"],
-            "new": bool(d.get("new")), "open": bool(d.get("open_url")),
+            "new": bool(d.get("new")), "open": d.get("status") == "open",
             "decision": "approved" if who else "rejected" if skipped else "ignored",
         })
         del state["drafts"][msg_id]
@@ -421,8 +497,8 @@ async def close_decided(queue, channel, state: dict, programs: list[dict], monda
 
 
 async def post_draft(queue, p: dict, state: dict, requested: str | None = None) -> None:
-    d = {k: p.get(k) for k in ("name", "url", "type", "who", "deadline_month", "women",
-                               "source", "new", "open_url")}
+    d = {k: p.get(k) for k in ("name", "url", "type", "who", "deadline_month", "women", "source",
+                               "status", "deadline", "checked", "apply_url", "via", "new")}
     d["created"] = datetime.now(timezone.utc).isoformat()
     if requested:
         d["requested"] = requested
@@ -450,7 +526,6 @@ async def refresh_board(channel, queue, state: dict, programs: list[dict], now: 
         except discord.Forbidden:
             await queue.send(f"Posted the opportunities board in {channel.mention} but couldn't pin it. "
                              "Pin it by hand, or give the bot Pin Messages there.")
-    state["board_day"] = now.date().isoformat()
 
 
 async def run_once() -> None:
@@ -459,7 +534,7 @@ async def run_once() -> None:
     now = datetime.now(TZ)
     week = now.strftime("%G-W%V")
     loop = asyncio.get_running_loop()
-    changed = False
+    changed = plist.refresh(programs, now.date())
     try:
         client = discord.Client(intents=discord.Intents.default())
         async with client:
@@ -468,18 +543,22 @@ async def run_once() -> None:
             queue = await client.fetch_channel(QUEUE_CHANNEL_ID)
             channel = await client.fetch_channel(CHANNEL_ID)
 
-            more, edited = await read_queue(queue, state, programs)
+            more, edited = await read_queue(queue, state, programs, now)
+            changed |= edited
             drafting = FORCE == "draft" or (now.weekday() in DRAFT_DAYS and state["drafted_week"] != week)
-            changed = await close_decided(queue, channel, state, programs, monday=drafting) or edited
+            daily = now.hour >= DAILY_HOUR and state["board_day"] != now.date().isoformat()
+            changed |= await close_decided(queue, channel, state, programs, monday=drafting)
 
-            pool = None
-            if drafting or more:
+            new = []
+            if drafting or more or daily:
                 try:
                     listings = await loop.run_in_executor(None, fetch_simplify, now)
                 except Exception as e:
                     log.error("SimplifyJobs fetch failed: %s", e)
                     listings = []
-                pool = candidates(state, programs, listings, now)
+                synced, new = sync_simplify(programs, listings, now)
+                changed |= synced
+            pool = candidates(state, programs, new, now) if drafting or more else []
 
             if drafting:
                 open_now = len(state["drafts"])
@@ -488,8 +567,7 @@ async def run_once() -> None:
                            "still open from last week (above)." if open_now else "")
                 await queue.send(f"**This week's opportunity picks.**{carried} {HOW_TO}. "
                                  "Approved ones post to #opportunities within about 2 hours. "
-                                 "Post `more` for extra picks, `add: Name | link | month | type` "
-                                 "or `remove: Name` to change the board.")
+                                 f"Commands: {COMMANDS}.")
                 for p in batch:
                     await post_draft(queue, p, state)
                     pool.remove(p)
@@ -498,18 +576,19 @@ async def run_once() -> None:
             for _ in range(more):
                 batch = pick(pool, DRAFTS_PER_REQUEST)
                 if not batch:
-                    await queue.send("No more programs due soon or open right now.")
+                    await queue.send("No more programs open or due soon.")
                 for p in batch:
                     await post_draft(queue, p, state, requested="more")
                     pool.remove(p)
 
-            if changed or (now.hour >= BOARD_HOUR and state["board_day"] != now.date().isoformat()):
+            if changed or daily:
                 await refresh_board(channel, queue, state, programs, now)
+                state["board_day"] = now.date().isoformat() if daily else state["board_day"]
             log.info("Open drafts: %d.", len(state["drafts"]))
     finally:
         save_state(state)
         if changed:
-            save_programs(programs)
+            save_programs(programs, now)
 
 
 if __name__ == "__main__":

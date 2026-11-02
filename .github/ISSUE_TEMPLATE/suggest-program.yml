@@ -63,6 +63,18 @@ body:
         - October
         - November
         - December
+  - type: dropdown
+    id: open
+    attributes:
+      label: Is it open right now?
+      options:
+        - Yes, I checked and applications are open
+        - Not sure / not yet
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline (if you know it)
+      placeholder: Dec 15, 2026
   - type: checkboxes
     id: women
     attributes:

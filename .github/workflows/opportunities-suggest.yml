@@ -1,14 +1,15 @@
 name: opportunities-suggest
 
-# A maintainer approves a "Suggest a program" issue by adding the `approved`
-# label. This adds the program to opportunities/programs.json, rebuilds the
-# board, and closes the issue. If the suggestion has a problem (duplicate,
-# broken link, missing field), it comments with what to fix and removes the
-# label so it can be re-approved after an edit.
+# A maintainer approves a "Suggest a program" or "Report closed / wrong info"
+# issue by adding the `approved` label. A suggestion is added to
+# opportunities/programs.json; a report updates the program's status, deadline,
+# or link. Either way the board is rebuilt and the issue closed. If something's
+# wrong (duplicate, broken link, unknown program, unreadable date), it comments
+# with what to fix and removes the label so it can be re-approved after an edit.
 #
 # Only people with triage access or above can add labels, so strangers can't
-# approve their own suggestions. The issue text is untrusted: it's read by
-# Python from the event file, never pasted into a shell command.
+# approve their own issues. The issue text is untrusted: it's read by Python
+# from the event file, never pasted into a shell command.
 on:
   issues:
     types: [labeled]
@@ -22,31 +23,40 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  add:
-    if: github.event.label.name == 'approved' && contains(github.event.issue.labels.*.name, 'program-suggestion')
+  apply:
+    if: >-
+      github.event.label.name == 'approved' && (
+      contains(github.event.issue.labels.*.name, 'program-suggestion') ||
+      contains(github.event.issue.labels.*.name, 'status-report'))
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
       ISSUE: ${{ github.event.issue.number }}
+      IS_REPORT: ${{ contains(github.event.issue.labels.*.name, 'status-report') }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Add the program and rebuild the board
+      - name: Apply the issue and rebuild the board
         run: |
-          if python opportunities/programs.py add-issue "$GITHUB_EVENT_PATH" > result.txt; then
+          if [ "$IS_REPORT" = "true" ]; then
+            command=report-issue; verb=Update; done_msg="Thanks! The board is updated"
+          else
+            command=add-issue; verb=Add; done_msg="Thanks! It's on the board now"
+          fi
+          if python opportunities/programs.py "$command" "$GITHUB_EVENT_PATH" > result.txt; then
             python opportunities/board.py
             git config user.name  "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add opportunities/programs.json README.md
-            git commit -m "Add $(head -1 result.txt) to the opportunities board (#$ISSUE)"
+            git add opportunities/programs.json README.md CLOSED.md
+            git commit -m "$verb $(head -1 result.txt) on the opportunities board (#$ISSUE)"
             git pull --rebase
             git push
             gh issue close "$ISSUE" --reason completed \
-              --comment "Thanks! It's on the board now: https://github.com/$GITHUB_REPOSITORY#readme"
+              --comment "$done_msg: https://github.com/$GITHUB_REPOSITORY#readme"
           else
-            { echo "Couldn't add this one yet:"; echo; cat result.txt; echo
+            { echo "Couldn't apply this one yet:"; echo; cat result.txt; echo
               echo "Edit the issue to fix it, then a maintainer can add the \`approved\` label again."; } > comment.md
             gh issue comment "$ISSUE" --body-file comment.md
             gh issue edit "$ISSUE" --remove-label approved
