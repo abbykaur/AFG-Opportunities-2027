@@ -1,12 +1,21 @@
 name: opportunities
 
-# Daily, re-render the opportunities board (README.md) from
-# opportunities/programs.json so "Coming up" follows the calendar.
-# Commits only when the board actually changes. See opportunities/board.py.
+# Every 2 hours, the opportunities bot (opportunities/opps.py) reads #opps-queue,
+# posts approved picks to #opportunities, drafts Monday's picks, and refreshes
+# the pinned board once a day. Every run (and every push that edits the list)
+# also re-renders the README board from opportunities/programs.json.
+# State and list changes are committed back, only when something changed.
 on:
   schedule:
-    - cron: "0 14 * * *"   # 6-7 AM Pacific
+    - cron: "45 */2 * * *"
+  # Manual "Run workflow" button. force=draft posts this week's picks now.
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Run a step now"
+        type: choice
+        options: [none, draft]
+        default: none
   push:
     paths:
       - opportunities/**
@@ -19,24 +28,38 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  render:
+  run:
     runs-on: ubuntu-latest
+    env:
+      NEWS_DISCORD_TOKEN: ${{ secrets.NEWS_DISCORD_TOKEN }}
+      OPPS_QUEUE_CHANNEL_ID: ${{ secrets.OPPS_QUEUE_CHANNEL_ID }}
+      OPPS_CHANNEL_ID: ${{ secrets.OPPS_CHANNEL_ID }}
+      OPPS_FORCE: ${{ inputs.force }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
+          cache-dependency-path: news-bot/requirements.txt
+      - run: pip install -r news-bot/requirements.txt
+      # Pushes only re-render the board; the Discord side runs on the schedule.
+      - name: Run the opportunities bot
+        if: github.event_name != 'push' && env.NEWS_DISCORD_TOKEN != '' && env.OPPS_QUEUE_CHANNEL_ID != '' && env.OPPS_CHANNEL_ID != ''
+        run: python opportunities/opps.py
       - name: Render the board
         run: python opportunities/board.py
-      - name: Commit README.md (only if it changed)
+      - name: Commit state and board (only if they changed)
+        if: always()
         run: |
-          if git diff --quiet README.md; then
-            echo "Board unchanged — nothing to commit."
+          # The folder, not single files: state.json doesn't exist before the first run.
+          git add opportunities README.md
+          if git diff --cached --quiet; then
+            echo "Nothing changed — nothing to commit."
           else
-            git config user.name "github-actions[bot]"
+            git config user.name  "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add README.md
-            git commit -m "Update opportunities board [skip ci]"
+            git commit -m "Update opportunities state and board [skip ci]"
             git pull --rebase
             git push
           fi

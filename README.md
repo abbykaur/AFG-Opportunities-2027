@@ -181,4 +181,4 @@ The list started from [LuisaE/opportunities](https://github.com/LuisaE/opportuni
 
 ---
 
-<sub>This board updates itself daily. The repo also runs AFG's Discord bots: [jobs bot setup](DEPLOY.md) · [news bot](news-bot/README.md).</sub>
+<sub>This board updates itself daily. The repo also runs AFG's Discord bots: [jobs bot setup](DEPLOY.md) · [news bot](news-bot/README.md) · [opportunities bot](opportunities/BOT.md).</sub>

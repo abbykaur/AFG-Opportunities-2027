@@ -98,7 +98,8 @@ def render(programs: list[dict], now: datetime) -> str:
         "---",
         "",
         "<sub>This board updates itself daily. The repo also runs AFG's Discord bots: "
-        "[jobs bot setup](DEPLOY.md) · [news bot](news-bot/README.md).</sub>",
+        "[jobs bot setup](DEPLOY.md) · [news bot](news-bot/README.md) · "
+        "[opportunities bot](opportunities/BOT.md).</sub>",
         "",
     ]
     return "\n".join(out)
