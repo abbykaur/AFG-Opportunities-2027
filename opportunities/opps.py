@@ -231,6 +231,11 @@ def draft_embed(d: dict, status: str = "pending", by: str | None = None) -> disc
     embed.add_field(name="Usually due", value=when(d))
     if d.get("open_url"):
         embed.add_field(name="Open now", value=f"[Listed on SimplifyJobs]({d['open_url']})", inline=False)
+    else:
+        # The board's months are rough (from community lists), so a pick that
+        # isn't confirmed open may be closed or not open yet.
+        embed.add_field(name="⚠️ Not confirmed open",
+                        value=f"Usual timing only. Check [the page]({d['url']}) before {APPROVE}.", inline=False)
     if d.get("new"):
         embed.add_field(name="New", value="Not on the board yet; approving adds it.", inline=False)
     if d.get("women"):
