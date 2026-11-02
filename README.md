@@ -12,11 +12,8 @@ Fellowships, insight programs, and early-career programs for students in tech, c
 |---|---|---|---|
 | [Citadel Launch](https://www.citadel.com/careers/programs-and-events/) | All students | Underclassmen program | ~Nov |
 | [City Early ID](http://careers.citi.com/Careers/index/#/universityprogram) | All students | Insight / exploratory | ~Nov |
-| [Goldman Sachs Diversity Programs](https://www.goldmansachs.com/careers/students/programs/) 💜 | Freshman, Sophomore, Junior | Insight / exploratory | ~Nov |
 | [Google CS Research Mentorship Program](https://research.google/outreach/csrmp/) | All students | Research program | ~Nov |
-| [HRT Women in Trading Technology](https://www.hudsonrivertrading.com/student-opportunities/) 💜 | Freshman, Sophomore | Insight / exploratory | ~Nov |
 | [SPARX Internship - ABK](https://careers.blizzard.com/global/en/earlycareers) | All students | Underclassmen program | ~Nov |
-| [Uber Career Prep Fellowship](https://www.hiddengeniusproject.org/ubercareerprep/) | Freshman, Sophomore | Mentorship | ~Nov |
 | [Blackstone Future Women Leaders](https://www.blackstone.com/careers/diversity-inclusion) 💜 | Sophomore | Insight / exploratory | ~Dec |
 | [Brown + Google exploreCSR](http://explorecsr.cs.brown.edu/?fbclid=IwAR0wxlRlNNpk7vKRy0-fYEs7qFQ3Ogp0GCCiIbVhJW1M24ZH4UnIsLVkyag) | All students | Research program | ~Dec |
 | [D.E. Shaw Research Undergraduate Fellowship](https://www.deshawresearch.com/stemfellowship/) | Freshman, Sophomore | Research program | ~Dec |
@@ -92,8 +89,6 @@ Fellowships, insight programs, and early-career programs for students in tech, c
 | Program | For | When |
 |---|---|---|
 | [City Early ID](http://careers.citi.com/Careers/index/#/universityprogram) | All students | ~Nov |
-| [Goldman Sachs Diversity Programs](https://www.goldmansachs.com/careers/students/programs/) 💜 | Freshman, Sophomore, Junior | ~Nov |
-| [HRT Women in Trading Technology](https://www.hudsonrivertrading.com/student-opportunities/) 💜 | Freshman, Sophomore | ~Nov |
 | [Blackstone Future Women Leaders](https://www.blackstone.com/careers/diversity-inclusion) 💜 | Sophomore | ~Dec |
 | [Discover Citadel](https://www.citadel.com/careers/programs-and-events/discover-citadel/) | Freshman, Sophomore | ~Dec |
 | [Barclays Sophomore Springboard](https://joinus.barclays/americas/diversity-programs-career/sophomore-springboard-diversity-program/) | Sophomore | ~Jan |
@@ -107,6 +102,7 @@ Fellowships, insight programs, and early-career programs for students in tech, c
 | [Blackrock Find Your Future Forum - Tech](https://blackrock.tal.net/vx/mobile-1/brand-3/candidate/so/pm/1/pl/2/opp/3806-2020-Find-Your-Future-Forum/en-GB) | Sophomore | ~Feb |
 | [Freshman Diversity Leadership Academy - McKinsey](https://www.mckinsey.com/careers/students/freshman-diversity-leadership-academy/overview) | Freshman | ~Feb |
 | [Bridge to consulting](https://www.bcg.com/en-us/careers/working-at-bcg/bridge-to-consulting.aspx) | Freshman, Sophomore | ~Mar |
+| [Goldman Sachs Diversity Programs](https://www.goldmansachs.com/careers/students/programs/) 💜 | Freshman, Sophomore, Junior | ~Mar |
 | [Ignite with Tech](https://bankcampuscareers.tal.net/vx/mobile-0/brand-4/candidate/so/pm/1/pl/1/opp/2067-Ignite-with-Tech/en-GB?fbclid=IwAR2lPQ8W7_graetvLg1dvaryK3wdtx3oYmGwvPMfwHPx3ORDAVuYShGuVfw) | Freshman, Sophomore | ~Mar |
 | [Morgan Stanley Technology Early Insight](https://morganstanley.tal.net/vx/lang-en-GB/mobile-0/brand-2/candidate/so/pm/1/pl/2/opp/9425-2020-Spring-Technology-Early-Insights-Day/en-GB) | All students | ~Mar |
 | [Accenture Student Empowerment Program](https://www.accenture.com/us-en/careers/local/accenture-student-empowerment-program) | Freshman, Sophomore | ~Apr |
@@ -117,6 +113,7 @@ Fellowships, insight programs, and early-career programs for students in tech, c
 | [P&G Emerging Leaders Information Technology](https://www.pgcareers.com/job/cincinnati/information-technology-emerging-leaders-2022-internship-sophomore/936/17085179) | Sophomore | ~Sep |
 | [Palantir Launch: Spring Program](https://www.palantir.com/careers/students/launch/) | All students | ~Sep |
 | [Technology Inside Track Series Diversity Program](https://joinus.barclays/americas/diversity-programs-career/technology-inside-track-series-diversity-program/) | Junior | ~Sep |
+| [HRT Women in Trading Technology](https://www.hudsonrivertrading.com/student-opportunities/) 💜 | Freshman, Sophomore | ~Oct |
 | [Bloomberg First Year Insights](https://www.bloomberg.com/company/career/first-year-insights/) | Freshman | Check site |
 | [Building Entrepreneurial Leaders Program](https://www.bain.com/careers/bel/) | All students | Check site |
 | [Capital One’s Tech Summit](https://www.capitalonecareers.com/get-ahead-with-early-career-programs-for-students) | All students | Check site |
@@ -168,7 +165,7 @@ Fellowships, insight programs, and early-career programs for students in tech, c
 
 | Program | For | When |
 |---|---|---|
-| [Uber Career Prep Fellowship](https://www.hiddengeniusproject.org/ubercareerprep/) | Freshman, Sophomore | ~Nov |
+| [Uber Career Prep Fellowship](https://www.hiddengeniusproject.org/ubercareerprep/) | Freshman, Sophomore | ~Sep |
 | [Management Leadership for Tomorrow Career Prep SWE Track](https://mlt.org/career-prep/) | Sophomore | ~Oct |
 
 ## Suggest a program

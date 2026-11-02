@@ -454,7 +454,7 @@
     "url": "https://www.goldmansachs.com/careers/students/programs/",
     "type": "Insight / exploratory",
     "who": "Freshman, Sophomore, Junior",
-    "deadline_month": 11,
+    "deadline_month": 3,
     "women": true,
     "source": "LuisaE/opportunities"
   },
@@ -463,7 +463,7 @@
     "url": "https://www.hudsonrivertrading.com/student-opportunities/",
     "type": "Insight / exploratory",
     "who": "Freshman, Sophomore",
-    "deadline_month": 11,
+    "deadline_month": 10,
     "women": true,
     "source": "LuisaE/opportunities"
   },
@@ -643,7 +643,7 @@
     "url": "https://www.hiddengeniusproject.org/ubercareerprep/",
     "type": "Mentorship",
     "who": "Freshman, Sophomore",
-    "deadline_month": 11,
+    "deadline_month": 9,
     "women": false,
     "source": "LuisaE/opportunities"
   },
