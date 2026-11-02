@@ -1270,11 +1270,13 @@
     "deadline_month": 9,
     "women": null,
     "source": "LuisaE/opportunities",
-    "status": "unconfirmed",
+    "status": "open",
     "deadline": null,
-    "checked": null,
+    "checked": "2026-11-02",
     "added": "2026-11-01",
-    "match": "First Play"
+    "match": "First Play",
+    "apply_url": "https://jobs.smartrecruiters.com/LinkedIn3/744000158394370",
+    "via": "postings"
   },
   {
     "name": "Meta University",
@@ -1298,11 +1300,13 @@
     "deadline_month": null,
     "women": null,
     "source": "LuisaE/opportunities",
-    "status": "unconfirmed",
+    "status": "open",
     "deadline": null,
-    "checked": null,
+    "checked": "2026-11-02",
     "added": "2026-11-01",
-    "match": "Explore"
+    "match": "Explore",
+    "apply_url": "https://apply.careers.microsoft.com/careers/job/1970393556925823",
+    "via": "postings"
   },
   {
     "name": "Microsoft New Technologists",

@@ -1,0 +1,106 @@
+{
+  "drafts": {
+    "1566852730167762985": {
+      "name": "Rewriting the Code",
+      "url": "https://rewritingthecode.org/",
+      "type": "Mentorship",
+      "who": "All students",
+      "deadline_month": null,
+      "women": "focused",
+      "source": "AFG research",
+      "status": "open",
+      "deadline": null,
+      "checked": "2026-11-01",
+      "apply_url": null,
+      "via": "checked",
+      "new": null,
+      "created": "2026-11-02T16:33:21.458262+00:00"
+    },
+    "1566852735716954144": {
+      "name": "LinkedIn First Play",
+      "url": "https://careers.linkedin.com/pathways-programs/internships/Technical/first-play",
+      "type": "Underclassmen program",
+      "who": "Sophomore",
+      "deadline_month": 9,
+      "women": null,
+      "source": "LuisaE/opportunities",
+      "status": "open",
+      "deadline": null,
+      "checked": "2026-11-02",
+      "apply_url": "https://jobs.smartrecruiters.com/LinkedIn3/744000158394370",
+      "via": "postings",
+      "new": null,
+      "created": "2026-11-02T16:33:22.763289+00:00"
+    },
+    "1566852741119348890": {
+      "name": "Microsoft Explore",
+      "url": "https://careers.microsoft.com/students/us/en/usexploremicrosoftprogram",
+      "type": "Underclassmen program",
+      "who": "Freshman, Sophomore",
+      "deadline_month": null,
+      "women": null,
+      "source": "LuisaE/opportunities",
+      "status": "open",
+      "deadline": null,
+      "checked": "2026-11-02",
+      "apply_url": "https://apply.careers.microsoft.com/careers/job/1970393556925823",
+      "via": "postings",
+      "new": null,
+      "created": "2026-11-02T16:33:24.085508+00:00"
+    },
+    "1566852746949427341": {
+      "name": "City Early ID",
+      "url": "http://careers.citi.com/Careers/index/#/universityprogram",
+      "type": "Insight / exploratory",
+      "who": "All students",
+      "deadline_month": 11,
+      "women": null,
+      "source": "LuisaE/opportunities",
+      "status": "unconfirmed",
+      "deadline": null,
+      "checked": null,
+      "apply_url": null,
+      "via": null,
+      "new": null,
+      "created": "2026-11-02T16:33:25.433803+00:00"
+    }
+  },
+  "drafted": {
+    "rewritingthecode": "2026-11-02T16:33:21.458262+00:00",
+    "linkedinfirstplay": "2026-11-02T16:33:22.763289+00:00",
+    "microsoftexplore": "2026-11-02T16:33:24.085508+00:00",
+    "cityearlyid": "2026-11-02T16:33:25.433803+00:00"
+  },
+  "last_message_id": 0,
+  "drafted_week": "2026-W45",
+  "board_message_id": 1566852791069179918,
+  "board_day": "2026-11-02",
+  "checks": {
+    "1566852752481460285": {
+      "name": "Citadel Launch",
+      "url": "https://www.citadel.com/careers/programs-and-events/",
+      "created": "2026-11-02T16:33:28.423721+00:00"
+    },
+    "1566852759448322149": {
+      "name": "Google CS Research Mentorship Program",
+      "url": "https://research.google/outreach/csrmp/",
+      "created": "2026-11-02T16:33:30.441785+00:00"
+    },
+    "1566852767782539388": {
+      "name": "SPARX Internship - ABK",
+      "url": "https://careers.blizzard.com/global/en/earlycareers",
+      "created": "2026-11-02T16:33:32.435602+00:00"
+    },
+    "1566852776011636943": {
+      "name": "Blackstone Future Women Leaders",
+      "url": "https://www.blackstone.com/careers/diversity-inclusion",
+      "created": "2026-11-02T16:33:34.118774+00:00"
+    },
+    "1566852783385215018": {
+      "name": "Brown + Google exploreCSR",
+      "url": "http://explorecsr.cs.brown.edu/?fbclid=IwAR0wxlRlNNpk7vKRy0-fYEs7qFQ3Ogp0GCCiIbVhJW1M24ZH4UnIsLVkyag",
+      "created": "2026-11-02T16:33:35.990778+00:00"
+    }
+  },
+  "history": []
+}

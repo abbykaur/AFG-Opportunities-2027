@@ -4,7 +4,7 @@
 
 ### Fellowships, freshman & sophomore programs, and scholarships for women in tech & AI
 
-[![Stars](https://img.shields.io/github/stars/abbykaur/AFG-Opportunities-2027?style=flat&label=Stars&color=8b5cf6)](https://github.com/abbykaur/AFG-Opportunities-2027/stargazers) [![Updated](https://img.shields.io/github/last-commit/abbykaur/AFG-Opportunities-2027?label=Updated&color=22c55e)](https://github.com/abbykaur/AFG-Opportunities-2027/commits) [![Open now](https://img.shields.io/badge/Open_now-2-22c55e)](#-open-now) [![For women](https://img.shields.io/badge/For_women-21-a855f7)](#-for-women) [![Discord](https://img.shields.io/badge/Discord-AI_First_Girls-5865F2?logo=discord&logoColor=white)](https://discord.gg/6BBkjMJURt)
+[![Stars](https://img.shields.io/github/stars/abbykaur/AFG-Opportunities-2027?style=flat&label=Stars&color=8b5cf6)](https://github.com/abbykaur/AFG-Opportunities-2027/stargazers) [![Updated](https://img.shields.io/github/last-commit/abbykaur/AFG-Opportunities-2027?label=Updated&color=22c55e)](https://github.com/abbykaur/AFG-Opportunities-2027/commits) [![Open now](https://img.shields.io/badge/Open_now-4-22c55e)](#-open-now) [![For women](https://img.shields.io/badge/For_women-21-a855f7)](#-for-women) [![Discord](https://img.shields.io/badge/Discord-AI_First_Girls-5865F2?logo=discord&logoColor=white)](https://discord.gg/6BBkjMJURt)
 
 </div>
 
@@ -15,7 +15,7 @@
 
 **Contribute in 60 seconds:** [➕ Suggest a program](../../issues/new?template=suggest-program.yml) · [🔁 Report one that's open, closed, or wrong](../../issues/new?template=report-program.yml) · or post it in **#opportunities** on [Discord](https://discord.gg/6BBkjMJURt).
 
-**2 open now** · **21 for women** · 13 checked in the last 30 days · updated November 2026
+**4 open now** · **21 for women** · 15 checked in the last 30 days · updated November 2026
 
 ---
 
@@ -23,7 +23,7 @@
 
 💜 **[For women](#-for-women)** (21)
 
-🎓 **[Underclassmen programs](#-underclassmen-programs)** (26 · ✅ 1 open)
+🎓 **[Underclassmen programs](#-underclassmen-programs)** (26 · ✅ 3 open)
 
 🌱 **[Fellowships](#-fellowships)** (29)
 
@@ -54,6 +54,8 @@
 
 | Program | For | Type | Apply | Deadline |
 |---|---|---|---|---|
+| [LinkedIn First Play](https://careers.linkedin.com/pathways-programs/internships/Technical/first-play) | Sophomore | Underclassmen program | ✅ [Apply](https://jobs.smartrecruiters.com/LinkedIn3/744000158394370) | ~Sep |
+| [Microsoft Explore](https://careers.microsoft.com/students/us/en/usexploremicrosoftprogram) | Freshman, Sophomore | Underclassmen program | ✅ [Apply](https://apply.careers.microsoft.com/careers/job/1970393556925823) | — |
 | [Rewriting the Code](https://rewritingthecode.org/) 🆕 | 💗 Women-focused · All students | Mentorship | ✅ Open | — |
 | [Visa Sophomore Internship Program](https://www.visa.com/careers/) | Sophomore | Underclassmen program | ✅ [Apply](https://visa.wd5.myworkdayjobs.com/Visa_Early_Careers/job/US---Ashburn-VA/XMLNAME-2027-Sophomore-Internship-Program---Software-Engineer-Intern--Ashburn_REF089878W) | — |
 
@@ -108,6 +110,8 @@ These usually open or close around now. Unless marked ⏳, nobody has confirmed 
 
 | Program | For | Status | Deadline | Checked |
 |---|---|---|---|---|
+| [LinkedIn First Play](https://careers.linkedin.com/pathways-programs/internships/Technical/first-play) | Sophomore | ✅ [Apply](https://jobs.smartrecruiters.com/LinkedIn3/744000158394370) | ~Sep | Nov 2 |
+| [Microsoft Explore](https://careers.microsoft.com/students/us/en/usexploremicrosoftprogram) | Freshman, Sophomore | ✅ [Apply](https://apply.careers.microsoft.com/careers/job/1970393556925823) | — | Nov 2 |
 | [Visa Sophomore Internship Program](https://www.visa.com/careers/) | Sophomore | ✅ [Apply](https://visa.wd5.myworkdayjobs.com/Visa_Early_Careers/job/US---Ashburn-VA/XMLNAME-2027-Sophomore-Internship-Program---Software-Engineer-Intern--Ashburn_REF089878W) | — | Nov 1 |
 | [Citadel Launch](https://www.citadel.com/careers/programs-and-events/) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Citadel%20Launch) | ~Nov | — |
 | [SPARX Internship - ABK](https://careers.blizzard.com/global/en/earlycareers) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=SPARX%20Internship%20-%20ABK) | ~Nov | — |
@@ -119,7 +123,6 @@ These usually open or close around now. Unless marked ⏳, nobody has confirmed 
 | [Capital One’s Early Internship Program](https://www.capitalonecareers.com/early-internships-program) | Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Capital%20One%E2%80%99s%20Early%20Internship%20Program) | ~Sep | — |
 | [EA Pathfinder](https://www.ea.com/en-ca/careers/early-careers) | Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=EA%20Pathfinder) | ~Sep | — |
 | [JPMorganChase Fellowship Program](https://www.jpmorganchase.com/careers/explore-opportunities/programs/jpmcfellowship) | Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=JPMorganChase%20Fellowship%20Program) | ~Sep | — |
-| [LinkedIn First Play](https://careers.linkedin.com/pathways-programs/internships/Technical/first-play) | Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=LinkedIn%20First%20Play) | ~Sep | — |
 | [Oracle First Year SWE internships](https://www.oracle.com/careers/students-grads/internships/) | Freshman | ❓ [Update](../../issues/new?template=report-program.yml&name=Oracle%20First%20Year%20SWE%20internships) | ~Sep | — |
 | [Palantir path](https://www.palantir.com/careers/students-and-early-talent) | Sophomore, Junior | ❓ [Update](../../issues/new?template=report-program.yml&name=Palantir%20path) | ~Sep | — |
 | [Zillow Engineering and Leadership Program - ZEAL](https://www.zillow.com/careers/internships/) | Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Zillow%20Engineering%20and%20Leadership%20Program%20-%20ZEAL) | ~Sep | — |
@@ -132,7 +135,6 @@ These usually open or close around now. Unless marked ⏳, nobody has confirmed 
 | [Break Through Tech Sprinternship](https://www.breakthroughtech.org/programs/) 🆕 | 💗 Women-focused · Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Break%20Through%20Tech%20Sprinternship) | — | — |
 | [Google STEP Internship](https://buildyourfuture.withgoogle.com/programs/step) 🆕 | Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Google%20STEP%20Internship) | — | — |
 | [Jane Street Immersion Program (JSIP)](https://www.janestreet.com/join-jane-street/programs-and-events/jsip/) | Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Jane%20Street%20Immersion%20Program%20%28JSIP%29) | — | — |
-| [Microsoft Explore](https://careers.microsoft.com/students/us/en/usexploremicrosoftprogram) | Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Microsoft%20Explore) | — | — |
 | [NASA](https://intern.nasa.gov/) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=NASA) | — | — |
 
 ## 🌱 Fellowships
