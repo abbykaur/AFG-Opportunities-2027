@@ -10,7 +10,15 @@
     "https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers": "2026-10-31T08:04:59.250345+00:00",
     "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/": "2026-10-31T17:06:06.979450+00:00",
     "https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code": "2026-10-31T17:06:08.351742+00:00",
-    "https://www.technologyreview.com/2026/10/28/1147709/creating-ai-value-with-enterprise-context/": "2026-10-31T17:06:09.540214+00:00"
+    "https://www.technologyreview.com/2026/10/28/1147709/creating-ai-value-with-enterprise-context/": "2026-10-31T17:06:09.540214+00:00",
+    "https://techcrunch.com/2026/11/02/omen-ai-adds-liquid-know-how-in-16-million-aquatic-labs-acquisition/": "2026-11-02T15:48:36.808746+00:00",
+    "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out": "2026-11-02T15:48:38.146926+00:00",
+    "https://www.technologyreview.com/2026/11/02/1147702/stop-counting-tokens-start-counting-what-ships/": "2026-11-02T15:48:39.058372+00:00",
+    "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/": "2026-11-02T15:48:40.180237+00:00",
+    "https://openai.com/index/grid-protectors-program": "2026-11-02T15:48:41.319437+00:00",
+    "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/": "2026-11-02T15:48:42.376994+00:00",
+    "https://www.youtube.com/watch?v=CWdTBLsbaQs": "2026-11-02T15:48:43.456999+00:00",
+    "https://www.youtube.com/watch?v=sFfPkUJd_Jk": "2026-11-02T15:48:44.585577+00:00"
   },
   "drafts": {
     "1566136198689456173": {
@@ -39,10 +47,78 @@
       "tag": "Tools",
       "created": "2026-10-31T17:06:09.540214+00:00",
       "requested": "more: feeds"
+    },
+    "1566841469904625855": {
+      "title": "Omen AI adds liquid know-how in $16 million Aquatic Labs acquisition",
+      "blurb": "Two startups tackling the data center water problem are joining forces in a $16 million deal.",
+      "url": "https://techcrunch.com/2026/11/02/omen-ai-adds-liquid-know-how-in-16-million-aquatic-labs-acquisition/",
+      "source": "TechCrunch",
+      "tag": "Startups & Funding",
+      "created": "2026-11-02T15:48:36.808746+00:00"
+    },
+    "1566841475302424827": {
+      "title": "The biggest names in AI are backing a new way to opt out of scraping",
+      "blurb": "OpenAI, Google, Microsoft, and Anthropic say they will adopt a new standard that publishers can use to opt out of being scraped by AI, as reported earlier by Search Engine Roundtable. With this control, publishers can apply their AI training preferences across multiple AI companies, instead of…",
+      "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+      "source": "The Verge",
+      "tag": "Policy & Safety",
+      "created": "2026-11-02T15:48:38.146926+00:00"
+    },
+    "1566841479266312286": {
+      "title": "Stop counting tokens, start counting what ships",
+      "blurb": "When a developer gives an AI agent a coding task, the agent does more than answer once. It plans, generates code, runs tests, and repeats the process to correct errors. A single task can use 10 to 50 times more tokens than a basic chat prompt. The more useful the agent becomes, the more calls…",
+      "url": "https://www.technologyreview.com/2026/11/02/1147702/stop-counting-tokens-start-counting-what-ships/",
+      "source": "MIT Technology Review",
+      "tag": "Tools",
+      "created": "2026-11-02T15:48:39.058372+00:00"
+    },
+    "1566841483989098630": {
+      "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+      "blurb": "It's still unknown how attackers got access to Anthropic's verified Cursor account.",
+      "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/",
+      "source": "Ars Technica",
+      "tag": "Tools",
+      "created": "2026-11-02T15:48:40.180237+00:00"
+    },
+    "1566841488602702028": {
+      "title": "Introducing the Grid Protectors Program",
+      "blurb": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
+      "url": "https://openai.com/index/grid-protectors-program",
+      "source": "OpenAI",
+      "tag": null,
+      "created": "2026-11-02T15:48:41.319437+00:00"
+    },
+    "1566841493090607318": {
+      "title": "Speeding up planning decisions with AI",
+      "blurb": "Google DeepMind and UK government work together to reduce planning assessment times",
+      "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
+      "source": "Google DeepMind",
+      "tag": "Policy & Safety",
+      "created": "2026-11-02T15:48:42.376994+00:00"
+    },
+    "1566841497909993595": {
+      "title": "OpenAI Claims It Just Did The Impossible",
+      "blurb": "",
+      "url": "https://www.youtube.com/watch?v=CWdTBLsbaQs",
+      "source": "Two Minute Papers",
+      "tag": null,
+      "kind": "video",
+      "category": "Paper breakdowns",
+      "created": "2026-11-02T15:48:43.456999+00:00"
+    },
+    "1566841502485844080": {
+      "title": "Genie 4: A new generation of world simulation",
+      "blurb": "Meet Genie 4, Google DeepMind’s most realistic and interactive world model yet. Built on our Gemini models, Genie 4 lets you step inside dynamic worlds in real time, steer scenes on the fly with natural language, and watch what happens next: how the world responds, how it sounds, and how the people…",
+      "url": "https://www.youtube.com/watch?v=sFfPkUJd_Jk",
+      "source": "Google DeepMind",
+      "tag": "Models & Releases",
+      "kind": "video",
+      "category": "Official labs",
+      "created": "2026-11-02T15:48:44.585577+00:00"
     }
   },
   "last_message_id": 1566207745802371097,
-  "drafted_week": "2026-W44",
+  "drafted_week": "2026-W45",
   "roundup_week": "2026-W44",
   "history": []
 }
