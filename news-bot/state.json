@@ -27,7 +27,7 @@
       "blurb": "Mark Zuckerberg's Meta made AI look so stinking cute by giving it a squishy little face - and this holiday season, he wants to sell you a Muse Charm so you can carry your jolly AI helper around like a Tamagotchi. But I won't be buying one, because we have Muse Charm at home. It […]",
       "url": "https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code",
       "source": "The Verge",
-      "tag": null,
+      "tag": "Tools",
       "created": "2026-10-31T17:06:08.351742+00:00",
       "requested": "more: feeds"
     },
@@ -41,7 +41,8 @@
       "requested": "more: feeds"
     }
   },
-  "last_message_id": 1566007771911028858,
+  "last_message_id": 1566207745802371097,
   "drafted_week": "2026-W44",
-  "roundup_week": "2026-W44"
+  "roundup_week": "2026-W44",
+  "history": []
 }
