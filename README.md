@@ -4,7 +4,7 @@
 
 ### Fellowships, freshman & sophomore programs, and scholarships for women in tech & AI
 
-[![Stars](https://img.shields.io/github/stars/abbykaur/AFG-Opportunities-2027?style=flat&label=Stars&color=8b5cf6)](https://github.com/abbykaur/AFG-Opportunities-2027/stargazers) [![Updated](https://img.shields.io/github/last-commit/abbykaur/AFG-Opportunities-2027?label=Updated&color=22c55e)](https://github.com/abbykaur/AFG-Opportunities-2027/commits) [![Open now](https://img.shields.io/badge/Open_now-1-22c55e)](#-open-now) [![For women](https://img.shields.io/badge/For_women-8-a855f7)](#-for-women) [![Discord](https://img.shields.io/badge/Discord-AI_First_Girls-5865F2?logo=discord&logoColor=white)](https://discord.gg/6BBkjMJURt)
+[![Stars](https://img.shields.io/github/stars/abbykaur/AFG-Opportunities-2027?style=flat&label=Stars&color=8b5cf6)](https://github.com/abbykaur/AFG-Opportunities-2027/stargazers) [![Updated](https://img.shields.io/github/last-commit/abbykaur/AFG-Opportunities-2027?label=Updated&color=22c55e)](https://github.com/abbykaur/AFG-Opportunities-2027/commits) [![Open now](https://img.shields.io/badge/Open_now-2-22c55e)](#-open-now) [![For women](https://img.shields.io/badge/For_women-21-a855f7)](#-for-women) [![Discord](https://img.shields.io/badge/Discord-AI_First_Girls-5865F2?logo=discord&logoColor=white)](https://discord.gg/6BBkjMJURt)
 
 </div>
 
@@ -15,27 +15,27 @@
 
 **Contribute in 60 seconds:** [➕ Suggest a program](../../issues/new?template=suggest-program.yml) · [🔁 Report one that's open, closed, or wrong](../../issues/new?template=report-program.yml) · or post it in **#opportunities** on [Discord](https://discord.gg/6BBkjMJURt).
 
-**1 open now** · **8 for women** · 4 checked in the last 30 days · updated November 2026
+**2 open now** · **21 for women** · 13 checked in the last 30 days · updated November 2026
 
 ---
 
-### Browse 106 programs
+### Browse 118 programs
 
-💜 **[For women](#-for-women)** (8)
+💜 **[For women](#-for-women)** (21)
 
-🎓 **[Underclassmen programs](#-underclassmen-programs)** (24 · ✅ 1 open)
+🎓 **[Underclassmen programs](#-underclassmen-programs)** (26 · ✅ 1 open)
 
-🌱 **[Fellowships](#-fellowships)** (27)
+🌱 **[Fellowships](#-fellowships)** (29)
 
-🔍 **[Insight & exploratory programs](#-insight--exploratory-programs)** (35)
+🔍 **[Insight & exploratory programs](#-insight--exploratory-programs)** (34)
 
-💰 **[Scholarships](#-scholarships)** (4)
+💰 **[Scholarships](#-scholarships)** (10)
 
 🎤 **[Conference scholarships](#-conference-scholarships)** (5)
 
 🔬 **[Research programs](#-research-programs)** (9)
 
-🤝 **[Mentorship](#-mentorship)** (2)
+🤝 **[Mentorship](#-mentorship)** (5 · ✅ 1 open)
 
 ---
 
@@ -46,7 +46,7 @@
 - 💜 Women only (or women and gender minorities) · 💗 Women-focused: open to everyone, built to support women
 - 🆕 Added in the last 2 weeks · **Bold dates** are confirmed deadlines; `~Nov` means it usually opens or closes around then
 
-> 🔒 Programs that are closed until their next cycle are in **[CLOSED.md](CLOSED.md)** (3).
+> 🔒 Programs that are closed until their next cycle are in **[CLOSED.md](CLOSED.md)** (8).
 
 ---
 
@@ -54,6 +54,7 @@
 
 | Program | For | Type | Apply | Deadline |
 |---|---|---|---|---|
+| [Rewriting the Code](https://rewritingthecode.org/) 🆕 | 💗 Women-focused · All students | Mentorship | ✅ Open | — |
 | [Visa Sophomore Internship Program](https://www.visa.com/careers/) | Sophomore | Underclassmen program | ✅ [Apply](https://visa.wd5.myworkdayjobs.com/Visa_Early_Careers/job/US---Ashburn-VA/XMLNAME-2027-Sophomore-Internship-Program---Software-Engineer-Intern--Ashburn_REF089878W) | — |
 
 ## 💜 For women
@@ -62,14 +63,27 @@ Programs made for women. Everything else on this board is open to women too.
 
 | Program | For | Type | Status | Deadline |
 |---|---|---|---|---|
+| [Rewriting the Code](https://rewritingthecode.org/) 🆕 | 💗 Women-focused · All students | Mentorship | ✅ Open | — |
+| [SWE Scholarships (current undergraduates)](https://swe.org/scholarships-overview/) 🆕 | 💗 Women-focused · Sophomore, Junior | Scholarship | ⏳ Not open yet | **Feb 1** |
+| [SWE Emerging First Year Scholarships](https://swe.org/scholarships-overview/#emerging-first-year) 🆕 | 💗 Women-focused · Freshman | Scholarship | ⏳ Not open yet | **Mar 31** |
+| [BHW Women in STEM Scholarship](https://thebhwgroup.com/scholarship) 🆕 | 💜 Women only · All students | Scholarship | ⏳ Not open yet | **Apr 30** |
 | [Blackstone Future Women Leaders](https://www.blackstone.com/careers/diversity-inclusion) | 💜 Women only · Sophomore | Insight / exploratory | ❓ [Update](../../issues/new?template=report-program.yml&name=Blackstone%20Future%20Women%20Leaders) | ~Dec |
 | [Blackstone Future Women Innovators Program](https://www.blackstone.com/careers/diversity-inclusion) | 💜 Women only · All students | Insight / exploratory | ❓ [Update](../../issues/new?template=report-program.yml&name=Blackstone%20Future%20Women%20Innovators%20Program) | ~Jan |
 | [Jefferies Inspiring Women in Finance](https://jefferies.tal.net/vx/mobile-0/appcentre-ext/brand-4/candidate/so/pm/1/pl/2/opp/66-Inspiring-Women-for-Finance-Symposium/en-GB) | 💜 Women only · Sophomore | Insight / exploratory | ❓ [Update](../../issues/new?template=report-program.yml&name=Jefferies%20Inspiring%20Women%20in%20Finance) | ~Jan |
+| [Zonta Women in STEM Award](https://www.zonta.org/Web/Programs/Education/Zonta_Women_in_STEM_Award.aspx) 🆕 | 💜 Women only · Sophomore, Junior | Scholarship | ❓ [Update](../../issues/new?template=report-program.yml&name=Zonta%20Women%20in%20STEM%20Award) | ~Feb |
 | [Break Through Tech AI Immersion Program](https://ecornell.cornell.edu/portal/break-through-tech-ai-information/) | 💗 Women-focused · All students | Fellowship | ❓ [Update](../../issues/new?template=report-program.yml&name=Break%20Through%20Tech%20AI%20Immersion%20Program) | ~Mar |
-| [Grace Hopper Scholarship](https://ghc.anitab.org) | 💜 Women only · All students | Conference scholarship | ❓ [Update](../../issues/new?template=report-program.yml&name=Grace%20Hopper%20Scholarship) | ~Mar |
 | [Palantir Women in Tech Scholarship](https://www.palantir.com/students/scholarship/wit-north-america/) | 💜 Women only · All students | Scholarship | ❓ [Update](../../issues/new?template=report-program.yml&name=Palantir%20Women%20in%20Tech%20Scholarship) | ~Mar |
+| [WiCV Travel Grants (Women in Computer Vision at CVPR)](https://sites.google.com/view/wicv-cvpr-2026/) 🆕 | 💜 Women only · All students | Conference scholarship | ❓ [Update](../../issues/new?template=report-program.yml&name=WiCV%20Travel%20Grants%20%28Women%20in%20Computer%20Vision%20at%20CVPR%29) | ~Mar |
 | [Google Conference Scholarships](https://buildyourfuture.withgoogle.com/scholarships/google-conference-scholarships) | 💗 Women-focused · All students | Conference scholarship | ❓ [Update](../../issues/new?template=report-program.yml&name=Google%20Conference%20Scholarships) | ~Jun |
+| [VIP Women in Technology Scholarship (WITS)](https://trustvip.com/wits-program-faqs/) 🆕 | 💜 Women only · All students | Scholarship | ❓ [Update](../../issues/new?template=report-program.yml&name=VIP%20Women%20in%20Technology%20Scholarship%20%28WITS%29) | ~Jun |
 | [Jane Street Insight](https://www.janestreet.com/join-jane-street/programs-and-events/insight/) | 💜 Women only · All students | Insight / exploratory | ❓ [Update](../../issues/new?template=report-program.yml&name=Jane%20Street%20Insight) | ~Jul |
+| [Baird Women in Banking Sophomore Internship](https://www.bairdcareers.com/internships/global-investment-banking-intern-program-us/) 🆕 | 💗 Women-focused · Sophomore | Underclassmen program | ❓ [Update](../../issues/new?template=report-program.yml&name=Baird%20Women%20in%20Banking%20Sophomore%20Internship) | ~Oct |
+| [AI4ALL Ignite](https://ai-4-all.org/ai4all-ignite/) 🆕 | 💗 Women-focused · All students | Fellowship | ❓ [Update](../../issues/new?template=report-program.yml&name=AI4ALL%20Ignite) | — |
+| [AnitaB.org Pass-It-On Awards](https://anitab.org/?p=1433) 🆕 | 💜 Women only · All students | Scholarship | ❓ [Update](../../issues/new?template=report-program.yml&name=AnitaB.org%20Pass-It-On%20Awards) | — |
+| [Break Through Tech Agentic AI Program](https://www.breakthroughtech.org/programs/#agentic-ai) 🆕 | 💗 Women-focused · All students | Fellowship | ❓ [Update](../../issues/new?template=report-program.yml&name=Break%20Through%20Tech%20Agentic%20AI%20Program) | — |
+| [Break Through Tech Sprinternship](https://www.breakthroughtech.org/programs/) 🆕 | 💗 Women-focused · Freshman, Sophomore | Underclassmen program | ❓ [Update](../../issues/new?template=report-program.yml&name=Break%20Through%20Tech%20Sprinternship) | — |
+| [Girls Who Code College Loops](https://girlswhocode.com/programs/college-and-career) 🆕 | 💜 Women only · All students | Mentorship | ❓ [Update](../../issues/new?template=report-program.yml&name=Girls%20Who%20Code%20College%20Loops) | — |
+| [WiML Mentorship (Women in Machine Learning)](https://www.wiml.org/) 🆕 | 💗 Women-focused · All students | Mentorship | ❓ [Update](../../issues/new?template=report-program.yml&name=WiML%20Mentorship%20%28Women%20in%20Machine%20Learning%29) | — |
 
 ## 🔥 Coming up (November – December)
 
@@ -109,11 +123,13 @@ These usually open or close around now. Unless marked ⏳, nobody has confirmed 
 | [Oracle First Year SWE internships](https://www.oracle.com/careers/students-grads/internships/) | Freshman | ❓ [Update](../../issues/new?template=report-program.yml&name=Oracle%20First%20Year%20SWE%20internships) | ~Sep | — |
 | [Palantir path](https://www.palantir.com/careers/students-and-early-talent) | Sophomore, Junior | ❓ [Update](../../issues/new?template=report-program.yml&name=Palantir%20path) | ~Sep | — |
 | [Zillow Engineering and Leadership Program - ZEAL](https://www.zillow.com/careers/internships/) | Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Zillow%20Engineering%20and%20Leadership%20Program%20-%20ZEAL) | ~Sep | — |
+| [Baird Women in Banking Sophomore Internship](https://www.bairdcareers.com/internships/global-investment-banking-intern-program-us/) 🆕 | 💗 Women-focused · Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Baird%20Women%20in%20Banking%20Sophomore%20Internship) | ~Oct | — |
 | [Duolingo Thrive Internship (SWE)](https://careers.duolingo.com/) | Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Duolingo%20Thrive%20Internship%20%28SWE%29) | ~Oct | — |
 | [Google ASDI - Associate Software Developer Intern](https://buildyourfuture.withgoogle.com/programs/step/) | Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Google%20ASDI%20-%20Associate%20Software%20Developer%20Intern) | ~Oct | — |
 | [Meta University](https://www.metacareers.com/careerprograms/students/) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Meta%20University) | ~Oct | — |
 | [Uber STAR](https://jobs.uber.com/en/teams/emerging-talent/) | Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Uber%20STAR) | ~Oct | — |
 | [Amazon Future Engineer](https://www.amazonfutureengineer.com/scholarships) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Amazon%20Future%20Engineer) | — | — |
+| [Break Through Tech Sprinternship](https://www.breakthroughtech.org/programs/) 🆕 | 💗 Women-focused · Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Break%20Through%20Tech%20Sprinternship) | — | — |
 | [Google STEP Internship](https://buildyourfuture.withgoogle.com/programs/step) 🆕 | Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Google%20STEP%20Internship) | — | — |
 | [Jane Street Immersion Program (JSIP)](https://www.janestreet.com/join-jane-street/programs-and-events/jsip/) | Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Jane%20Street%20Immersion%20Program%20%28JSIP%29) | — | — |
 | [Microsoft Explore](https://careers.microsoft.com/students/us/en/usexploremicrosoftprogram) | Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Microsoft%20Explore) | — | — |
@@ -132,7 +148,9 @@ These usually open or close around now. Unless marked ⏳, nobody has confirmed 
 | [Google Summer of Code](https://summerofcode.withgoogle.com) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Google%20Summer%20of%20Code) | ~Apr | — |
 | [Bessemer Fellowship Program](https://www.bvp.com/bessemer-fellows) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Bessemer%20Fellowship%20Program) | ~Jul | — |
 | [8VC Fellowship](https://www.8vc.com/fellowships) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=8VC%20Fellowship) | — | — |
+| [AI4ALL Ignite](https://ai-4-all.org/ai4all-ignite/) 🆕 | 💗 Women-focused · All students | ❓ [Update](../../issues/new?template=report-program.yml&name=AI4ALL%20Ignite) | — | — |
 | [Bellingcat Tech Fellow](https://www.bellingcat.com/become-a-bellingcat-tech-fellow-2/) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Bellingcat%20Tech%20Fellow) | — | — |
+| [Break Through Tech Agentic AI Program](https://www.breakthroughtech.org/programs/#agentic-ai) 🆕 | 💗 Women-focused · All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Break%20Through%20Tech%20Agentic%20AI%20Program) | — | — |
 | [Capital One First Gen Focus](https://capitalone.eightfold.ai/events/candidate?plannedEventId=E75Y3bk7) | Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Capital%20One%20First%20Gen%20Focus) | — | — |
 | [Code2040 Fellows](https://www.code2040.org/) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Code2040%20Fellows) | — | — |
 | [CodePath Summer Internship for Tech Excellence](https://support.codepath.org/hc/en-us/sections/10451374834203-Summer-Internship-For-Tech-Excellence-SITE-) | Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=CodePath%20Summer%20Internship%20for%20Tech%20Excellence) | — | — |
@@ -181,7 +199,6 @@ These usually open or close around now. Unless marked ⏳, nobody has confirmed 
 | [Bloomberg First Year Insights](https://www.bloomberg.com/company/career/first-year-insights/) | Freshman | ❓ [Update](../../issues/new?template=report-program.yml&name=Bloomberg%20First%20Year%20Insights) | — | — |
 | [Building Entrepreneurial Leaders Program](https://www.bain.com/careers/bel/) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Building%20Entrepreneurial%20Leaders%20Program) | — | — |
 | [Capital One’s Tech Summit](https://www.capitalonecareers.com/get-ahead-with-early-career-programs-for-students) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Capital%20One%E2%80%99s%20Tech%20Summit) | — | — |
-| [DE Shaw Fellowships](https://fellowships.deshaw.com) | Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=DE%20Shaw%20Fellowships) | — | — |
 | [Deloitte National Leadership Conference](https://www2.deloitte.com/us/en/pages/careers/articles/join-deloitte-deloitte-national-leadership-conference.html) | Sophomore, Junior | ❓ [Update](../../issues/new?template=report-program.yml&name=Deloitte%20National%20Leadership%20Conference) | — | — |
 | [Extern (formerly Paragon One)](https://extern.com/externships) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Extern%20%28formerly%20Paragon%20One%29) | — | — |
 | [Impact Labs Fellowship](https://www.impactlabs.io/fellowship) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Impact%20Labs%20Fellowship) | — | — |
@@ -195,18 +212,24 @@ These usually open or close around now. Unless marked ⏳, nobody has confirmed 
 
 | Program | For | Status | Deadline | Checked |
 |---|---|---|---|---|
+| [SWE Scholarships (current undergraduates)](https://swe.org/scholarships-overview/) 🆕 | 💗 Women-focused · Sophomore, Junior | ⏳ Not open yet | **Feb 1** | Nov 1 |
+| [SWE Emerging First Year Scholarships](https://swe.org/scholarships-overview/#emerging-first-year) 🆕 | 💗 Women-focused · Freshman | ⏳ Not open yet | **Mar 31** | Nov 1 |
+| [BHW Women in STEM Scholarship](https://thebhwgroup.com/scholarship) 🆕 | 💜 Women only · All students | ⏳ Not open yet | **Apr 30** | Nov 1 |
+| [Zonta Women in STEM Award](https://www.zonta.org/Web/Programs/Education/Zonta_Women_in_STEM_Award.aspx) 🆕 | 💜 Women only · Sophomore, Junior | ❓ [Update](../../issues/new?template=report-program.yml&name=Zonta%20Women%20in%20STEM%20Award) | ~Feb | — |
 | [Palantir Future Scholarship](https://www.palantir.com/students/scholarship/future/) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Palantir%20Future%20Scholarship) | ~Mar | — |
 | [Palantir Women in Tech Scholarship](https://www.palantir.com/students/scholarship/wit-north-america/) | 💜 Women only · All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Palantir%20Women%20in%20Tech%20Scholarship) | ~Mar | — |
 | [Quip Diversity Scholarship](https://quip.com/blog/2020-quip-diversity-scholarship) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Quip%20Diversity%20Scholarship) | ~Jun | — |
+| [VIP Women in Technology Scholarship (WITS)](https://trustvip.com/wits-program-faqs/) 🆕 | 💜 Women only · All students | ❓ [Update](../../issues/new?template=report-program.yml&name=VIP%20Women%20in%20Technology%20Scholarship%20%28WITS%29) | ~Jun | — |
 | [Generation Google Scholarship](https://buildyourfuture.withgoogle.com/scholarships/generation-google-scholarship/) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Generation%20Google%20Scholarship) | ~Sep | — |
+| [AnitaB.org Pass-It-On Awards](https://anitab.org/?p=1433) 🆕 | 💜 Women only · All students | ❓ [Update](../../issues/new?template=report-program.yml&name=AnitaB.org%20Pass-It-On%20Awards) | — | — |
 
 ## 🎤 Conference scholarships
 
 | Program | For | Status | Deadline | Checked |
 |---|---|---|---|---|
-| [Grace Hopper Scholarship](https://ghc.anitab.org) | 💜 Women only · All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Grace%20Hopper%20Scholarship) | ~Mar | — |
 | [SHPE National Convention](https://shpe.org/engage/events/national-convention/) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=SHPE%20National%20Convention) | ~Mar | — |
 | [Tapia Conference Scholarship](http://tapiaconference.org) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Tapia%20Conference%20Scholarship) | ~Mar | — |
+| [WiCV Travel Grants (Women in Computer Vision at CVPR)](https://sites.google.com/view/wicv-cvpr-2026/) 🆕 | 💜 Women only · All students | ❓ [Update](../../issues/new?template=report-program.yml&name=WiCV%20Travel%20Grants%20%28Women%20in%20Computer%20Vision%20at%20CVPR%29) | ~Mar | — |
 | [Google Conference Scholarships](https://buildyourfuture.withgoogle.com/scholarships/google-conference-scholarships) | 💗 Women-focused · All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Google%20Conference%20Scholarships) | ~Jun | — |
 | [YC AI Startup School](https://events.ycombinator.com/startup-school-2026) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=YC%20AI%20Startup%20School) | — | — |
 
@@ -228,8 +251,11 @@ These usually open or close around now. Unless marked ⏳, nobody has confirmed 
 
 | Program | For | Status | Deadline | Checked |
 |---|---|---|---|---|
+| [Rewriting the Code](https://rewritingthecode.org/) 🆕 | 💗 Women-focused · All students | ✅ Open | — | Nov 1 |
 | [Uber Career Prep Fellowship](https://www.hiddengeniusproject.org/ubercareerprep/) | Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Uber%20Career%20Prep%20Fellowship) | ~Sep | — |
 | [Management Leadership for Tomorrow Career Prep SWE Track](https://mlt.org/career-prep/) | Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Management%20Leadership%20for%20Tomorrow%20Career%20Prep%20SWE%20Track) | ~Oct | — |
+| [Girls Who Code College Loops](https://girlswhocode.com/programs/college-and-career) 🆕 | 💜 Women only · All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Girls%20Who%20Code%20College%20Loops) | — | — |
+| [WiML Mentorship (Women in Machine Learning)](https://www.wiml.org/) 🆕 | 💗 Women-focused · All students | ❓ [Update](../../issues/new?template=report-program.yml&name=WiML%20Mentorship%20%28Women%20in%20Machine%20Learning%29) | — | — |
 
 ## FAQ
 
@@ -281,4 +307,4 @@ The list started from [LuisaE/opportunities](https://github.com/LuisaE/opportuni
 
 ---
 
-<sub>109 programs · updated November 2026. This board updates itself daily. The repo also runs AFG's Discord bots: [jobs bot setup](DEPLOY.md) · [news bot](news-bot/README.md) · [opportunities bot](opportunities/BOT.md).</sub>
+<sub>126 programs · updated November 2026. This board updates itself daily. The repo also runs AFG's Discord bots: [jobs bot setup](DEPLOY.md) · [news bot](news-bot/README.md) · [opportunities bot](opportunities/BOT.md).</sub>
