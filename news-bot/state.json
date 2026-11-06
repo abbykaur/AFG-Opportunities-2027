@@ -21,40 +21,14 @@
     "https://www.youtube.com/watch?v=sFfPkUJd_Jk": "2026-11-02T15:48:44.585577+00:00"
   },
   "drafts": {
-    "1566136198689456173": {
-      "title": "OpenAI reportedly lowers funding target for new round",
-      "blurb": "OpenAI’s latest funding round doesn't seem to be living up to expectations.",
-      "url": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
-      "source": "TechCrunch",
-      "tag": "Startups & Funding",
-      "created": "2026-10-31T17:06:06.979450+00:00",
-      "requested": "more: feeds"
-    },
-    "1566136204070625322": {
-      "title": "I built an AI Tamagotchi before Meta could",
-      "blurb": "Mark Zuckerberg's Meta made AI look so stinking cute by giving it a squishy little face - and this holiday season, he wants to sell you a Muse Charm so you can carry your jolly AI helper around like a Tamagotchi. But I won't be buying one, because we have Muse Charm at home. It […]",
-      "url": "https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code",
-      "source": "The Verge",
-      "tag": "Tools",
-      "created": "2026-10-31T17:06:08.351742+00:00",
-      "requested": "more: feeds"
-    },
-    "1566136209124888719": {
-      "title": "Creating AI value with enterprise context",
-      "blurb": "Across a business, any number of AI platforms, systems, and tools may be at work simultaneously—for example, AI-powered customer platforms, conversational assistants, and workflow and process automation tools. Each one is sophisticated, advanced, and quick to respond. But, when set to work, the…",
-      "url": "https://www.technologyreview.com/2026/10/28/1147709/creating-ai-value-with-enterprise-context/",
-      "source": "MIT Technology Review",
-      "tag": "Tools",
-      "created": "2026-10-31T17:06:09.540214+00:00",
-      "requested": "more: feeds"
-    },
     "1566841469904625855": {
       "title": "Omen AI adds liquid know-how in $16 million Aquatic Labs acquisition",
       "blurb": "Two startups tackling the data center water problem are joining forces in a $16 million deal.",
       "url": "https://techcrunch.com/2026/11/02/omen-ai-adds-liquid-know-how-in-16-million-aquatic-labs-acquisition/",
       "source": "TechCrunch",
       "tag": "Startups & Funding",
-      "created": "2026-11-02T15:48:36.808746+00:00"
+      "created": "2026-11-02T15:48:36.808746+00:00",
+      "carried": true
     },
     "1566841475302424827": {
       "title": "The biggest names in AI are backing a new way to opt out of scraping",
@@ -62,7 +36,8 @@
       "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
       "source": "The Verge",
       "tag": "Policy & Safety",
-      "created": "2026-11-02T15:48:38.146926+00:00"
+      "created": "2026-11-02T15:48:38.146926+00:00",
+      "carried": true
     },
     "1566841479266312286": {
       "title": "Stop counting tokens, start counting what ships",
@@ -70,7 +45,8 @@
       "url": "https://www.technologyreview.com/2026/11/02/1147702/stop-counting-tokens-start-counting-what-ships/",
       "source": "MIT Technology Review",
       "tag": "Tools",
-      "created": "2026-11-02T15:48:39.058372+00:00"
+      "created": "2026-11-02T15:48:39.058372+00:00",
+      "carried": true
     },
     "1566841483989098630": {
       "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
@@ -78,7 +54,8 @@
       "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/",
       "source": "Ars Technica",
       "tag": "Tools",
-      "created": "2026-11-02T15:48:40.180237+00:00"
+      "created": "2026-11-02T15:48:40.180237+00:00",
+      "carried": true
     },
     "1566841488602702028": {
       "title": "Introducing the Grid Protectors Program",
@@ -86,7 +63,8 @@
       "url": "https://openai.com/index/grid-protectors-program",
       "source": "OpenAI",
       "tag": null,
-      "created": "2026-11-02T15:48:41.319437+00:00"
+      "created": "2026-11-02T15:48:41.319437+00:00",
+      "carried": true
     },
     "1566841493090607318": {
       "title": "Speeding up planning decisions with AI",
@@ -94,7 +72,8 @@
       "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
       "source": "Google DeepMind",
       "tag": "Policy & Safety",
-      "created": "2026-11-02T15:48:42.376994+00:00"
+      "created": "2026-11-02T15:48:42.376994+00:00",
+      "carried": true
     },
     "1566841497909993595": {
       "title": "OpenAI Claims It Just Did The Impossible",
@@ -104,7 +83,8 @@
       "tag": null,
       "kind": "video",
       "category": "Paper breakdowns",
-      "created": "2026-11-02T15:48:43.456999+00:00"
+      "created": "2026-11-02T15:48:43.456999+00:00",
+      "carried": true
     },
     "1566841502485844080": {
       "title": "Genie 4: A new generation of world simulation",
@@ -114,11 +94,37 @@
       "tag": "Models & Releases",
       "kind": "video",
       "category": "Official labs",
-      "created": "2026-11-02T15:48:44.585577+00:00"
+      "created": "2026-11-02T15:48:44.585577+00:00",
+      "carried": true
     }
   },
   "last_message_id": 1566841502485844080,
   "drafted_week": "2026-W45",
-  "roundup_week": "2026-W44",
-  "history": []
+  "roundup_week": "2026-W45",
+  "history": [
+    {
+      "week": "2026-W45",
+      "kind": "article",
+      "category": null,
+      "source": "TechCrunch",
+      "tag": "Startups & Funding",
+      "decision": "rejected"
+    },
+    {
+      "week": "2026-W45",
+      "kind": "article",
+      "category": null,
+      "source": "The Verge",
+      "tag": "Tools",
+      "decision": "approved"
+    },
+    {
+      "week": "2026-W45",
+      "kind": "article",
+      "category": null,
+      "source": "MIT Technology Review",
+      "tag": "Tools",
+      "decision": "rejected"
+    }
+  ]
 }
