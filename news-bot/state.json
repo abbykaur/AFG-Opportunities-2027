@@ -18,7 +18,10 @@
     "https://openai.com/index/grid-protectors-program": "2026-11-02T15:48:41.319437+00:00",
     "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/": "2026-11-02T15:48:42.376994+00:00",
     "https://www.youtube.com/watch?v=CWdTBLsbaQs": "2026-11-02T15:48:43.456999+00:00",
-    "https://www.youtube.com/watch?v=sFfPkUJd_Jk": "2026-11-02T15:48:44.585577+00:00"
+    "https://www.youtube.com/watch?v=sFfPkUJd_Jk": "2026-11-02T15:48:44.585577+00:00",
+    "https://techcrunch.com/2026/11/09/jensen-huangs-affair-with-alleged-chinese-spy-puts-nvidias-china-ambitions-under-scrutiny/": "2026-11-09T18:47:26.671014+00:00",
+    "https://www.theverge.com/tech/1030061/instagram-ai-effect-builder-filters": "2026-11-09T18:47:28.229527+00:00",
+    "https://www.youtube.com/watch?v=NCxD-qsQcN0": "2026-11-09T18:47:29.509965+00:00"
   },
   "drafts": {
     "1566841469904625855": {
@@ -96,10 +99,36 @@
       "category": "Official labs",
       "created": "2026-11-02T15:48:44.585577+00:00",
       "carried": true
+    },
+    "1569423189648605245": {
+      "title": "Jensen Huang’s affair with alleged Chinese spy puts Nvidia’s China ambitions under scrutiny",
+      "blurb": "Jensen Huang’s alleged affair with a suspected Chinese spy threatens to complicate Nvidia’s lobbying efforts to loosen U.S. chip export restrictions and maintain access to China’s lucrative AI market.",
+      "url": "https://techcrunch.com/2026/11/09/jensen-huangs-affair-with-alleged-chinese-spy-puts-nvidias-china-ambitions-under-scrutiny/",
+      "source": "TechCrunch",
+      "tag": null,
+      "created": "2026-11-09T18:47:26.671014+00:00"
+    },
+    "1569423196497907716": {
+      "title": "Instagram’s Effect Builder makes new filters from AI prompts",
+      "blurb": "After expanding its Edits app to macOS last week, Instagram's next move is launching this Effect Builder that generates custom filters for your Stories posts with AI. Available now for US residents who are over 18, it has a prompt box for describing your filter idea to the chatbot, with an option…",
+      "url": "https://www.theverge.com/tech/1030061/instagram-ai-effect-builder-filters",
+      "source": "The Verge",
+      "tag": "Tools",
+      "created": "2026-11-09T18:47:28.229527+00:00"
+    },
+    "1569423202156027957": {
+      "title": "Design hardware with Astra",
+      "blurb": "You don't need to be an engineer to make hardware. Want to make something physical? Let GPT-6 Astra help you bring it to life.",
+      "url": "https://www.youtube.com/watch?v=NCxD-qsQcN0",
+      "source": "OpenAI",
+      "tag": "Models & Releases",
+      "kind": "video",
+      "category": "Official labs",
+      "created": "2026-11-09T18:47:29.509965+00:00"
     }
   },
   "last_message_id": 1568376917684650096,
-  "drafted_week": "2026-W45",
+  "drafted_week": "2026-W46",
   "roundup_week": "2026-W45",
   "history": [
     {
