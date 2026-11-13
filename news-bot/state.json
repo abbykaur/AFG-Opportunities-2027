@@ -23,113 +23,10 @@
     "https://www.theverge.com/tech/1030061/instagram-ai-effect-builder-filters": "2026-11-09T18:47:28.229527+00:00",
     "https://www.youtube.com/watch?v=NCxD-qsQcN0": "2026-11-09T18:47:29.509965+00:00"
   },
-  "drafts": {
-    "1566841469904625855": {
-      "title": "Omen AI adds liquid know-how in $16 million Aquatic Labs acquisition",
-      "blurb": "Two startups tackling the data center water problem are joining forces in a $16 million deal.",
-      "url": "https://techcrunch.com/2026/11/02/omen-ai-adds-liquid-know-how-in-16-million-aquatic-labs-acquisition/",
-      "source": "TechCrunch",
-      "tag": "Startups & Funding",
-      "created": "2026-11-02T15:48:36.808746+00:00",
-      "carried": true
-    },
-    "1566841475302424827": {
-      "title": "The biggest names in AI are backing a new way to opt out of scraping",
-      "blurb": "OpenAI, Google, Microsoft, and Anthropic say they will adopt a new standard that publishers can use to opt out of being scraped by AI, as reported earlier by Search Engine Roundtable. With this control, publishers can apply their AI training preferences across multiple AI companies, instead of…",
-      "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
-      "source": "The Verge",
-      "tag": "Policy & Safety",
-      "created": "2026-11-02T15:48:38.146926+00:00",
-      "carried": true
-    },
-    "1566841479266312286": {
-      "title": "Stop counting tokens, start counting what ships",
-      "blurb": "When a developer gives an AI agent a coding task, the agent does more than answer once. It plans, generates code, runs tests, and repeats the process to correct errors. A single task can use 10 to 50 times more tokens than a basic chat prompt. The more useful the agent becomes, the more calls…",
-      "url": "https://www.technologyreview.com/2026/11/02/1147702/stop-counting-tokens-start-counting-what-ships/",
-      "source": "MIT Technology Review",
-      "tag": "Tools",
-      "created": "2026-11-02T15:48:39.058372+00:00",
-      "carried": true
-    },
-    "1566841483989098630": {
-      "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
-      "blurb": "It's still unknown how attackers got access to Anthropic's verified Cursor account.",
-      "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/",
-      "source": "Ars Technica",
-      "tag": "Tools",
-      "created": "2026-11-02T15:48:40.180237+00:00",
-      "carried": true
-    },
-    "1566841488602702028": {
-      "title": "Introducing the Grid Protectors Program",
-      "blurb": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
-      "url": "https://openai.com/index/grid-protectors-program",
-      "source": "OpenAI",
-      "tag": null,
-      "created": "2026-11-02T15:48:41.319437+00:00",
-      "carried": true
-    },
-    "1566841493090607318": {
-      "title": "Speeding up planning decisions with AI",
-      "blurb": "Google DeepMind and UK government work together to reduce planning assessment times",
-      "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
-      "source": "Google DeepMind",
-      "tag": "Policy & Safety",
-      "created": "2026-11-02T15:48:42.376994+00:00",
-      "carried": true
-    },
-    "1566841497909993595": {
-      "title": "OpenAI Claims It Just Did The Impossible",
-      "blurb": "",
-      "url": "https://www.youtube.com/watch?v=CWdTBLsbaQs",
-      "source": "Two Minute Papers",
-      "tag": null,
-      "kind": "video",
-      "category": "Paper breakdowns",
-      "created": "2026-11-02T15:48:43.456999+00:00",
-      "carried": true
-    },
-    "1566841502485844080": {
-      "title": "Genie 4: A new generation of world simulation",
-      "blurb": "Meet Genie 4, Google DeepMind’s most realistic and interactive world model yet. Built on our Gemini models, Genie 4 lets you step inside dynamic worlds in real time, steer scenes on the fly with natural language, and watch what happens next: how the world responds, how it sounds, and how the people…",
-      "url": "https://www.youtube.com/watch?v=sFfPkUJd_Jk",
-      "source": "Google DeepMind",
-      "tag": "Models & Releases",
-      "kind": "video",
-      "category": "Official labs",
-      "created": "2026-11-02T15:48:44.585577+00:00",
-      "carried": true
-    },
-    "1569423189648605245": {
-      "title": "Jensen Huang’s affair with alleged Chinese spy puts Nvidia’s China ambitions under scrutiny",
-      "blurb": "Jensen Huang’s alleged affair with a suspected Chinese spy threatens to complicate Nvidia’s lobbying efforts to loosen U.S. chip export restrictions and maintain access to China’s lucrative AI market.",
-      "url": "https://techcrunch.com/2026/11/09/jensen-huangs-affair-with-alleged-chinese-spy-puts-nvidias-china-ambitions-under-scrutiny/",
-      "source": "TechCrunch",
-      "tag": null,
-      "created": "2026-11-09T18:47:26.671014+00:00"
-    },
-    "1569423196497907716": {
-      "title": "Instagram’s Effect Builder makes new filters from AI prompts",
-      "blurb": "After expanding its Edits app to macOS last week, Instagram's next move is launching this Effect Builder that generates custom filters for your Stories posts with AI. Available now for US residents who are over 18, it has a prompt box for describing your filter idea to the chatbot, with an option…",
-      "url": "https://www.theverge.com/tech/1030061/instagram-ai-effect-builder-filters",
-      "source": "The Verge",
-      "tag": "Tools",
-      "created": "2026-11-09T18:47:28.229527+00:00"
-    },
-    "1569423202156027957": {
-      "title": "Design hardware with Astra",
-      "blurb": "You don't need to be an engineer to make hardware. Want to make something physical? Let GPT-6 Astra help you bring it to life.",
-      "url": "https://www.youtube.com/watch?v=NCxD-qsQcN0",
-      "source": "OpenAI",
-      "tag": "Models & Releases",
-      "kind": "video",
-      "category": "Official labs",
-      "created": "2026-11-09T18:47:29.509965+00:00"
-    }
-  },
+  "drafts": {},
   "last_message_id": 1569423202156027957,
   "drafted_week": "2026-W46",
-  "roundup_week": "2026-W45",
+  "roundup_week": "2026-W46",
   "history": [
     {
       "week": "2026-W45",
@@ -153,6 +50,94 @@
       "category": null,
       "source": "MIT Technology Review",
       "tag": "Tools",
+      "decision": "rejected"
+    },
+    {
+      "week": "2026-W46",
+      "kind": "article",
+      "category": null,
+      "source": "TechCrunch",
+      "tag": "Startups & Funding",
+      "decision": "ignored"
+    },
+    {
+      "week": "2026-W46",
+      "kind": "article",
+      "category": null,
+      "source": "The Verge",
+      "tag": "Policy & Safety",
+      "decision": "ignored"
+    },
+    {
+      "week": "2026-W46",
+      "kind": "article",
+      "category": null,
+      "source": "MIT Technology Review",
+      "tag": "Tools",
+      "decision": "ignored"
+    },
+    {
+      "week": "2026-W46",
+      "kind": "article",
+      "category": null,
+      "source": "Ars Technica",
+      "tag": "Tools",
+      "decision": "ignored"
+    },
+    {
+      "week": "2026-W46",
+      "kind": "article",
+      "category": null,
+      "source": "OpenAI",
+      "tag": null,
+      "decision": "ignored"
+    },
+    {
+      "week": "2026-W46",
+      "kind": "article",
+      "category": null,
+      "source": "Google DeepMind",
+      "tag": "Policy & Safety",
+      "decision": "ignored"
+    },
+    {
+      "week": "2026-W46",
+      "kind": "video",
+      "category": "Paper breakdowns",
+      "source": "Two Minute Papers",
+      "tag": null,
+      "decision": "ignored"
+    },
+    {
+      "week": "2026-W46",
+      "kind": "video",
+      "category": "Official labs",
+      "source": "Google DeepMind",
+      "tag": "Models & Releases",
+      "decision": "ignored"
+    },
+    {
+      "week": "2026-W46",
+      "kind": "article",
+      "category": null,
+      "source": "TechCrunch",
+      "tag": null,
+      "decision": "approved"
+    },
+    {
+      "week": "2026-W46",
+      "kind": "article",
+      "category": null,
+      "source": "The Verge",
+      "tag": "Tools",
+      "decision": "rejected"
+    },
+    {
+      "week": "2026-W46",
+      "kind": "video",
+      "category": "Official labs",
+      "source": "OpenAI",
+      "tag": "Models & Releases",
       "decision": "rejected"
     }
   ]
