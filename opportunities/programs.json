@@ -1257,10 +1257,12 @@
     "deadline_month": 9,
     "women": null,
     "source": "LuisaE/opportunities",
-    "status": "unconfirmed",
+    "status": "open",
     "deadline": null,
-    "checked": null,
-    "added": "2026-11-01"
+    "checked": "2026-11-16",
+    "added": "2026-11-01",
+    "apply_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210807232",
+    "via": "postings"
   },
   {
     "name": "LinkedIn First Play",
