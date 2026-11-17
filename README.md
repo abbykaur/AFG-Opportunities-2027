@@ -134,7 +134,7 @@ These usually open or close around now. Unless marked ⏳, nobody has confirmed 
 | [Uber STAR](https://jobs.uber.com/en/teams/emerging-talent/) | Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Uber%20STAR) | ~Oct | — |
 | [Amazon Future Engineer](https://www.amazonfutureengineer.com/scholarships) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Amazon%20Future%20Engineer) | — | — |
 | [Break Through Tech Sprinternship](https://www.breakthroughtech.org/programs/) | 💗 Women-focused · Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Break%20Through%20Tech%20Sprinternship) | — | — |
-| [Google STEP Internship](https://buildyourfuture.withgoogle.com/programs/step) 🆕 | Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Google%20STEP%20Internship) | — | — |
+| [Google STEP Internship](https://buildyourfuture.withgoogle.com/programs/step) | Freshman, Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Google%20STEP%20Internship) | — | — |
 | [Jane Street Immersion Program (JSIP)](https://www.janestreet.com/join-jane-street/programs-and-events/jsip/) | Sophomore | ❓ [Update](../../issues/new?template=report-program.yml&name=Jane%20Street%20Immersion%20Program%20%28JSIP%29) | — | — |
 | [NASA](https://intern.nasa.gov/) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=NASA) | — | — |
 
