@@ -112,8 +112,8 @@ These usually open or close around now. Unless marked ⏳, nobody has confirmed 
 | Program | For | Status | Deadline | Checked |
 |---|---|---|---|---|
 | [JPMorganChase Fellowship Program](https://www.jpmorganchase.com/careers/explore-opportunities/programs/jpmcfellowship) | Sophomore | ✅ [Apply](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210807232) | ~Sep | Nov 16 |
-| [LinkedIn First Play](https://careers.linkedin.com/pathways-programs/internships/Technical/first-play) | Sophomore | ✅ [Apply](https://jobs.smartrecruiters.com/LinkedIn3/744000158394370) | ~Sep | Nov 2 |
-| [Microsoft Explore](https://careers.microsoft.com/students/us/en/usexploremicrosoftprogram) | Freshman, Sophomore | ✅ [Apply](https://apply.careers.microsoft.com/careers/job/1970393556925823) | — | Nov 2 |
+| [LinkedIn First Play](https://careers.linkedin.com/pathways-programs/internships/Technical/first-play) | Sophomore | ✅ [Apply](https://jobs.smartrecruiters.com/LinkedIn3/744000158394370) | ~Sep | Nov 17 |
+| [Microsoft Explore](https://careers.microsoft.com/students/us/en/usexploremicrosoftprogram) | Freshman, Sophomore | ✅ [Apply](https://apply.careers.microsoft.com/careers/job/1970393556925823) | — | Nov 17 |
 | [Visa Sophomore Internship Program](https://www.visa.com/careers/) | Sophomore | ✅ [Apply](https://visa.wd5.myworkdayjobs.com/Visa_Early_Careers/job/US---Ashburn-VA/XMLNAME-2027-Sophomore-Internship-Program---Software-Engineer-Intern--Ashburn_REF089878W) | — | Nov 1 |
 | [Citadel Launch](https://www.citadel.com/careers/programs-and-events/) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Citadel%20Launch) | ~Nov | — |
 | [SPARX Internship - ABK](https://careers.blizzard.com/global/en/earlycareers) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=SPARX%20Internship%20-%20ABK) | ~Nov | — |
