@@ -67,38 +67,6 @@
       "new": true,
       "created": "2026-11-09T19:07:21.345219+00:00",
       "carried": true
-    },
-    "1571961692491878604": {
-      "name": "JPMorganChase Fellowship Program",
-      "url": "https://www.jpmorganchase.com/careers/explore-opportunities/programs/jpmcfellowship",
-      "type": "Underclassmen program",
-      "who": "Sophomore",
-      "deadline_month": 9,
-      "women": null,
-      "source": "LuisaE/opportunities",
-      "status": "open",
-      "deadline": null,
-      "checked": "2026-11-16",
-      "apply_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210807232",
-      "via": "postings",
-      "new": null,
-      "created": "2026-11-16T18:54:33.014609+00:00"
-    },
-    "1571961697210597418": {
-      "name": "SPARX Internship - ABK",
-      "url": "https://careers.blizzard.com/global/en/earlycareers",
-      "type": "Underclassmen program",
-      "who": "All students",
-      "deadline_month": 11,
-      "women": null,
-      "source": "LuisaE/opportunities",
-      "status": "unconfirmed",
-      "deadline": null,
-      "checked": null,
-      "apply_url": null,
-      "via": null,
-      "new": null,
-      "created": "2026-11-16T18:54:34.138542+00:00"
     }
   },
   "drafted": {
@@ -113,36 +81,11 @@
     "jpmorganchasefellowshipprogram": "2026-11-16T18:54:33.014609+00:00",
     "sparxinternshipabk": "2026-11-16T18:54:34.138542+00:00"
   },
-  "last_message_id": 1569428230497108103,
+  "last_message_id": 1571961738377826318,
   "drafted_week": "2026-W47",
   "board_message_id": 1566852791069179918,
   "board_day": "2026-11-16",
   "checks": {
-    "1569428205859770409": {
-      "name": "City Early ID",
-      "url": "http://careers.citi.com/Careers/index/#/universityprogram",
-      "created": "2026-11-09T19:07:24.093342+00:00"
-    },
-    "1569428211425874003": {
-      "name": "SPARX Internship - ABK",
-      "url": "https://careers.blizzard.com/global/en/earlycareers",
-      "created": "2026-11-09T19:07:25.520908+00:00"
-    },
-    "1569428217750884357": {
-      "name": "Blackstone Future Women Leaders",
-      "url": "https://www.blackstone.com/careers/diversity-inclusion",
-      "created": "2026-11-09T19:07:27.255682+00:00"
-    },
-    "1569428224780275814": {
-      "name": "Brown + Google exploreCSR",
-      "url": "http://explorecsr.cs.brown.edu/?fbclid=IwAR0wxlRlNNpk7vKRy0-fYEs7qFQ3Ogp0GCCiIbVhJW1M24ZH4UnIsLVkyag",
-      "created": "2026-11-09T19:07:28.641607+00:00"
-    },
-    "1569428230497108103": {
-      "name": "D.E. Shaw Research Undergraduate Fellowship",
-      "url": "https://www.deshawresearch.com/stemfellowship/",
-      "created": "2026-11-09T19:07:29.949295+00:00"
-    },
     "1571961704164622479": {
       "name": "Discover Citadel",
       "url": "https://www.citadel.com/careers/programs-and-events/discover-citadel/",
@@ -197,6 +140,20 @@
       "new": false,
       "open": false,
       "decision": "rejected"
+    },
+    {
+      "week": "2026-W47",
+      "type": "Underclassmen program",
+      "new": false,
+      "open": true,
+      "decision": "approved"
+    },
+    {
+      "week": "2026-W47",
+      "type": "Underclassmen program",
+      "new": false,
+      "open": false,
+      "decision": "approved"
     }
   ]
 }
