@@ -4,7 +4,7 @@
 
 ### Fellowships, freshman & sophomore programs, and scholarships for women in tech & AI
 
-[![Stars](https://img.shields.io/github/stars/abbykaur/AFG-Opportunities-2027?style=flat&label=Stars&color=8b5cf6)](https://github.com/abbykaur/AFG-Opportunities-2027/stargazers) [![Updated](https://img.shields.io/github/last-commit/abbykaur/AFG-Opportunities-2027?label=Updated&color=22c55e)](https://github.com/abbykaur/AFG-Opportunities-2027/commits) [![Open now](https://img.shields.io/badge/Open_now-5-22c55e)](#-open-now) [![For women](https://img.shields.io/badge/For_women-21-a855f7)](#-for-women) [![Discord](https://img.shields.io/badge/Discord-AI_First_Girls-5865F2?logo=discord&logoColor=white)](https://discord.gg/6BBkjMJURt)
+[![Stars](https://img.shields.io/github/stars/abbykaur/AFG-Opportunities-2027?style=flat&label=Stars&color=8b5cf6)](https://github.com/abbykaur/AFG-Opportunities-2027/stargazers) [![Updated](https://img.shields.io/github/last-commit/abbykaur/AFG-Opportunities-2027?label=Updated&color=22c55e)](https://github.com/abbykaur/AFG-Opportunities-2027/commits) [![Open now](https://img.shields.io/badge/Open_now-4-22c55e)](#-open-now) [![For women](https://img.shields.io/badge/For_women-21-a855f7)](#-for-women) [![Discord](https://img.shields.io/badge/Discord-AI_First_Girls-5865F2?logo=discord&logoColor=white)](https://discord.gg/6BBkjMJURt)
 
 </div>
 
@@ -15,15 +15,15 @@
 
 **Contribute in 60 seconds:** [➕ Suggest a program](../../issues/new?template=suggest-program.yml) · [🔁 Report one that's open, closed, or wrong](../../issues/new?template=report-program.yml) · or post it in **#opportunities** on [Discord](https://discord.gg/6BBkjMJURt).
 
-**5 open now** · **21 for women** · 16 checked in the last 30 days · updated November 2026
+**4 open now** · **21 for women** · 16 checked in the last 30 days · updated November 2026
 
 ---
 
-### Browse 118 programs
+### Browse 117 programs
 
 💜 **[For women](#-for-women)** (21)
 
-🎓 **[Underclassmen programs](#-underclassmen-programs)** (26 · ✅ 4 open)
+🎓 **[Underclassmen programs](#-underclassmen-programs)** (25 · ✅ 3 open)
 
 🌱 **[Fellowships](#-fellowships)** (29)
 
@@ -46,7 +46,7 @@
 - 💜 Women only (or women and gender minorities) · 💗 Women-focused: open to everyone, built to support women
 - 🆕 Added in the last 2 weeks · **Bold dates** are confirmed deadlines; `~Nov` means it usually opens or closes around then
 
-> 🔒 Programs that are closed until their next cycle are in **[CLOSED.md](CLOSED.md)** (8).
+> 🔒 Programs that are closed until their next cycle are in **[CLOSED.md](CLOSED.md)** (9).
 
 ---
 
@@ -55,7 +55,6 @@
 | Program | For | Type | Apply | Deadline |
 |---|---|---|---|---|
 | [JPMorganChase Fellowship Program](https://www.jpmorganchase.com/careers/explore-opportunities/programs/jpmcfellowship) | Sophomore | Underclassmen program | ✅ [Apply](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210807232) | ~Sep |
-| [LinkedIn First Play](https://careers.linkedin.com/pathways-programs/internships/Technical/first-play) | Sophomore | Underclassmen program | ✅ [Apply](https://jobs.smartrecruiters.com/LinkedIn3/744000158394370) | ~Sep |
 | [Microsoft Explore](https://careers.microsoft.com/students/us/en/usexploremicrosoftprogram) | Freshman, Sophomore | Underclassmen program | ✅ [Apply](https://apply.careers.microsoft.com/careers/job/1970393556925823) | — |
 | [Rewriting the Code](https://rewritingthecode.org/) | 💗 Women-focused · All students | Mentorship | ✅ Open | — |
 | [Visa Sophomore Internship Program](https://www.visa.com/careers/) | Sophomore | Underclassmen program | ✅ [Apply](https://visa.wd5.myworkdayjobs.com/Visa_Early_Careers/job/US---Ashburn-VA/XMLNAME-2027-Sophomore-Internship-Program---Software-Engineer-Intern--Ashburn_REF089878W) | — |
@@ -112,7 +111,6 @@ These usually open or close around now. Unless marked ⏳, nobody has confirmed 
 | Program | For | Status | Deadline | Checked |
 |---|---|---|---|---|
 | [JPMorganChase Fellowship Program](https://www.jpmorganchase.com/careers/explore-opportunities/programs/jpmcfellowship) | Sophomore | ✅ [Apply](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210807232) | ~Sep | Nov 16 |
-| [LinkedIn First Play](https://careers.linkedin.com/pathways-programs/internships/Technical/first-play) | Sophomore | ✅ [Apply](https://jobs.smartrecruiters.com/LinkedIn3/744000158394370) | ~Sep | Nov 17 |
 | [Microsoft Explore](https://careers.microsoft.com/students/us/en/usexploremicrosoftprogram) | Freshman, Sophomore | ✅ [Apply](https://apply.careers.microsoft.com/careers/job/1970393556925823) | — | Nov 17 |
 | [Visa Sophomore Internship Program](https://www.visa.com/careers/) | Sophomore | ✅ [Apply](https://visa.wd5.myworkdayjobs.com/Visa_Early_Careers/job/US---Ashburn-VA/XMLNAME-2027-Sophomore-Internship-Program---Software-Engineer-Intern--Ashburn_REF089878W) | — | Nov 1 |
 | [Citadel Launch](https://www.citadel.com/careers/programs-and-events/) | All students | ❓ [Update](../../issues/new?template=report-program.yml&name=Citadel%20Launch) | ~Nov | — |
