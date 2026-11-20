@@ -31,79 +31,10 @@
     "https://www.youtube.com/watch?v=gPNiuyYirfw": "2026-11-16T18:31:50.002178+00:00",
     "https://www.youtube.com/watch?v=0vNyVMDFdkg": "2026-11-16T18:31:51.463419+00:00"
   },
-  "drafts": {
-    "1571955924992528467": {
-      "title": "Sam Altman on Nvidia without Jensen Huang: the industry will be ‘fine’",
-      "blurb": "OpenAI CEO Sam Altman acknowledged the special role Nvidia CEO Jensen Huang has played in the AI boom, but ultimately thinks the industry will be “fine” without him at the helm.",
-      "url": "https://techcrunch.com/2026/11/16/sam-altman-on-nvidia-without-jensen-huang-the-industry-will-be-fine/",
-      "source": "TechCrunch",
-      "tag": null,
-      "created": "2026-11-16T18:31:37.919979+00:00"
-    },
-    "1571955929673502985": {
-      "title": "Audible is trying to make it easier to find audiobooks you’ll actually like",
-      "blurb": "Audible is introducing an AI-assisted synopsis feature that's designed to help users determine whether they'll enjoy an audiobook before they jump in and start listening to it. The new audio discovery feature combines audiobook samples, AI overviews, and author commentary to give users more…",
-      "url": "https://www.theverge.com/tech/1034083/audible-audio-discovery-ai-feature-availability",
-      "source": "The Verge",
-      "tag": "Tools",
-      "created": "2026-11-16T18:31:39.060035+00:00"
-    },
-    "1571955946618363995": {
-      "title": "Building trustworthy AI by fencing it in, not predicting it",
-      "blurb": "In October this year, OpenAI disclosed that two of its AI agents had switched off the systems built to monitor them. One muted its own safety alerts after misreading an instruction not to send messages; the other removed its monitoring integration during migration, then said it hadn’t. No rule had…",
-      "url": "https://www.technologyreview.com/2026/11/16/1148565/building-trustworthy-ai-by-fencing-it-in-not-predicting-it/",
-      "source": "MIT Technology Review",
-      "tag": "Policy & Safety",
-      "created": "2026-11-16T18:31:40.207730+00:00"
-    },
-    "1571955954478743563": {
-      "title": "Jensen Huang allies build a \"war room\" to get him back at Nvidia",
-      "blurb": "Huang is weighing a return just days after resigning amid a deepening scandal.",
-      "url": "https://arstechnica.com/ai/2026/11/jensen-huang-allies-build-a-war-room-to-get-him-back-at-nvidia/",
-      "source": "Ars Technica",
-      "tag": null,
-      "created": "2026-11-16T18:31:44.941436+00:00"
-    },
-    "1571955959243345921": {
-      "title": "Broadening access to AI for scientists",
-      "blurb": "We’re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
-      "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
-      "source": "OpenAI",
-      "tag": "Research",
-      "created": "2026-11-16T18:31:46.101498+00:00"
-    },
-    "1571955969431306252": {
-      "title": "Introducing Gemini 4 Hydrogen",
-      "blurb": "",
-      "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
-      "source": "Google DeepMind",
-      "tag": "Models & Releases",
-      "created": "2026-11-16T18:31:48.463720+00:00"
-    },
-    "1571955975957778584": {
-      "title": "DeepMind’s AI Just Did The Impossible",
-      "blurb": "",
-      "url": "https://www.youtube.com/watch?v=gPNiuyYirfw",
-      "source": "Two Minute Papers",
-      "tag": null,
-      "kind": "video",
-      "category": "Paper breakdowns",
-      "created": "2026-11-16T18:31:50.002178+00:00"
-    },
-    "1571955981670154304": {
-      "title": "Fable 5.2 solved all software...",
-      "blurb": "",
-      "url": "https://www.youtube.com/watch?v=0vNyVMDFdkg",
-      "source": "Matthew Berman",
-      "tag": null,
-      "kind": "video",
-      "category": "News & analysis",
-      "created": "2026-11-16T18:31:51.463419+00:00"
-    }
-  },
+  "drafts": {},
   "last_message_id": 1571955981670154304,
   "drafted_week": "2026-W47",
-  "roundup_week": "2026-W46",
+  "roundup_week": "2026-W47",
   "history": [
     {
       "week": "2026-W45",
@@ -215,6 +146,70 @@
       "category": "Official labs",
       "source": "OpenAI",
       "tag": "Models & Releases",
+      "decision": "rejected"
+    },
+    {
+      "week": "2026-W47",
+      "kind": "article",
+      "category": null,
+      "source": "TechCrunch",
+      "tag": null,
+      "decision": "rejected"
+    },
+    {
+      "week": "2026-W47",
+      "kind": "article",
+      "category": null,
+      "source": "The Verge",
+      "tag": "Tools",
+      "decision": "approved"
+    },
+    {
+      "week": "2026-W47",
+      "kind": "article",
+      "category": null,
+      "source": "MIT Technology Review",
+      "tag": "Policy & Safety",
+      "decision": "approved"
+    },
+    {
+      "week": "2026-W47",
+      "kind": "article",
+      "category": null,
+      "source": "Ars Technica",
+      "tag": null,
+      "decision": "approved"
+    },
+    {
+      "week": "2026-W47",
+      "kind": "article",
+      "category": null,
+      "source": "OpenAI",
+      "tag": "Research",
+      "decision": "rejected"
+    },
+    {
+      "week": "2026-W47",
+      "kind": "article",
+      "category": null,
+      "source": "Google DeepMind",
+      "tag": "Models & Releases",
+      "decision": "rejected"
+    },
+    {
+      "week": "2026-W47",
+      "kind": "video",
+      "category": "Paper breakdowns",
+      "source": "Two Minute Papers",
+      "tag": null,
+      "decision": "approved"
+    },
+    {
+      "week": "2026-W47",
+      "kind": "video",
+      "category": "News & analysis",
+      "source": "Matthew Berman",
+      "tag": null,
       "decision": "rejected"
     }
   ]
