@@ -1,28 +1,11 @@
 {
   "drafts": {
-    "1569428186159124594": {
-      "name": "Visa Sophomore Internship Program",
-      "url": "https://www.visa.com/careers/",
+    "1574444931714392126": {
+      "name": "Dropbox Launch",
+      "url": "https://www.dropbox.jobs/",
       "type": "Underclassmen program",
-      "who": "Sophomore",
-      "deadline_month": null,
-      "women": null,
-      "source": "LuisaE/opportunities",
-      "status": "open",
-      "deadline": null,
-      "checked": "2026-11-01",
-      "apply_url": "https://visa.wd5.myworkdayjobs.com/Visa_Early_Careers/job/US---Ashburn-VA/XMLNAME-2027-Sophomore-Internship-Program---Software-Engineer-Intern--Ashburn_REF089878W",
-      "via": "checked",
-      "new": null,
-      "created": "2026-11-09T19:07:18.066156+00:00",
-      "carried": true
-    },
-    "1569428190903144499": {
-      "name": "Google CS Research Mentorship Program",
-      "url": "https://research.google/outreach/csrmp/",
-      "type": "Research program",
       "who": "All students",
-      "deadline_month": 11,
+      "deadline_month": 12,
       "women": null,
       "source": "LuisaE/opportunities",
       "status": "unconfirmed",
@@ -31,15 +14,14 @@
       "apply_url": null,
       "via": null,
       "new": null,
-      "created": "2026-11-09T19:07:19.146150+00:00",
-      "carried": true
+      "created": "2026-11-23T15:22:03.392724+00:00"
     },
-    "1569428195449503745": {
-      "name": "Citadel Launch",
-      "url": "https://www.citadel.com/careers/programs-and-events/",
+    "1574444936437432484": {
+      "name": "Global Technology Freshman Summer Analyst Program",
+      "url": "https://campus.bankofamerica.com/careers/Global-Technology-Freshman-Summer-Analyst-Program-US.html",
       "type": "Underclassmen program",
-      "who": "All students",
-      "deadline_month": 11,
+      "who": "Freshman",
+      "deadline_month": 12,
       "women": null,
       "source": "LuisaE/opportunities",
       "status": "unconfirmed",
@@ -48,12 +30,11 @@
       "apply_url": null,
       "via": null,
       "new": null,
-      "created": "2026-11-09T19:07:20.185804+00:00",
-      "carried": true
+      "created": "2026-11-23T15:22:04.484756+00:00"
     },
-    "1569428200017236011": {
-      "name": "10a Labs Engineering Fellow",
-      "url": "https://job-boards.greenhouse.io/10alabs/jobs/4203095009",
+    "1574444940006531185": {
+      "name": "Anthropic Fellows Program - ML Systems & Performance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5183051008",
       "type": "Fellowship",
       "who": "All students",
       "deadline_month": null,
@@ -61,12 +42,27 @@
       "source": "SimplifyJobs",
       "status": "open",
       "deadline": null,
-      "checked": "2026-11-09",
-      "apply_url": "https://job-boards.greenhouse.io/10alabs/jobs/4203095009",
+      "checked": "2026-11-23",
+      "apply_url": "https://job-boards.greenhouse.io/anthropic/jobs/5183051008",
       "via": "postings",
       "new": true,
-      "created": "2026-11-09T19:07:21.345219+00:00",
-      "carried": true
+      "created": "2026-11-23T15:22:05.435292+00:00"
+    },
+    "1574444944138051687": {
+      "name": "Anthropic Fellows Program - AI Safety",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5183044008",
+      "type": "Fellowship",
+      "who": "All students",
+      "deadline_month": null,
+      "women": null,
+      "source": "SimplifyJobs",
+      "status": "open",
+      "deadline": null,
+      "checked": "2026-11-23",
+      "apply_url": "https://job-boards.greenhouse.io/anthropic/jobs/5183044008",
+      "via": "postings",
+      "new": true,
+      "created": "2026-11-23T15:22:06.435105+00:00"
     }
   },
   "drafted": {
@@ -79,12 +75,16 @@
     "citadellaunch": "2026-11-09T19:07:20.185804+00:00",
     "10alabsengineeringfellow": "2026-11-09T19:07:21.345219+00:00",
     "jpmorganchasefellowshipprogram": "2026-11-16T18:54:33.014609+00:00",
-    "sparxinternshipabk": "2026-11-16T18:54:34.138542+00:00"
+    "sparxinternshipabk": "2026-11-16T18:54:34.138542+00:00",
+    "dropboxlaunch": "2026-11-23T15:22:03.392724+00:00",
+    "globaltechnologyfreshmansummeranalystprogram": "2026-11-23T15:22:04.484756+00:00",
+    "anthropicfellowsprogrammlsystemsperformance": "2026-11-23T15:22:05.435292+00:00",
+    "anthropicfellowsprogramaisafety": "2026-11-23T15:22:06.435105+00:00"
   },
   "last_message_id": 1571961738377826318,
-  "drafted_week": "2026-W47",
+  "drafted_week": "2026-W48",
   "board_message_id": 1566852791069179918,
-  "board_day": "2026-11-22",
+  "board_day": "2026-11-23",
   "checks": {
     "1571961704164622479": {
       "name": "Discover Citadel",
@@ -110,6 +110,31 @@
       "name": "Two Sigma Freshman Software Engineer Internship",
       "url": "https://careers.twosigma.com/",
       "created": "2026-11-16T18:54:45.753992+00:00"
+    },
+    "1574444956725153793": {
+      "name": "Citadel Launch",
+      "url": "https://www.citadel.com/careers/programs-and-events/",
+      "created": "2026-11-23T15:22:10.664468+00:00"
+    },
+    "1574444962441855101": {
+      "name": "City Early ID",
+      "url": "http://careers.citi.com/Careers/index/#/universityprogram",
+      "created": "2026-11-23T15:22:12.204637+00:00"
+    },
+    "1574444968578256907": {
+      "name": "Google CS Research Mentorship Program",
+      "url": "https://research.google/outreach/csrmp/",
+      "created": "2026-11-23T15:22:13.503252+00:00"
+    },
+    "1574444974169133068": {
+      "name": "SPARX Internship - ABK",
+      "url": "https://careers.blizzard.com/global/en/earlycareers",
+      "created": "2026-11-23T15:22:16.078783+00:00"
+    },
+    "1574444984885584135": {
+      "name": "Blackstone Future Women Leaders",
+      "url": "https://www.blackstone.com/careers/diversity-inclusion",
+      "created": "2026-11-23T15:22:17.520171+00:00"
     }
   },
   "history": [
@@ -154,6 +179,34 @@
       "new": false,
       "open": false,
       "decision": "approved"
+    },
+    {
+      "week": "2026-W48",
+      "type": "Underclassmen program",
+      "new": false,
+      "open": true,
+      "decision": "ignored"
+    },
+    {
+      "week": "2026-W48",
+      "type": "Research program",
+      "new": false,
+      "open": false,
+      "decision": "ignored"
+    },
+    {
+      "week": "2026-W48",
+      "type": "Underclassmen program",
+      "new": false,
+      "open": false,
+      "decision": "ignored"
+    },
+    {
+      "week": "2026-W48",
+      "type": "Fellowship",
+      "new": true,
+      "open": true,
+      "decision": "ignored"
     }
   ]
 }
