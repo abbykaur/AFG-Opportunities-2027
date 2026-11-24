@@ -81,36 +81,11 @@
     "anthropicfellowsprogrammlsystemsperformance": "2026-11-23T15:22:05.435292+00:00",
     "anthropicfellowsprogramaisafety": "2026-11-23T15:22:06.435105+00:00"
   },
-  "last_message_id": 1571961738377826318,
+  "last_message_id": 1574444984885584135,
   "drafted_week": "2026-W48",
   "board_message_id": 1566852791069179918,
   "board_day": "2026-11-23",
   "checks": {
-    "1571961704164622479": {
-      "name": "Discover Citadel",
-      "url": "https://www.citadel.com/careers/programs-and-events/discover-citadel/",
-      "created": "2026-11-16T18:54:37.465143+00:00"
-    },
-    "1571961711236223120": {
-      "name": "Dropbox Launch",
-      "url": "https://www.dropbox.jobs/",
-      "created": "2026-11-16T18:54:39.427098+00:00"
-    },
-    "1571961719226634324": {
-      "name": "Global Technology Freshman Summer Analyst Program",
-      "url": "https://campus.bankofamerica.com/careers/Global-Technology-Freshman-Summer-Analyst-Program-US.html",
-      "created": "2026-11-16T18:54:42.452396+00:00"
-    },
-    "1571961732304347290": {
-      "name": "NYU CDS Undergraduate Research Program (CURP)",
-      "url": "https://cds.nyu.edu/curp/",
-      "created": "2026-11-16T18:54:44.026058+00:00"
-    },
-    "1571961738377826318": {
-      "name": "Two Sigma Freshman Software Engineer Internship",
-      "url": "https://careers.twosigma.com/",
-      "created": "2026-11-16T18:54:45.753992+00:00"
-    },
     "1574444956725153793": {
       "name": "Citadel Launch",
       "url": "https://www.citadel.com/careers/programs-and-events/",
