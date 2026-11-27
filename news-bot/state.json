@@ -39,79 +39,10 @@
     "https://www.youtube.com/watch?v=gl2U4fGTr6g": "2026-11-23T20:12:56.575961+00:00",
     "https://www.youtube.com/watch?v=zqzk43bSdDI": "2026-11-23T20:12:57.672872+00:00"
   },
-  "drafts": {
-    "1574518081475059815": {
-      "title": "Google Search’s AI Mode can now tap into Drive and Wallet for more personalized responses",
-      "blurb": "By bringing Personal Intelligence in AI Mode to Drive, Wallet, and the Gemini app, Google is leveraging the wealth of user data that's already within its ecosystem",
-      "url": "https://techcrunch.com/2026/11/23/google-searchs-ai-mode-can-now-tap-into-drive-and-wallet-for-more-personalized-responses/",
-      "source": "TechCrunch",
-      "tag": "Tools",
-      "created": "2026-11-23T20:12:43.602481+00:00"
-    },
-    "1574518088152653955": {
-      "title": "Oregon and Virginia sue SpaceX over Grok’s porn deepfakes",
-      "blurb": "In separate but similar lawsuits filed on Monday, Oregon Attorney General Dan Rayfield and Virginia Attorney General Jay Jones accused SpaceX of violating state consumer protection laws by ignoring industry-standard safeguards and falsely promoting the safety of its X social media platform and Grok…",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1040255/x-grok-ai-deepfakes-oregon-virginia-lawsuit",
-      "source": "The Verge",
-      "tag": "Policy & Safety",
-      "created": "2026-11-23T20:12:45.221036+00:00"
-    },
-    "1574518097707016246": {
-      "title": "A legendary philosopher isn’t buying Anthropic’s consciousness argument",
-      "blurb": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Before going public last week, Anthropic named the possibility that AI could be conscious or sentient as a risk factor for anyone investing. Given “the way we…",
-      "url": "https://www.technologyreview.com/2026/11/23/1149569/a-legendary-philosopher-isnt-buying-anthropics-consciousness-argument/",
-      "source": "MIT Technology Review",
-      "tag": null,
-      "created": "2026-11-23T20:12:47.532449+00:00"
-    },
-    "1574518102375268375": {
-      "title": "Jensen Huang reinstated as Nvidia CEO, board chair",
-      "blurb": "Trump says he spoke to the board and that Huang \"did nothing wrong.\"",
-      "url": "https://arstechnica.com/ai/2026/11/jensen-huang-reinstated-as-nvidia-ceo-board-chair/",
-      "source": "Ars Technica",
-      "tag": null,
-      "created": "2026-11-23T20:12:48.721651+00:00"
-    },
-    "1574518115503579239": {
-      "title": "Connected intelligence for in-house legal",
-      "blurb": "Watch OpenAI’s Stacey Wang and Craig Bruney, Mary O’Carroll of LECG, and Cooley’s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
-      "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
-      "source": "OpenAI",
-      "tag": null,
-      "created": "2026-11-23T20:12:51.801789+00:00"
-    },
-    "1574518120427815033": {
-      "title": "Finding faster quantum algorithms with agents and formal verification",
-      "blurb": "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry.",
-      "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
-      "source": "Google DeepMind",
-      "tag": "Tools",
-      "created": "2026-11-23T20:12:52.933963+00:00"
-    },
-    "1574518135686565941": {
-      "title": "OpenAI's New Breakthrough Is... Utter Chaos",
-      "blurb": "",
-      "url": "https://www.youtube.com/watch?v=gl2U4fGTr6g",
-      "source": "Two Minute Papers",
-      "tag": "Research",
-      "kind": "video",
-      "category": "Paper breakdowns",
-      "created": "2026-11-23T20:12:56.575961+00:00"
-    },
-    "1574518140170272769": {
-      "title": "Since last year, we asked: “What if AI solved the Riemann Hypothesis?”",
-      "blurb": "3blue1brown is a channel about animating math, in all senses of the word animate. If you're reading the bottom of a video description, I'm guessing you're more interested than the average viewer in lessons here. It would mean a lot to me if you chose to stay up to date on new ones, either by…",
-      "url": "https://www.youtube.com/watch?v=zqzk43bSdDI",
-      "source": "3Blue1Brown",
-      "tag": null,
-      "kind": "video",
-      "category": "Learning",
-      "created": "2026-11-23T20:12:57.672872+00:00"
-    }
-  },
+  "drafts": {},
   "last_message_id": 1575024554085064838,
   "drafted_week": "2026-W48",
-  "roundup_week": "2026-W47",
+  "roundup_week": "2026-W48",
   "history": [
     {
       "week": "2026-W45",
@@ -286,6 +217,70 @@
       "kind": "video",
       "category": "News & analysis",
       "source": "Matthew Berman",
+      "tag": null,
+      "decision": "rejected"
+    },
+    {
+      "week": "2026-W48",
+      "kind": "article",
+      "category": null,
+      "source": "TechCrunch",
+      "tag": "Tools",
+      "decision": "rejected"
+    },
+    {
+      "week": "2026-W48",
+      "kind": "article",
+      "category": null,
+      "source": "The Verge",
+      "tag": "Policy & Safety",
+      "decision": "approved"
+    },
+    {
+      "week": "2026-W48",
+      "kind": "article",
+      "category": null,
+      "source": "MIT Technology Review",
+      "tag": null,
+      "decision": "rejected"
+    },
+    {
+      "week": "2026-W48",
+      "kind": "article",
+      "category": null,
+      "source": "Ars Technica",
+      "tag": null,
+      "decision": "approved"
+    },
+    {
+      "week": "2026-W48",
+      "kind": "article",
+      "category": null,
+      "source": "OpenAI",
+      "tag": null,
+      "decision": "rejected"
+    },
+    {
+      "week": "2026-W48",
+      "kind": "article",
+      "category": null,
+      "source": "Google DeepMind",
+      "tag": "Tools",
+      "decision": "rejected"
+    },
+    {
+      "week": "2026-W48",
+      "kind": "video",
+      "category": "Paper breakdowns",
+      "source": "Two Minute Papers",
+      "tag": "Research",
+      "decision": "rejected"
+    },
+    {
+      "week": "2026-W48",
+      "kind": "video",
+      "category": "Learning",
+      "source": "3Blue1Brown",
       "tag": null,
       "decision": "rejected"
     }
